@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082147">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082156">
 </head>
 <body>
 
@@ -100,7 +100,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082147"></script>
+<script src="data.js?v=202611082156"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -250,7 +250,7 @@ ${catWheelOn() ? "" : `<div class="cw-replay"><button onclick="replayWheel()">�
         <div class="stat"><b class="chrome" data-count="${total}">0</b><span>modeli New Holland w ofercie</span></div>
         <div class="stat"><b class="chrome">24/7</b><span>serwis w sezonie żniwnym</span></div>
       </div>
-      <div class="timeline">
+      <div class="timeline tl-draw" id="tlDraw"><span class="tl-spark" aria-hidden="true"></span>
         <div class="tl"><b class="chrome">1997</b><p>Założenie firmy Rolmax</p></div>
         <div class="tl"><b class="chrome">NH</b><p>Autoryzowany Dealer i Serwis New Holland</p></div>
         <div class="tl"><b class="chrome">4</b><p>Świdnik · Miączyn · Rudnik · Białka</p></div>
@@ -495,8 +495,18 @@ function vbFrame(){ vbFx.raf=0; const pin=$('#vbPin'), sec=$('#vbSec'); if(!pin|
 addEventListener('scroll',()=>{ if(!vbFx.raf) vbFx.raf=requestAnimationFrame(vbFrame); },{passive:true});
 addEventListener('resize',vbLayout); if(document.fonts) document.fonts.ready.then(()=>vbLayout());
 
+
+/* ===== oś czasu rysuje się przy przewijaniu, punkty zapalają się po kolei ===== */
+const tlFx={raf:0};
+function tlFrame(){ tlFx.raf=0; const t=document.getElementById('tlDraw'); if(!t) return;
+  const r=t.getBoundingClientRect(), vh=innerHeight; const p=Math.max(0,Math.min(1,(vh*.88-r.top)/(vh*.5)));
+  t.style.setProperty('--tp',p.toFixed(4)); t.classList.toggle('drawing',p>0&&p<1);
+  t.querySelectorAll('.tl').forEach(el=>{ const x=(el.getBoundingClientRect().left-r.left+8)/r.width; el.classList.toggle('lit',p>=x-.005); }); }
+addEventListener('scroll',()=>{ if(!tlFx.raf) tlFx.raf=requestAnimationFrame(tlFrame); },{passive:true});
+addEventListener('resize',tlFrame);
+
 function mountHome(){
-  setTimeout(vbLayout,60); mountFlip(); mountWheel(); setTimeout(railLayout,50); setTimeout(railLayout,900);
+  setTimeout(tlFrame,60); setTimeout(vbLayout,60); mountFlip(); mountWheel(); setTimeout(railLayout,50); setTimeout(railLayout,900);
   const ex=$('#exSide'); if(ex) megaOferta(ex,$('#exMain'),4);
   const tabs=$('#brTabs'); if(tabs){
     tabs.innerHTML=BR.map((b,i)=>`<button class="${i?'':'on'}" data-i="${i}"><b>${b.n}</b><span>${b.tag} · ${b.a}</span></button>`).join('');

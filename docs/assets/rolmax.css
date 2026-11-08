@@ -764,3 +764,20 @@ font[style]{background:none!important;box-shadow:none!important}
 .vb-pin.off .vb-mask{display:none}
 .vb-pin:not(.off)>.vband::after{opacity:var(--vbc)}
 .vb-pin:not(.off)>.vband video{filter:brightness(calc(1.15 - var(--vbc)*.15)) saturate(1.15)}
+/* ===== rysowana linia historii ===== */
+.tl-draw{--tp:0}
+.tl-draw::after{content:"";position:absolute;top:9px;left:0;right:0;height:2px;background:rgba(200,214,236,.14);z-index:0}
+.tl-draw::before{z-index:1;transform:scaleX(var(--tp));transform-origin:left center;background:linear-gradient(90deg,#8d99aa,#fff 70%,#fff);box-shadow:0 0 12px rgba(220,232,255,.55)}
+.tl-spark{position:absolute;top:10px;left:calc(var(--tp)*100%);width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;z-index:2;opacity:0;
+  background:#fff;box-shadow:0 0 10px 3px rgba(255,255,255,.9),0 0 30px 8px rgba(120,170,255,.55);transition:opacity .25s}
+.tl-draw.drawing .tl-spark{opacity:1}
+.tl-draw .tl{z-index:2}
+.tl-draw .tl::before{background:#16264a;box-shadow:0 0 0 4px var(--navy-900),inset 0 0 0 1.5px rgba(200,214,236,.35);transition:background .3s,box-shadow .3s,transform .3s}
+.tl-draw .tl b,.tl-draw .tl p{opacity:.18;transform:translateY(10px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.75,.2,1)}
+.tl-draw .tl p{transition-delay:.12s}
+.tl-draw .tl.lit::before{background:var(--chrome-edge);box-shadow:0 0 0 4px var(--navy-900),0 0 18px 4px rgba(220,232,255,.6);animation:tlPop .7s cubic-bezier(.2,.75,.2,1)}
+.tl-draw .tl.lit::after{content:"";position:absolute;top:2px;left:0;width:16px;height:16px;border-radius:50%;border:2px solid rgba(230,240,255,.9);animation:tlRing .9s ease-out forwards;pointer-events:none}
+.tl-draw .tl.lit b,.tl-draw .tl.lit p{opacity:1;transform:none}
+@keyframes tlPop{0%{transform:scale(.6)}55%{transform:scale(1.35)}100%{transform:scale(1)}}
+@keyframes tlRing{0%{transform:scale(1);opacity:1}100%{transform:scale(3.2);opacity:0}}
+@media (prefers-reduced-motion: reduce){.tl-draw{--tp:1!important}.tl-draw .tl b,.tl-draw .tl p{opacity:1;transform:none}}
