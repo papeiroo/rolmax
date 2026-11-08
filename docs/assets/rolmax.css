@@ -608,3 +608,5 @@ section{position:relative}
 [data-mega="uslugi"] .mega-inner{min-height:0}
 .site-header #megaUslugiSide{display:flex!important;flex-direction:column}
 #megaUslugiSide button{flex:1 1 auto}
+/* podpisy usług w menu — wyrównane do prawej krawędzi jak pozostałe */
+.site-header #megaUslugiSide button small{text-align:right;margin-left:auto;padding-left:12px}
