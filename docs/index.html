@@ -183,7 +183,7 @@ function home(){ return `
 </section>
 
 <nav class="catstrip" aria-label="Kategorie maszyn"><div class="wrap">
-  ${RX.filter(c=>c.items.length).map(c=>`<a href="#oferta-${c.s}"><img src="${IMG(c.items.find(x=>!x.photo)||c.items[0])}" alt="${c.c}"><span>${c.c}</span></a>`).join('')}
+  ${RX.filter(c=>c.items.length).map(c=>`<a href="#oferta-${c.s}">${(it=>`<img${PH(it)} src="${IMG(it)}" alt="${c.c}">`)(c.items.find(x=>!x.photo)||c.items[0])}<span>${c.c}</span></a>`).join('')}
 </div></nav>
 
 <section class="sec bg-steel" id="uslugi">

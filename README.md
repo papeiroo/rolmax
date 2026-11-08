@@ -16,7 +16,7 @@ NH-SYNC.md            raport: porównanie oferty z New Holland, plan bloga i SEO
 
 ## Podgląd na GitHub Pages
 Settings → Pages → Source: *Deploy from a branch* → Branch: `main`, folder: `/docs` → Save.
-Po chwili podgląd będzie pod adresem `https://papeiroo.github.io/rolmax-strona/`.
+Po chwili podgląd będzie pod adresem `https://papeiroo.github.io/rolmax/`.
 
 ## Instalacja motywu w WordPressie
 Spakuj folder `wp-theme/rolmax-30` do ZIP i wgraj: Wygląd → Motywy → Dodaj nowy → Wyślij motyw.
