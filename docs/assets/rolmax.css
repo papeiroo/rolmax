@@ -935,3 +935,14 @@ font[style]{background:none!important;box-shadow:none!important}
   animation:logoGlint 4.5s ease-in-out infinite,ctaSheen 6s ease-in-out infinite;
   filter:drop-shadow(0 0 1px rgba(255,255,255,.4)) drop-shadow(0 3px 6px rgba(0,0,0,.55))}
 @keyframes logoGlint{0%,50%{background-position:160% 0,0% 50%}100%{background-position:-60% 0,100% 50%}}
+/* logo — jasne srebro, połysk płynie tylko w jedną stronę (bez cofania), szybsza pętla */
+.site-header .logo::after,.f-brand>a::after{
+  background:
+    linear-gradient(105deg,transparent 0%,transparent 38%,rgba(255,255,255,0) 41%,#ffffff 48%,#ffffff 52%,rgba(255,255,255,0) 59%,transparent 62%,transparent 100%),
+    linear-gradient(90deg,#c3ccd9 0%,#ffffff 25%,#d7dee9 50%,#ffffff 75%,#c3ccd9 100%);
+  background-size:260% 100%,240px 100%;background-repeat:no-repeat,repeat-x;
+  animation:logoGlint2 2.6s linear infinite,logoFlow 3.2s linear infinite;
+  filter:drop-shadow(0 0 1px rgba(255,255,255,.45)) drop-shadow(0 3px 6px rgba(0,0,0,.5))}
+@keyframes logoGlint2{0%,12%{background-position:160% 0,var(--lf,0) 0}100%{background-position:-60% 0,var(--lf,0) 0}}
+@keyframes logoFlow{from{--lf:0px}to{--lf:240px}}
+@property --lf{syntax:'<length>';inherits:false;initial-value:0px}
