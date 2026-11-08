@@ -540,3 +540,4 @@ section{position:relative}
 .cw-h-touch{display:none}
 @media (hover:none){.cw-h-touch{display:inline}.cw-h-mouse{display:none}}
 @media (max-width:900px){#cwName{margin-top:auto}}
+.cw-spot{display:none}
