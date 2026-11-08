@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082230">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082231">
 </head>
 <body>
 
@@ -101,7 +101,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082230"></script>
+<script src="data.js?v=202611082231"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -543,7 +543,7 @@ function brMapMount(onPick){ const box=$('#brMap'); if(!box) return null;
   <button class="br-all" id="brAll" type="button" hidden>← Całe województwo</button>`;
   const svg=box.querySelector('svg'), shape=box.querySelector('#brShape');
   const len=shape.getTotalLength(); shape.style.strokeDasharray=len; shape.style.strokeDashoffset=len;
-  new IntersectionObserver((es,o)=>es.forEach(e=>{ if(e.isIntersecting){ box.classList.add('drawn'); o.disconnect(); } }),{threshold:.35}).observe(box);
+  new IntersectionObserver((es,o)=>es.forEach(e=>{ if(e.isIntersecting){ box.classList.add('drawn'); o.disconnect(); } }),{threshold:.12}).observe(box);
   let vb=MAP_FULL.slice(), anim=0;
   const tween=to=>{ cancelAnimationFrame(anim); const from=vb.slice(), t0=performance.now(), D=1100;
     const st=t=>{ let k=Math.min(1,(t-t0)/D); k=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2; vb=from.map((v,i)=>v+(to[i]-v)*k); svg.setAttribute('viewBox',vb.map(v=>v.toFixed(2)).join(' ')); const sc=Math.max(.55,vb[2]/MAP_FULL[2]*1.25); pins.forEach((g,i)=>g.setAttribute('transform',`translate(${BR_XY[i][0]} ${BR_XY[i][1]}) scale(${sc.toFixed(3)})`)); if(k<1) anim=requestAnimationFrame(st); }; anim=requestAnimationFrame(st); };

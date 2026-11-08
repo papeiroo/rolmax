@@ -880,3 +880,9 @@ font[style]{background:none!important;box-shadow:none!important}
 .to-top:hover svg{animation:ttUp .6s ease}
 @keyframes ttUp{0%{transform:none}40%{transform:translateY(-4px)}100%{transform:none}}
 @media (max-width:700px){.to-top{right:14px;bottom:14px;width:46px;height:46px}}
+/* mapa oddziałów — szybsze rysowanie i pinezki */
+#brShape{transition:stroke-dashoffset 1.1s cubic-bezier(.4,.1,.2,1),fill-opacity .7s ease .55s}
+.br-ref{transition:opacity .5s .7s}
+.br-map.drawn .br-pin{animation-duration:.5s}
+.br-map.drawn .br-pin[data-i="0"]{animation-delay:.65s}.br-map.drawn .br-pin[data-i="1"]{animation-delay:.78s}
+.br-map.drawn .br-pin[data-i="2"]{animation-delay:.91s}.br-map.drawn .br-pin[data-i="3"]{animation-delay:1.04s}
