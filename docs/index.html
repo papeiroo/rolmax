@@ -8,14 +8,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082054">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082056">
 </head>
 <body>
 
 <div class="topbar">
   <div class="wrap">
     <nav class="langs" aria-label="Język"><a class="on" href="#top">PL</a><a href="#top">EN</a><a href="#top">DE</a><a href="#top">UK</a></nav>
-    <span class="jubilee-chip">30 LAT · 1997–2027</span>
+    <div class="jub-wrap"><span class="jubilee-chip">30 LAT · 1997–2027</span>
+      <div class="jub-count" id="jubCount" role="timer" aria-live="off" title="Do jubileuszu 30-lecia Rolmax — 1 lutego 2027">
+        <span class="jc-lbl">Do jubileuszu</span>
+        <span class="jc-seg"><b data-u="d">--</b><i>dni</i></span><span class="jc-dot">:</span>
+        <span class="jc-seg"><b data-u="h">--</b><i>godz</i></span><span class="jc-dot jc-min">:</span>
+        <span class="jc-seg jc-min"><b data-u="m">--</b><i>min</i></span><span class="jc-dot jc-sec">:</span>
+        <span class="jc-seg jc-sec"><b data-u="s">--</b><i>sek</i></span>
+      </div></div>
     <div class="contact"><span>+48 81 721 67 85</span><span>rolmax@rolmax.net.pl</span></div>
   </div>
 </div>
@@ -82,7 +89,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082054"></script>
+<script src="data.js?v=202611082056"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -525,6 +532,14 @@ function route(){
 
 
 /* telefon: mega menu tuż pod wstążką; klik poza menu zamyka */
+/* odliczanie do jubileuszu 30-lecia — 1 lutego 2027, 00:00 czasu polskiego */
+(()=>{ const el=document.getElementById('jubCount'); if(!el) return; const T=Date.parse('2027-02-01T00:00:00+01:00');
+  const q=u=>el.querySelector(`[data-u="${u}"]`), p=n=>String(n).padStart(2,'0'); let last={};
+  const set=(u,v)=>{ if(last[u]===v) return; last[u]=v; const b=q(u); b.textContent=v; b.classList.remove('tick'); void b.offsetWidth; b.classList.add('tick'); };
+  function tick(){ let ms=T-Date.now(); if(ms<=0){ el.innerHTML='<span class="jc-lbl jc-now">Świętujemy 30 lat Rolmax!</span>'; return; }
+    const d=Math.floor(ms/864e5); ms%=864e5; const h=Math.floor(ms/36e5); ms%=36e5; const m=Math.floor(ms/6e4); const s=Math.floor(ms%6e4/1e3);
+    set('d',String(d)); set('h',p(h)); set('m',p(m)); set('s',p(s)); setTimeout(tick,1000-Date.now()%1000+10); }
+  tick(); })();
 /* pływające przyciski: pod „Zapytaj o cenę”, na wysokości nagłówka „Klasa premium” */
 function placeDock(){ const d=document.querySelector('.cta-dock'), c=document.querySelector('.hdr-cta'), hd=document.querySelector('.site-header'); if(!d||!c||!hd) return;
   const cr=c.getBoundingClientRect(); d.style.right=Math.max(8,Math.round(innerWidth-cr.right))+'px';
