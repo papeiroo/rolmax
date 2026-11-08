@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082241">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082243">
 </head>
 <body>
 
@@ -99,7 +99,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082241"></script>
+<script src="data.js?v=202611082243"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -663,7 +663,7 @@ function postPage(slug){ const b=BLOG.find(x=>x.slug===slug); if(!b) return blog
   <aside class="post-side">
     ${toc.length?`<div class="dept chrome-frame"><h4 class="chrome">W artykule</h4>${toc.map((t,i)=>`<a class="toc" href="#wpis-${b.slug}" onclick="event.preventDefault();document.getElementById('s${i}').scrollIntoView({behavior:'smooth'})">${t}</a>`).join('')}</div>`:''}
     ${rel.length?`<div class="dept chrome-frame" style="margin-top:16px"><h4 class="chrome">Maszyny z artykułu</h4>${rel.map(r=>`<a class="side-m" href="#maszyna-${r.s}"><img${PH(r)} src="${IMG(r)}" alt=""><span>${r.n}</span></a>`).join('')}</div>`:''}
-    <div class="dept chrome-frame cta-box" style="margin-top:16px"><h4 class="chrome">Masz pytanie?</h4><p>Doradca Rolmax odpowie i przygotuje ofertę z finansowaniem.</p><a class="btn btn-chrome" href="#oddzialy">Kontakt</a></div>
+    <div class="dept chrome-frame cta-box" style="margin-top:16px"><h4 class="chrome">Masz pytanie?</h4><p>Doradca Rolmax odpowie i przygotuje ofertę z finansowaniem.</p><a class="btn btn-chrome btn-shine" href="#oddzialy">Kontakt</a></div>
   </aside>
 </div></section>
 <section class="sec" style="padding-top:0"><div class="wrap"><h2 class="display chrome" style="font-size:2.2rem;margin-bottom:24px">Czytaj także</h2><div class="news-grid">${BLOG.filter(x=>x.slug!==b.slug).slice(0,3).map(blogCard).join('')}</div></div></section>`;}

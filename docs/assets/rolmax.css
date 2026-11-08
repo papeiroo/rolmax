@@ -919,3 +919,10 @@ font[style]{background:none!important;box-shadow:none!important}
   .footer .f-grid>div:not(.f-brand) li{margin:0;line-height:1.3}
   .footer ul.f-2col{display:grid!important;columns:auto;grid-template-rows:repeat(5,auto);grid-auto-flow:column;grid-template-columns:1fr 1fr;align-content:space-between;column-gap:28px}
 }
+/* ===== Przycisk w stylu „Zapytaj o cenę” (srebrny, mieniący się) ===== */
+.btn-shine{position:relative;overflow:hidden;isolation:isolate;padding:12px 26px;color:var(--navy-900)!important;-webkit-text-fill-color:var(--navy-900);text-shadow:none;
+  background:linear-gradient(110deg,#8f9bb0 0%,#e9eef6 22%,#ffffff 34%,#aeb9ca 50%,#f4f7fb 66%,#9aa6ba 82%,#dfe6f0 100%)!important;background-size:260% 100%!important;
+  animation:ctaSheen 6s ease-in-out infinite;text-decoration:none!important}
+.btn-shine::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;z-index:-1;transform:skewX(-20deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent);animation:ctaGlint 4.5s ease-in-out infinite}
+.btn-shine:hover{transform:translateY(-1px);filter:brightness(1.06)}
