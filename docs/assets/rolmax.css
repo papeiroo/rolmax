@@ -589,3 +589,7 @@ section{position:relative}
 /* pływające przyciski — wyżej, pod przyciskiem „Zapytaj o cenę” */
 .cta-dock{transform:none;top:calc(var(--hh,84px) + 16px);flex-direction:column;align-items:flex-end}
 .cta-dock a{background:rgba(6,20,48,.9)}
+/* pływające przyciski: zawsze widoczne, ta sama pozycja na każdej podstronie */
+.cta-dock{display:flex!important;transition:none}
+@media (max-width:1100px){.cta-dock{gap:8px}.cta-dock a{padding:9px;max-width:46px;border-radius:12px}.cta-dock svg{flex:0 0 28px;width:28px;height:28px;padding:5px}}
+@media (max-width:700px){.cta-dock a{padding:7px;max-width:40px}.cta-dock svg{flex:0 0 26px;width:26px;height:26px}}

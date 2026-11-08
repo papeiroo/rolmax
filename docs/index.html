@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611081655">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082015">
 </head>
 <body>
 
@@ -80,7 +80,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611081655"></script>
+<script src="data.js?v=202611082015"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -519,11 +519,10 @@ function route(){
 
 /* telefon: mega menu tuż pod wstążką; klik poza menu zamyka */
 /* pływające przyciski: pod „Zapytaj o cenę”, na wysokości nagłówka „Klasa premium” */
-function placeDock(){ const d=document.querySelector('.cta-dock'), c=document.querySelector('.hdr-cta'), hd=document.querySelector('.site-header'); if(!d||!c) return;
-  const cr=c.getBoundingClientRect(), hb=hd.getBoundingClientRect().height; d.style.right=Math.max(8,Math.round(innerWidth-cr.right))+'px';
-  const h1=document.querySelector('.hero h1'); let top=hb+16;
-  if(h1){ const t=Math.round(h1.getBoundingClientRect().top+scrollY); if(t<innerHeight*.7) top=Math.max(top,t); }
-  d.style.top=top+'px'; }
+function placeDock(){ const d=document.querySelector('.cta-dock'), c=document.querySelector('.hdr-cta'), hd=document.querySelector('.site-header'); if(!d||!c||!hd) return;
+  const cr=c.getBoundingClientRect(); d.style.right=Math.max(8,Math.round(innerWidth-cr.right))+'px';
+  d.style.top=Math.round(Math.max(0,hd.getBoundingClientRect().bottom)+(innerWidth<700?24:44))+'px'; }
+addEventListener('scroll',placeDock,{passive:true});
 addEventListener('resize',placeDock); addEventListener('load',placeDock); addEventListener('hashchange',()=>setTimeout(placeDock,60)); setTimeout(placeDock,300);
 (()=>{const h=document.querySelector('.site-header');if(!h)return;const set=()=>document.documentElement.style.setProperty('--hh',h.getBoundingClientRect().bottom+'px');
 ['load','resize','scroll'].forEach(e=>addEventListener(e,set,{passive:true}));set();
