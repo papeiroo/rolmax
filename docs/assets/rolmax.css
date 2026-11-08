@@ -906,3 +906,16 @@ font[style]{background:none!important;box-shadow:none!important}
 @keyframes logoGlint{0%,55%{background-position:150% 0,0% 50%}100%{background-position:-60% 0,100% 50%}}
 .site-header .logo:hover::after,.f-brand>a:hover::after{animation-duration:1.6s,6s}
 @media (prefers-reduced-motion: reduce){.site-header .logo::after,.f-brand>a::after{animation:none}}
+/* ===== Stopka: wyrównane kolumny (Oferta w 2 kolumnach, sklep i konfigurator w Usługach) ===== */
+.footer .f-grid{grid-template-columns:minmax(0,1.25fr) minmax(0,1.75fr) minmax(0,1fr) minmax(0,.85fr)}
+.footer ul.f-2col{columns:2;column-gap:28px}
+.footer ul.f-2col li{break-inside:avoid}
+@media (max-width:900px){.footer ul.f-2col{columns:1}.footer .f-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,1.1fr) minmax(0,1fr) minmax(0,.9fr)}}
+/* stopka: wszystkie kolumny kończą się na wysokości ikon social media */
+@media (min-width:901px){
+  .footer .f-grid{align-items:stretch}
+  .footer .f-grid>div:not(.f-brand){display:flex;flex-direction:column}
+  .footer .f-grid>div:not(.f-brand)>ul{flex:1;display:flex;flex-direction:column;justify-content:space-between;margin:0;padding:0}
+  .footer .f-grid>div:not(.f-brand) li{margin:0;line-height:1.3}
+  .footer ul.f-2col{display:grid!important;columns:auto;grid-template-rows:repeat(5,auto);grid-auto-flow:column;grid-template-columns:1fr 1fr;align-content:space-between;column-gap:28px}
+}

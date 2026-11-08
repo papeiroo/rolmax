@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082237">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082241">
 </head>
 <body>
 
@@ -88,12 +88,10 @@
         <a href="https://www.youtube.com/@rolmaxswidnik616" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4" fill="currentColor"/><path d="M10 9.2v5.6l4.8-2.8z" fill="#020713"/></svg></a>
       </nav>
       </div>
-      <div><h5>Oferta</h5><ul id="fOferta"></ul></div>
+      <div class="f-col-oferta"><h5>Oferta</h5><ul id="fOferta" class="f-2col"></ul></div>
       <div><h5>Usługi</h5><ul id="fUslugi"></ul></div>
       <div><h5>Rolmax</h5><ul>
-        <li><a href="#promocje">Promocje</a></li><li><a href="#blog">Blog</a></li><li><a href="#aktualnosci">Aktualności</a></li><li><a href="#galeria">Galeria</a></li><li><a href="#oddzialy">Praca</a></li><li><a href="#oddzialy">Kontakt</a></li>
-        <li><a href="https://www.rolmax-sklep.pl/">Sklep internetowy</a></li>
-        <li><a href="https://agriculture.newholland.com/pl-pl/europe/uslugi-i-rozwiazania/konfigurator">Konfigurator New Holland</a></li>
+        <li><a href="#promocje">Promocje</a></li><li><a href="#blog">Blog</a></li><li><a href="#aktualnosci">Aktualności</a></li><li><a href="#galeria">Galeria</a></li><li><a href="#jubileusz">O nas</a></li><li><a href="#oddzialy">Praca</a></li><li><a href="#oddzialy">Kontakt</a></li>
       </ul></div>
     </div>
     <div class="f-bottom"><span>© Rolmax 2027 · Wszelkie prawa zastrzeżone.</span>
@@ -101,7 +99,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082237"></script>
+<script src="data.js?v=202611082241"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -198,7 +196,7 @@ addEventListener('wheel',e=>{ if(Date.now()<megaFwd.until && !e.ctrlKey){ e.prev
 /* zamknij menu przy przewijaniu strony, gdy kursor nie jest nad panelem */
 addEventListener('wheel',e=>{ if(e.target.closest&&e.target.closest('.mega-inner')) return; document.querySelectorAll('[data-mega].open').forEach(x=>x.classList.remove('open')); },{passive:true});
 $('#fOferta').innerHTML = RX.map(c=>`<li><a href="#oferta-${c.s}">${c.c}</a></li>`).join('');
-$('#fUslugi').innerHTML = SVC.map(c=>`<li><a href="#usluga-${c.s}">${c.n}</a></li>`).join('');
+$('#fUslugi').innerHTML = SVC.map(c=>`<li><a href="#usluga-${c.s}">${c.n}</a></li>`).join('') + `<li><a href="https://www.rolmax-sklep.pl/">Sklep internetowy</a></li><li><a href="https://agriculture.newholland.com/pl-pl/europe/uslugi-i-rozwiazania/konfigurator">Konfigurator NH</a></li>`;
 
 /* ---------- views ---------- */
 function home(){ return `
