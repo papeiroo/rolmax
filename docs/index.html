@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082015">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082016">
 </head>
 <body>
 
@@ -80,7 +80,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082015"></script>
+<script src="data.js?v=202611082016"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -378,7 +378,7 @@ function catWheel(){ const cats=CW_CATS(); return `
       <p id="cwDesc">${cats[0].items.length} modeli New Holland</p>
       <a class="btn btn-chrome" id="cwGo" href="#oferta-${cats[0].s}">Zobacz maszyny</a>
       <div class="cw-models" id="cwModels"></div>
-      <div class="cw-actions"><button class="cw-skip" onclick="cwSkip()">Pomiń ↓</button><button class="cw-skip cw-end" onclick="cwEnd()">Zakończ tryb pokazu ✕</button></div>
+      <div class="cw-actions"><button class="cw-skip" onclick="cwSkip()">Pomiń ↓</button><button class="cw-skip cw-end" onclick="cwEnd()">Zamknij tryb pokazu ✕</button></div>
     </div>
     <div class="cw-dots">${cats.map((c,i)=>`<i data-i="${i}"></i>`).join('')}</div>
   </div>
