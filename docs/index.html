@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082211">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082221">
 </head>
 <body>
 
@@ -100,7 +100,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082211"></script>
+<script src="data.js?v=202611082221"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -189,12 +189,15 @@ $('#fUslugi').innerHTML = SVC.map(c=>`<li><a href="#usluga-${c.s}">${c.n}</a></l
 
 /* ---------- views ---------- */
 function home(){ return `
-<section class="hero">
+<div class="hero-pin" id="heroPin">
+<section class="hero" id="heroSec">
+  <div class="hero-frame" aria-hidden="true"></div>
+  <div class="hero-badge" aria-hidden="true"><span class="eyebrow">Autoryzowany Dealer New Holland</span><b class="chrome-sheen">od 1997</b></div>
   <video autoplay muted loop playsinline poster="assets/poster.jpg"><source src="assets/hero.webm" type="video/webm"><source src="assets/hero.mp4" type="video/mp4"></video>
   <div class="wrap">
     <div class="reveal">
       <div class="eyebrow">Autoryzowany Dealer · Lubelszczyzna</div>
-      <h1 class="display" style="margin-top:18px"><span class="chrome-sheen">Klasa premium</span><span class="nh chrome">New Holland</span></h1>
+      <h1 class="display" style="margin-top:18px"><span class="chrome-sheen hx-l">Klasa premium</span><span class="nh chrome hx-r">New Holland</span></h1>
       <p>Od 1997 roku dostarczamy gospodarstwom Lubelszczyzny maszyny jednej z najbardziej prestiżowych marek rolniczych świata — z pełnym serwisem, częściami i finansowaniem w jednym miejscu.</p>
       <div class="actions"><a class="btn btn-chrome" href="#oferta">Poznaj ofertę</a><a class="btn btn-ghost" href="#usluga-serwis">Serwis 24/7 w żniwa</a></div>
     </div>
@@ -206,6 +209,7 @@ function home(){ return `
   </div>
   <div class="scroll-cue" aria-hidden="true"></div>
 </section>
+</div>
 
 ${catWheelOn() ? catWheel() : ""}
 <nav class="catstrip${catWheelOn()?' cw-hidden':''}" aria-label="Kategorie maszyn"><div class="wrap">
@@ -570,8 +574,24 @@ function mountGal(){ const g=$('#galC'); if(!g) return; if(matchMedia('(prefers-
   [...g.children].forEach(f=>{ const o=()=>galLightbox(+f.dataset.i); f.addEventListener('click',o); f.addEventListener('keydown',e=>{ if(e.key==='Enter') o(); }); });
   galLayout(); setTimeout(galLayout,600); }
 
+
+/* ===== Hero „Wjazd w markę” — wideo kurczy się do karty ze srebrną ramką ===== */
+const heroFx={raf:0};
+function heroLayout(){ const pin=$('#heroPin'), sec=$('#heroSec'); if(!pin||!sec) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){ pin.classList.add('off'); return; }
+  const hh=($('.site-header')?.getBoundingClientRect().height)||84; heroFx.hh=hh;
+  heroFx.L=Math.round(innerHeight*.9); sec.style.top=hh+'px'; sec.style.height=(innerHeight-hh)+'px';
+  pin.style.height=(innerHeight-hh+heroFx.L)+'px'; heroFrame(); }
+function heroFrame(){ heroFx.raf=0; const pin=$('#heroPin'), sec=$('#heroSec'); if(!pin||!sec||pin.classList.contains('off')) return;
+  const r=pin.getBoundingClientRect(); let p=Math.max(0,Math.min(1,(heroFx.hh-r.top)/heroFx.L)); const e=1-Math.pow(1-p,3);
+  const mob=innerWidth<700; const ix=e*(mob?4:7), iy=e*(mob?10:9), rad=e*(mob?18:30);
+  sec.style.setProperty('--hx',ix+'%'); sec.style.setProperty('--hy',iy+'%'); sec.style.setProperty('--hr',rad+'px'); sec.style.setProperty('--hp',e.toFixed(4));
+  sec.classList.toggle('hx-on',p>0); }
+addEventListener('scroll',()=>{ if(!heroFx.raf) heroFx.raf=requestAnimationFrame(heroFrame); },{passive:true});
+addEventListener('resize',heroLayout);
+
 function mountHome(){
-  mountGal(); setTimeout(tlFrame,60); setTimeout(vbLayout,60); mountFlip(); mountWheel(); setTimeout(railLayout,50); setTimeout(railLayout,900);
+  heroLayout(); mountGal(); setTimeout(tlFrame,60); setTimeout(vbLayout,60); mountFlip(); mountWheel(); setTimeout(railLayout,50); setTimeout(railLayout,900);
   const ex=$('#exSide'); if(ex) megaOferta(ex,$('#exMain'),4);
   const tabs=$('#brTabs'); if(tabs){
     tabs.innerHTML=BR.map((b,i)=>`<button class="${i?'':'on'}" data-i="${i}"><b>${b.n}</b><span>${b.tag} · ${b.a}</span></button>`).join('');

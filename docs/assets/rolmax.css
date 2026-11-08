@@ -849,3 +849,20 @@ font[style]{background:none!important;box-shadow:none!important}
 .glb-nav:hover,.glb-x:hover{background:var(--chrome-edge);color:var(--navy-900)}
 .glb-x{position:absolute;top:18px;right:18px;font-size:1.1rem;width:46px;height:46px}
 @media (max-width:700px){.glb{padding:60px 8px 30px}.glb-nav{position:absolute;bottom:20px;width:48px;height:48px}.glb-nav.prev{left:calc(50% - 60px)}.glb-nav.next{left:calc(50% + 12px)}.glb img{max-height:66vh}}
+/* ===== Hero „Wjazd w markę” ===== */
+.hero-pin{position:relative;background:#030a1a}
+.hero-pin:not(.off)>.hero{position:sticky;min-height:0;--hx:0%;--hy:0%;--hr:0px;--hp:0}
+.hero-pin:not(.off)>.hero video,.hero-pin:not(.off)>.hero::after{clip-path:inset(var(--hy) var(--hx) round var(--hr))}
+.hero-frame{position:absolute;inset:var(--hy,0) var(--hx,0);border-radius:var(--hr,0);pointer-events:none;z-index:2;opacity:var(--hp,0);
+  box-shadow:0 0 0 1.5px rgba(236,241,248,.85),0 0 0 6px rgba(160,180,210,.12),0 40px 120px -30px rgba(0,0,0,.9),inset 0 0 0 1px rgba(255,255,255,.18)}
+.hero-pin:not(.off) .hx-l{display:block;transform:translateX(calc(var(--hp)*-38vw));opacity:calc(1 - var(--hp)*1.3);will-change:transform}
+.hero-pin:not(.off) .hx-r{transform:translateX(calc(var(--hp)*38vw));opacity:calc(1 - var(--hp)*1.3);will-change:transform}
+.hero-pin:not(.off) .hero .eyebrow:not(.hero-badge .eyebrow),
+.hero-pin:not(.off) .hero p,.hero-pin:not(.off) .hero .actions{transform:translateY(calc(var(--hp)*40px));opacity:calc(1 - var(--hp)*2)}
+.hero-pin:not(.off) .hero .anniv{transform:translateX(calc(var(--hp)*30vw)) rotate(calc(var(--hp)*8deg));opacity:calc(1 - var(--hp)*1.4)}
+.hero-pin:not(.off) .hero .scroll-cue{opacity:calc(1 - var(--hp)*4)}
+.hero-badge{position:absolute;left:50%;top:50%;z-index:3;transform:translate(-50%,-50%) scale(calc(.85 + var(--hp,0)*.15));opacity:calc((var(--hp,0) - .55)*2.4);
+  display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;pointer-events:none}
+.hero-badge b{font-family:var(--ff-display);font-weight:800;font-size:clamp(3rem,8vw,7rem);line-height:.9;text-transform:uppercase;text-shadow:0 10px 40px rgba(0,0,0,.5)}
+.hero-pin.off .hero-frame,.hero-pin.off .hero-badge{display:none}
+@media (max-width:700px){.hero-badge .eyebrow{letter-spacing:.14em;font-size:.62rem;white-space:nowrap}.hero-badge .eyebrow::before{display:none}}
