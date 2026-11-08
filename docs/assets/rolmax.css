@@ -953,3 +953,6 @@ font[style]{background:none!important;box-shadow:none!important}
 .topbar .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
 .topbar .lang-box{justify-self:start}.topbar .jub-wrap{justify-self:center}.topbar .tb-chip{justify-self:end;margin-left:0}
 @media (max-width:480px){.topbar .wrap{grid-template-columns:auto 1fr}.topbar .jub-wrap{justify-self:end}}
+/* newsletter — w prawym dolnym rogu (nad przyciskiem „na górę”) */
+.nl{left:auto!important;right:24px!important;bottom:92px!important}
+@media (max-width:700px){.nl{right:12px!important;left:12px!important;bottom:72px!important}}
