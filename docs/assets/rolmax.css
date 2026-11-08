@@ -727,3 +727,14 @@ font[style]{background:none!important;box-shadow:none!important}
 .js-lbl{font-family:var(--ff-display);font-weight:800;text-transform:uppercase;font-size:clamp(1.3rem,2.6vw,2.3rem);letter-spacing:.04em;margin:18px 0 10px;line-height:1.05}
 .js-in p{color:#b9c7dd;font-size:clamp(.95rem,1.4vw,1.15rem);margin:0}
 #jubileusz.js-active .reveal{opacity:1!important;transform:none!important}
+/* ===== Sekcja „Wybierz kategorię”: jak menu Oferta — stała wysokość, lista wypełnia całość, miniatury przewijane w panelu ===== */
+@media (min-width:1101px){
+  .explorer{height:min(640px,calc(100vh - var(--hh,126px) - 40px));grid-template-columns:300px 1fr}
+  .explorer>.mega-side{height:100%;overflow:hidden;display:flex!important;flex-direction:column;padding:0}
+  .explorer>.mega-side button{flex:1 1 0;min-height:0;padding-top:10px;padding-bottom:10px}
+  .explorer>.mega-main{height:100%;min-height:0;max-height:none!important;overflow:auto!important;background:#fff}
+  .explorer .mega-grid{grid-template-columns:repeat(4,1fr);gap:14px}
+  .explorer .tile{padding:12px 12px 14px}
+  .explorer .tile img{aspect-ratio:16/9.5}
+  .explorer .tile span{font-size:.92rem}
+}
