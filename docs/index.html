@@ -368,12 +368,12 @@ function replayWheel(){ cwForce=true; const app=$('#app'); app.dataset.view=''; 
 function catWheel(){ const cats=CW_CATS(); return `
 <section class="cwheel" id="katalog" style="--n:${cats.length}">
   <div class="cw-stick">
-    <div class="cw-head"><div class="eyebrow">Oferta New Holland</div><h2 class="display chrome">Wybierz kategorię</h2>
-      <p class="cw-hint"><span class="cw-mouse"></span>Przewiń kółkiem myszy</p></div>
-    <div class="cw-stage" aria-live="polite">
+    <div class="cw-stage" aria-live="polite"><div class="cw-spot"></div>
       ${cats.map((c,i)=>{const it=c.items.find(x=>!x.photo)||c.items[0];return `<a class="cw-item" data-i="${i}" href="#oferta-${c.s}"><div class="cw-img${it.photo?' ph':''}"><img src="${IMG(it)}" alt="${c.c}"></div><span>${c.c}</span></a>`}).join('')}
     </div>
     <div class="cw-info">
+      <div class="cw-head"><div class="eyebrow">Oferta New Holland</div><h2 class="display chrome">Wybierz kategorię</h2>
+        <p class="cw-hint"><span class="cw-mouse"></span><span class="cw-h-mouse">Przewiń kółkiem myszy</span><span class="cw-h-touch">Przesuń palcem w górę</span></p></div>
       <div class="cw-count"><b class="chrome" id="cwNum">01</b><span>/ ${String(cats.length).padStart(2,'0')}</span></div>
       <h3 class="display chrome-sheen" id="cwName">${cats[0].c}</h3>
       <p id="cwDesc">${cats[0].items.length} modeli New Holland</p>
