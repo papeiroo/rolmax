@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082102">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082107">
 </head>
 <body>
 
@@ -100,7 +100,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082102"></script>
+<script src="data.js?v=202611082107"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -229,7 +229,9 @@ ${catWheelOn() ? "" : `<div class="cw-replay"><button onclick="replayWheel()">�
   </div>
 </section>
 
+<div class="jub-pin" id="jubPin">
 <section class="sec jubilee" id="jubileusz">
+  <div class="jub-show" id="jubShow" aria-hidden="true"></div>
   <div class="wrap jub-grid">
     <div class="reveal">
       <div class="big30 chrome-sheen">30</div>
@@ -254,6 +256,7 @@ ${catWheelOn() ? "" : `<div class="cw-replay"><button onclick="replayWheel()">�
     </div>
   </div>
 </section>
+</div>
 
 <section class="vband" aria-label="New Holland — marka premium">
   <video autoplay muted loop playsinline data-start="8" poster="assets/poster.jpg"><source src="assets/hero.webm" type="video/webm"><source src="assets/hero.mp4" type="video/mp4"></video>
@@ -450,8 +453,44 @@ function mountWheel(){
   cwState={wheel,touch,raf:0}; info(0); addEventListener('resize',()=>cwFit($('#cwName'))); cwState.raf=requestAnimationFrame(draw);
 }
 
+
+/* ===== Jubileusz: prezentacja liczb — duże kafelki przesuwane kółkiem, potem wracają na miejsce ===== */
+const JS_EXTRA=['Od 1997 roku razem z rolnikami Lubelszczyzny','Świdnik · Miączyn · Rudnik · Białka','Ciągniki, kombajny, prasy, ładowarki i więcej','Serwis w polu, gdy liczy się każda godzina'];
+let jsGeo=null;
+function mountJubShow(){
+  const pin=$('#jubPin'), sec=$('#jubileusz'), show=$('#jubShow'); jsGeo=null; if(!pin||!sec||!show) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){ pin.classList.add('off'); return; }
+  const stats=[...sec.querySelectorAll('.stat')];
+  show.innerHTML='<div class="js-bg"></div>'+stats.map((st,i)=>{ const b=st.querySelector('b'); const num=b.dataset.count||b.textContent; return `<div class="js-card"><div class="js-in"><b class="js-num chrome-sheen">${num}</b><h4 class="js-lbl chrome">${st.querySelector('span').textContent}</h4><p>${JS_EXTRA[i]||''}</p></div></div>`; }).join('');
+  jsGeo={pin,sec,show,stats,cards:[...show.querySelectorAll('.js-card')],bg:show.querySelector('.js-bg')};
+  jsLayout(); jsFrame();
+}
+function jsLayout(){ const g=jsGeo; if(!g) return; const vh=innerHeight, hh=($('.site-header')?.getBoundingClientRect().height)||84;
+  g.L=Math.round(vh*3.2); g.secH=g.sec.offsetHeight; g.pin.style.height=(g.secH+g.L)+'px';
+  g.T=Math.min(hh, vh-g.secH); g.sec.style.top=g.T+'px'; g.hh=hh;
+  g.W=Math.min(780, innerWidth*.84); g.H=Math.min(460, (vh-hh)*.66);
+  g.cards.forEach(c=>{ c.style.width=g.W+'px'; c.style.height=g.H+'px'; }); }
+function jsFrame(){ const g=jsGeo; if(!g||!g.pin.isConnected) return; const vh=innerHeight;
+  const r=g.pin.getBoundingClientRect(); const p=Math.max(0,Math.min(1,(g.T-r.top)/g.L));
+  const active=p>0&&p<1; g.show.classList.toggle('on',active); g.sec.classList.toggle('js-active',active);
+  if(!active){ g.stats.forEach(s=>s.style.opacity=''); return; }
+  const sr=g.sec.getBoundingClientRect(); const visTop=Math.max(sr.top,g.hh), visBot=Math.min(sr.bottom,vh);
+  const cx=sr.width/2, cy=(visTop+visBot)/2-sr.top; const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+  const f = p<.1?0 : p<.8 ? (p-.1)/.7*3 : 3; const enter=Math.min(1,p/.1); const t=p>.8?ease((p-.8)/.2):0;
+  g.bg.style.opacity=(enter*(1-t)).toFixed(3);
+  g.cards.forEach((c,i)=>{ const d=i-f, ad=Math.abs(d);
+    let x=cx+d*g.W*1.08, y=cy, sc=1-Math.min(1,ad)*.2, op=ad<1.25?1:Math.max(0,1-(ad-1.25)*2.5), br=1-Math.min(1,ad)*.45;
+    if(p<.1){ sc*=.86+.14*enter; op*=enter; y+= (1-enter)*60; }
+    if(t>0){ const cr=g.stats[i].getBoundingClientRect(); const tx=cr.left-sr.left+cr.width/2, ty=cr.top-sr.top+cr.height/2, ts=cr.width/g.W;
+      x=x+(tx-x)*t; y=y+(ty-y)*t; sc=sc+(ts-sc)*t; op=op+(1-op)*t; br=br+(1-br)*t; if(t>.82) op*=Math.max(0,1-(t-.82)/.18); }
+    c.style.transform=`translate(${(x-g.W/2).toFixed(1)}px,${(y-g.H/2).toFixed(1)}px) scale(${sc.toFixed(4)})`; c.style.opacity=op.toFixed(3); c.style.filter=br<.999?`brightness(${br.toFixed(3)})`:'';
+    c.classList.toggle('cur',ad<.5&&t===0); });
+  const so=t>.82?Math.min(1,(t-.82)/.18):0; g.stats.forEach(s=>s.style.opacity=so.toFixed(3)); }
+let jsRaf=0; addEventListener('scroll',()=>{ if(!jsRaf) jsRaf=requestAnimationFrame(()=>{jsRaf=0; jsFrame();}); },{passive:true});
+addEventListener('resize',()=>{ jsLayout(); jsFrame(); });
+
 function mountHome(){
-  mountWheel();
+  mountWheel(); mountJubShow();
   const ex=$('#exSide'); if(ex) megaOferta(ex,$('#exMain'),4);
   const tabs=$('#brTabs'); if(tabs){
     tabs.innerHTML=BR.map((b,i)=>`<button class="${i?'':'on'}" data-i="${i}"><b>${b.n}</b><span>${b.tag} · ${b.a}</span></button>`).join('');

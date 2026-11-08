@@ -709,3 +709,21 @@ font[style]{background:none!important;box-shadow:none!important}
 @media (max-width:900px){.svc.shop-banner{min-height:340px}.svc.shop-banner img{object-position:80% 50%}
   .svc.shop-banner::after{background:linear-gradient(180deg,rgba(4,12,32,.15) 0%,rgba(4,12,32,.55) 45%,rgba(4,12,32,.95) 85%)}
   .svc.shop-banner{align-items:flex-end}.svc.shop-banner .body{padding:24px}.svc.shop-banner h3{font-size:1.8rem}}
+/* ===== Jubileusz: prezentacja liczb przy przewijaniu ===== */
+.jub-pin{position:relative}
+.jub-pin>#jubileusz{position:sticky;top:84px}
+.jub-pin.off{height:auto!important}.jub-pin.off>#jubileusz{position:relative;top:auto!important}.jub-pin.off .jub-show{display:none}
+.jub-show{position:absolute;inset:0;z-index:5;pointer-events:none;visibility:hidden}
+.jub-show.on{visibility:visible}
+.js-bg{position:absolute;inset:0;opacity:0;background:radial-gradient(1100px 600px at 50% 50%,rgba(16,52,120,.55),rgba(3,10,26,.94) 70%);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.js-card{position:absolute;left:0;top:0;transform-origin:50% 50%;will-change:transform,opacity;border-radius:26px;overflow:hidden;
+  background:linear-gradient(150deg,#123a86 0%,#0a2257 45%,#050f27 100%);border:1px solid rgba(220,230,245,.55);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 40px 90px -30px rgba(0,0,0,.85)}
+.js-card::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 60px,rgba(255,255,255,.03) 60px 61px)}
+.js-card::after{content:"";position:absolute;top:-40%;bottom:-40%;width:30%;left:-40%;transform:rotate(18deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);transition:left 1.1s ease}
+.js-card.cur::after{left:120%}
+.js-in{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;padding:6% 8%}
+.js-num{font-family:var(--ff-display);font-weight:800;font-size:clamp(5rem,min(16vw,24vh),12rem);line-height:.85;letter-spacing:-.01em}
+.js-lbl{font-family:var(--ff-display);font-weight:800;text-transform:uppercase;font-size:clamp(1.3rem,2.6vw,2.3rem);letter-spacing:.04em;margin:18px 0 10px;line-height:1.05}
+.js-in p{color:#b9c7dd;font-size:clamp(.95rem,1.4vw,1.15rem);margin:0}
+#jubileusz.js-active .reveal{opacity:1!important;transform:none!important}
