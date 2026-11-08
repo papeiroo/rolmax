@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082225">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082227">
 </head>
 <body>
 
@@ -100,7 +100,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082225"></script>
+<script src="data.js?v=202611082227"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -185,12 +185,15 @@ document.querySelectorAll('[data-mega]').forEach(li=>{
   li.querySelector('button').addEventListener('click',()=>{ if(Date.now()-ot<400) return; li.classList.contains('open')?li.classList.remove('open'):open(); });
   /* przewinięcie listy do końca kółkiem → menu się zamyka, strona przewija się dalej */
   const inner=li.querySelector('.mega-inner');
-  if(inner) inner.addEventListener('wheel',e=>{ if(!li.classList.contains('open')) return;
+  if(inner) inner.addEventListener('wheel',e=>{ if(!li.classList.contains('open')) return; if(Date.now()<megaFwd.until) return;
     const sc=e.target.closest('.mega-main'); const dy=e.deltaY; if(!dy) return;
     const atEnd=!sc||sc.scrollHeight<=sc.clientHeight+1||(dy>0&&sc.scrollTop+sc.clientHeight>=sc.scrollHeight-1)||(dy<0&&sc.scrollTop<=0);
-    if(atEnd){ clearTimeout(t); li.classList.remove('open'); setTimeout(()=>li.querySelectorAll('.mega-main').forEach(m=>m.scrollTop=0),320); }
-  },{passive:true});
+    if(atEnd){ e.preventDefault(); megaFwd.go(dy); clearTimeout(t); li.classList.remove('open'); setTimeout(()=>li.querySelectorAll('.mega-main').forEach(m=>m.scrollTop=0),320); }
+  },{passive:false});
 });
+/* po zamknięciu menu kółko od razu przewija stronę (bez ruszania myszką) — przekazujemy ruch kółka do strony */
+const megaFwd={until:0, go(dy){ this.until=Date.now()+450; window.scrollBy({top:dy,behavior:'instant'}); }};
+addEventListener('wheel',e=>{ if(Date.now()<megaFwd.until && !e.ctrlKey){ e.preventDefault(); megaFwd.go(e.deltaMode===1?e.deltaY*40:e.deltaY); } },{passive:false,capture:true});
 /* zamknij menu przy przewijaniu strony, gdy kursor nie jest nad panelem */
 addEventListener('wheel',e=>{ if(e.target.closest&&e.target.closest('.mega-inner')) return; document.querySelectorAll('[data-mega].open').forEach(x=>x.classList.remove('open')); },{passive:true});
 $('#fOferta').innerHTML = RX.map(c=>`<li><a href="#oferta-${c.s}">${c.c}</a></li>`).join('');
