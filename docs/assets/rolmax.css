@@ -870,3 +870,13 @@ font[style]{background:none!important;box-shadow:none!important}
 .mega{pointer-events:none}
 .nav>li.open .mega .mega-inner{pointer-events:auto}
 .hero-badge .eyebrow{display:block;text-align:center;padding:0;margin:0 auto}.hero-badge .eyebrow::before,.hero-badge .eyebrow::after{display:none!important;content:none!important}
+/* ===== Przycisk „na górę” — srebrny ===== */
+.to-top{position:fixed;right:24px;bottom:24px;z-index:900;width:54px;height:54px;border-radius:50%;border:0;cursor:pointer;display:grid;place-items:center;color:var(--navy-900);
+  background:linear-gradient(135deg,#9aa6ba 0%,#eef2f8 30%,#ffffff 45%,#b8c2d1 65%,#f2f5fa 85%,#a9b4c5 100%);background-size:220% 220%;animation:ctaSheen 6s ease-in-out infinite;
+  box-shadow:inset 0 1px 0 #fff,inset 0 -2px 4px rgba(0,0,0,.18),0 12px 30px -10px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.25);
+  opacity:0;visibility:hidden;transform:translateY(16px) scale(.9);transition:opacity .35s,transform .35s cubic-bezier(.2,.75,.2,1),visibility .35s,box-shadow .25s}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.to-top:hover{transform:translateY(-3px);box-shadow:inset 0 1px 0 #fff,inset 0 -2px 4px rgba(0,0,0,.18),0 18px 36px -10px rgba(0,0,0,.8),0 0 18px rgba(200,220,255,.35)}
+.to-top:hover svg{animation:ttUp .6s ease}
+@keyframes ttUp{0%{transform:none}40%{transform:translateY(-4px)}100%{transform:none}}
+@media (max-width:700px){.to-top{right:14px;bottom:14px;width:46px;height:46px}}
