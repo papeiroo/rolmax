@@ -697,3 +697,15 @@ font[style]{background:none!important;box-shadow:none!important}
 @media (max-width:480px){.lang-box{gap:6px}.lang-more{padding:0 6px}}
 .lang-more .lm-cur.quick{display:none}
 @media (max-width:480px){.lang-box .langs{display:none}.lang-more .lm-cur.quick{display:inline}}
+/* ===== Baner sklepu internetowego ze zdjęciem ===== */
+.svc.shop-banner{min-height:300px;background:#061430}
+.svc.shop-banner img{object-position:72% 50%}
+.svc.shop-banner::after{background:linear-gradient(90deg,rgba(4,12,32,.96) 0%,rgba(4,12,32,.82) 32%,rgba(4,12,32,.25) 62%,rgba(4,12,32,0) 85%)}
+.svc.shop-banner .body{grid-template-columns:1fr!important;gap:10px!important;max-width:520px;padding:40px}
+.svc.shop-banner .tag{justify-self:start;margin-bottom:4px}
+.svc.shop-banner h3{font-size:2.4rem}
+.svc.shop-banner p{color:#d5deec;margin:4px 0 10px}
+.svc.shop-banner:hover img{transform:scale(1.04)}
+@media (max-width:900px){.svc.shop-banner{min-height:340px}.svc.shop-banner img{object-position:80% 50%}
+  .svc.shop-banner::after{background:linear-gradient(180deg,rgba(4,12,32,.15) 0%,rgba(4,12,32,.55) 45%,rgba(4,12,32,.95) 85%)}
+  .svc.shop-banner{align-items:flex-end}.svc.shop-banner .body{padding:24px}.svc.shop-banner h3{font-size:1.8rem}}

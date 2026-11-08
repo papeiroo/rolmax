@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082100">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082102">
 </head>
 <body>
 
@@ -100,7 +100,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082100"></script>
+<script src="data.js?v=202611082102"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -222,7 +222,8 @@ ${catWheelOn() ? "" : `<div class="cw-replay"><button onclick="replayWheel()">�
     <div class="svc-grid">
       ${SVC.map((c,i)=>`<a class="svc chrome-frame reveal ${i<2?'wide':''}" style="transition-delay:${i*80}ms" href="#usluga-${c.s}">
         <img src="${c.img}" alt="${c.n}"><div class="body"><span class="tag">${c.tag}</span><h3 class="chrome">${c.n}</h3><p>${c.d}</p><span class="more">Szczegóły</span></div></a>`).join('')}
-      <a class="svc banner chrome-frame reveal" href="https://www.rolmax-sklep.pl/" style="background:linear-gradient(110deg,#1550b3,#061430 70%)">
+      <a class="svc banner shop-banner chrome-frame reveal" href="https://www.rolmax-sklep.pl/">
+        <img src="assets/img/sklep-banner.webp" srcset="assets/img/sklep-banner-1200.webp 1200w, assets/img/sklep-banner.webp 2172w" sizes="(max-width:900px) 100vw, 1300px" alt="Części i akcesoria do maszyn rolniczych — sklep Rolmax" loading="lazy" width="2172" height="724">
         <div class="body"><span class="tag">Online 24h</span><h3 class="chrome">Sklep internetowy</h3><p>Tysiące części i akcesoriów z wysyłką — rolmax-sklep.pl</p><span class="more">Przejdź do sklepu</span></div></a>
     </div>
   </div>
@@ -569,7 +570,9 @@ btn.addEventListener('click',e=>{ e.stopPropagation(); panel.hidden?open():close
 document.addEventListener('click',e=>{ if(!panel.hidden && !e.target.closest('.lang-box')) close(); });
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') close(); });
 q.addEventListener('input',()=>{ const v=q.value.trim().toLowerCase(); list.querySelectorAll('.lp-group').forEach(g=>{ let any=0; g.querySelectorAll('button').forEach(b=>{ const ok=!v||b.dataset.k.includes(v); b.hidden=!ok; any|=ok; }); g.hidden=!any; }); });
-if(cur!=='pl'){ window.gtInit=()=>{ new google.translate.TranslateElement({pageLanguage:'pl',autoDisplay:false},'gt_el'); };
+if(cur!=='pl'){ const tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT); const re=/(New Holland|Rolmax|GK Rolmax|CNH|CASE|STEYR)/; const hits=[]; while(tw.nextNode()){ const n=tw.currentNode; if(re.test(n.nodeValue)&&!n.parentElement.closest('script,style,.notranslate')) hits.push(n); }
+  hits.forEach(n=>{ const f=document.createDocumentFragment(); n.nodeValue.split(/(New Holland|GK Rolmax|Rolmax|CNH|CASE|STEYR)/).forEach((t,i)=>{ if(!t) return; if(i%2){ const sp=document.createElement('span'); sp.className='notranslate'; sp.setAttribute('translate','no'); sp.textContent=t; f.appendChild(sp);} else f.appendChild(document.createTextNode(t)); }); n.parentNode.replaceChild(f,n); });
+  window.gtInit=()=>{ new google.translate.TranslateElement({pageLanguage:'pl',autoDisplay:false},'gt_el'); };
   const d=document.createElement('div'); d.id='gt_el'; d.style.display='none'; document.body.appendChild(d);
   const sc=document.createElement('script'); sc.src='https://translate.google.com/translate_a/element.js?cb=gtInit'; document.body.appendChild(sc); }
 })();
