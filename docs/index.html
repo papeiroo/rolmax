@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082253">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082258">
 </head>
 <body>
 
@@ -99,7 +99,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082253"></script>
+<script src="data.js?v=202611082258"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -404,7 +404,7 @@ function svcPage(s){ const c=SVC.find(x=>x.s===s); if(!c) return home(); return 
    <form class="dept" style="margin-top:20px;display:grid;gap:12px" onsubmit="event.preventDefault();this.innerHTML='<h4>Dziękujemy — to podgląd, formularz zostanie podpięty w WordPressie.</h4>'">
     <input placeholder="Imię i nazwisko" style="padding:14px;border-radius:10px;border:1px solid #33507f;background:#061430;color:#fff">
     <input placeholder="Telefon" style="padding:14px;border-radius:10px;border:1px solid #33507f;background:#061430;color:#fff">
-    <textarea placeholder="Model maszyny / opis usterki" rows="4" style="padding:14px;border-radius:10px;border:1px solid #33507f;background:#061430;color:#fff"></textarea>
+    <textarea placeholder="${c.s==='finansowanie'?'Model maszyny':'Model maszyny / opis usterki'}" rows="4" style="padding:14px;border-radius:10px;border:1px solid #33507f;background:#061430;color:#fff"></textarea>
     <button class="btn btn-chrome" style="justify-content:center">Wyślij zgłoszenie</button></form></div>
 </div></section>`; }
 
@@ -747,7 +747,7 @@ function railLayout(){ const pin=$('#railPin'); if(!pin) return; const sec=pin.f
   if(matchMedia('(prefers-reduced-motion: reduce)').matches||innerWidth<700){ pin.classList.add('off'); pin.style.height=''; sec.style.top=''; return; }
   pin.classList.remove('off'); const max=r.scrollWidth-r.clientWidth; const hh=($('.site-header')?.getBoundingClientRect().height)||84;
   const secH=sec.offsetHeight; const T=Math.max(Math.min(hh, innerHeight-secH), hh+(innerHeight-hh-secH)/2|0);
-  railPin.L=Math.max(0,Math.round(max*0.7)); railPin.T=Math.min(T, innerHeight-secH>hh?T:innerHeight-secH);
+  railPin.L=Math.max(0,Math.round(max*0.7)); { const rt=r.getBoundingClientRect().top-sec.getBoundingClientRect().top, rh=r.offsetHeight; railPin.T=Math.round(hh+(innerHeight-hh)/2-(rt+rh/2)); }
   sec.style.top=railPin.T+'px'; pin.style.height=(secH+railPin.L)+'px'; railFrame(); }
 function railFrame(){ railPin.raf=0; const pin=$('#railPin'); if(!pin||pin.classList.contains('off')) return; const r=pin.querySelector('.rail-auto'); if(!r) return;
   const max=r.scrollWidth-r.clientWidth; const p=railPin.L?Math.max(0,Math.min(1,(railPin.T-pin.getBoundingClientRect().top)/railPin.L)):0;
