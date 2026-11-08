@@ -541,3 +541,14 @@ section{position:relative}
 @media (hover:none){.cw-h-touch{display:inline}.cw-h-mouse{display:none}}
 @media (max-width:900px){#cwName{margin-top:auto}}
 .cw-spot{display:none}
+
+/* ===== Katalog-kółko v3: ostre kontury, bez poświat ===== */
+.cw-stage{-webkit-mask-image:none;mask-image:none}
+.cw-img,.cw-item.on .cw-img{background:none!important;box-shadow:none!important;border-radius:0}
+.cw-img img,.cw-item.on .cw-img img{filter:none!important}
+.cw-img.ph img{border-radius:14px;box-shadow:none!important;outline:1px solid rgba(220,230,245,.35);outline-offset:-1px}
+.cw-item{width:min(560px,42vw)}
+.cw-img{aspect-ratio:auto;height:min(360px,40vh)}
+.cw-img img{max-height:100%;max-width:100%}
+.cwheel{background:#061430}
+@media (max-width:900px){.cw-item{width:84vw}.cw-img{height:30vh}}

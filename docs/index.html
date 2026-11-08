@@ -369,7 +369,7 @@ function catWheel(){ const cats=CW_CATS(); return `
 <section class="cwheel" id="katalog" style="--n:${cats.length}">
   <div class="cw-stick">
     <div class="cw-stage" aria-live="polite"><div class="cw-spot"></div>
-      ${cats.map((c,i)=>{const it=c.items.find(x=>!x.photo)||c.items[0];return `<a class="cw-item" data-i="${i}" href="#oferta-${c.s}"><div class="cw-img${it.photo?' ph':''}"><img src="${IMG(it)}" alt="${c.c}"></div></a>`}).join('')}
+      ${cats.map((c,i)=>{const it=c.items.find(x=>!x.photo)||c.items[0];return `<a class="cw-item" data-i="${i}" href="#oferta-${c.s}"><div class="cw-img${it.photo?' ph':''}"><img src="${it.photo?IMG(it):`assets/img/hd/${it.s}.webp`}" alt="${c.c}" onerror="this.onerror=null;this.src='${IMG(it)}'"></div></a>`}).join('')}
     </div>
     <div class="cw-info">
       <div class="cw-head"><div class="eyebrow">Oferta New Holland</div><h2 class="display chrome">Wybierz kategorię</h2>
@@ -400,10 +400,10 @@ function mountWheel(){
     if(i===N-1){ try{localStorage.setItem(CW_KEY,1)}catch(e){} } };
   const draw=()=>{ const g=geo(); const p=Math.min(1,Math.max(0,(scrollY-g.top)/g.span)); target=p*(N-1);
     cur+= (target-cur)*0.18; if(Math.abs(target-cur)<0.001) cur=target;
-    const sp=Math.min(240,innerHeight*0.27);
+    const ih=(items[0]&&items[0].querySelector('.cw-img').offsetHeight)||300; const sp=ih*0.84;
     items.forEach((el,i)=>{ const d=i-cur, a=Math.abs(d);
-      el.style.transform=`translate(-50%,-50%) translateY(${d*sp}px) rotateX(${-d*16}deg) scale(${Math.max(.35,1-a*.32)})`;
-      el.style.opacity=a>3.2?0:Math.max(0,1-a*.38); el.style.filter=`blur(${Math.min(4,a*1.6)}px)`; el.style.zIndex=100-Math.round(a*10);
+      el.style.transform=`translate(-50%,-50%) translateY(${d*sp}px) rotateX(${-d*14}deg) scale(${Math.max(.3,1-a*.45)})`;
+      el.style.opacity=a>2.2?0:Math.max(0,1-a*.62); el.style.filter=`brightness(${Math.max(.5,1-a*.4)})`; el.style.zIndex=100-Math.round(a*10);
       el.classList.toggle('on',a<.5); });
     info(Math.round(cur));
     if(cwState) cwState.raf=requestAnimationFrame(draw); };
