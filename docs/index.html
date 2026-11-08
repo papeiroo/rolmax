@@ -39,8 +39,8 @@
       <li><a href="#jubileusz">O nas</a></li>
       <li><a href="#galeria">Galeria</a></li>
       <li><a href="#oddzialy">Kontakt</a></li>
-      <li class="nav-cta"><a class="btn btn-chrome" style="height:auto;padding:11px 20px" href="#oddzialy">Zapytaj o cenę</a></li>
     </ul>
+    <a class="btn btn-chrome hdr-cta" href="#oddzialy">Zapytaj o cenę</a>
   </div>
 </header>
 
@@ -518,6 +518,13 @@ function route(){
 
 
 /* telefon: mega menu tuż pod wstążką; klik poza menu zamyka */
+/* pływające przyciski: pod „Zapytaj o cenę”, na wysokości nagłówka „Klasa premium” */
+function placeDock(){ const d=document.querySelector('.cta-dock'), c=document.querySelector('.hdr-cta'), hd=document.querySelector('.site-header'); if(!d||!c) return;
+  const cr=c.getBoundingClientRect(), hb=hd.getBoundingClientRect().height; d.style.right=Math.max(8,Math.round(innerWidth-cr.right))+'px';
+  const h1=document.querySelector('.hero h1'); let top=hb+16;
+  if(h1){ const t=Math.round(h1.getBoundingClientRect().top+scrollY); if(t<innerHeight*.7) top=Math.max(top,t); }
+  d.style.top=top+'px'; }
+addEventListener('resize',placeDock); addEventListener('load',placeDock); addEventListener('hashchange',()=>setTimeout(placeDock,60)); setTimeout(placeDock,300);
 (()=>{const h=document.querySelector('.site-header');if(!h)return;const set=()=>document.documentElement.style.setProperty('--hh',h.getBoundingClientRect().bottom+'px');
 ['load','resize','scroll'].forEach(e=>addEventListener(e,set,{passive:true}));set();
 document.addEventListener('click',e=>{if(!e.target.closest('.site-header'))document.querySelectorAll('.site-header .open').forEach(x=>x.classList.remove('open'))});})();
