@@ -610,3 +610,21 @@ section{position:relative}
 #megaUslugiSide button{flex:1 1 auto}
 /* podpisy usług w menu — wyrównane do prawej krawędzi jak pozostałe */
 .site-header #megaUslugiSide button small{text-align:right;margin-left:auto;padding-left:12px}
+/* ===== Mega „Oferta”: 2 rzędy większych miniatur, lista po lewej wypełnia wysokość ===== */
+[data-mega="oferta"] .mega-inner{min-height:0}
+.site-header #megaOfertaSide{display:flex!important;flex-direction:column}
+.site-header #megaOfertaSide button{flex:1 1 auto}
+.site-header #megaOfertaMain .mega-grid{grid-template-columns:repeat(4,1fr);gap:14px}
+.site-header #megaOfertaMain .tile{padding:12px 12px 14px}
+.site-header #megaOfertaMain .tile img{aspect-ratio:16/10}
+.site-header #megaOfertaMain .tile span{font-size:.92rem}
+.site-header #megaOfertaMain .tile[hidden]{display:none}
+.mega-more{display:block;margin:16px auto 0;padding:11px 26px;border-radius:999px;border:1px solid #c9d5e6;background:#fff;color:var(--blue-600);
+  font-family:var(--ff-display);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.82rem;cursor:pointer;transition:.2s}
+.mega-more span{color:#64748b;letter-spacing:.04em}
+.mega-more:hover{background:var(--blue-600);color:#fff;border-color:var(--blue-600)}.mega-more:hover span{color:#dbe7ff}
+@media (max-width:1100px){.site-header #megaOfertaMain .mega-grid{grid-template-columns:repeat(3,1fr)!important}}
+@media (max-width:700px){.site-header #megaOfertaMain .mega-grid{grid-template-columns:repeat(2,1fr)!important}}
+.site-header #megaOfertaMain{max-height:none!important;overflow:visible}
+.site-header #megaOfertaMain:has(.mega-grid[data-all]){max-height:calc(100vh - var(--hh,126px) - 16px)!important;overflow:auto}
+.site-header #megaOfertaSide button{padding-top:12px;padding-bottom:12px}

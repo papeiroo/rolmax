@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082032">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082037">
 </head>
 <body>
 
@@ -80,7 +80,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082032"></script>
+<script src="data.js?v=202611082037"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -137,10 +137,19 @@ function megaOferta(side, main, cols){
     side.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.c===s));
     main.innerHTML = `<div class="mega-head"><h3>${c.c}</h3><a href="#oferta-${c.s}">Zobacz wszystkie →</a></div>
       <div class="mega-grid" ${cols?`style="grid-template-columns:repeat(${cols},1fr)"`:''}>${c.items.map((it,k)=>`<a class="tile" style="animation-delay:${k*30}ms" href="#maszyna-${it.s}">${BADGE(it)}<img loading="lazy"${PH(it)} src="${IMG(it)}" alt="New Holland ${it.n}"><span>${it.n}</span></a>`).join('')}</div>`;
+    if(main.id==='megaOfertaMain' && typeof megaLimit==='function') megaLimit();
   };
   side.querySelectorAll('button').forEach(b=>{ b.addEventListener('mouseenter',()=>show(b.dataset.c)); b.addEventListener('click',()=>show(b.dataset.c)); });
   show(RX[0].s);
+  return show;
 }
+/* mega „Oferta” we wstążce: 2 rzędy większych miniatur + „Pokaż więcej” */
+function megaLimit(){ const main=$('#megaOfertaMain'); if(!main) return; const g=main.querySelector('.mega-grid'); if(!g||g.dataset.all) return;
+  const tiles=[...g.children].filter(x=>x.classList.contains('tile')); tiles.forEach(t=>t.hidden=false);
+  const cols=getComputedStyle(g).gridTemplateColumns.split(' ').filter(Boolean).length||4, lim=cols*2;
+  tiles.forEach((t,i)=>t.hidden=i>=lim); main.querySelector('.mega-more')?.remove();
+  const rest=tiles.length-lim; if(rest>0){ g.insertAdjacentHTML('afterend',`<button class="mega-more" type="button">Pokaż więcej <span>(+${rest})</span></button>`);
+    main.querySelector('.mega-more').addEventListener('click',e=>{ e.stopPropagation(); g.dataset.all=1; tiles.forEach(t=>t.hidden=false); e.currentTarget.remove(); }); } }
 function megaUslugi(side, main){
   side.innerHTML = SVC.map((c,i)=>`<button data-c="${c.s}" class="${i?'':'on'}">${c.n}<small>${c.tag}</small></button>`).join('') +
     `<button onclick="location.href='https://www.rolmax-sklep.pl/'">Sklep internetowy<small>↗</small></button>`;
@@ -152,6 +161,8 @@ function megaUslugi(side, main){
   show(SVC[0].s);
 }
 megaOferta($('#megaOfertaSide'), $('#megaOfertaMain'));
+megaLimit(); addEventListener('resize',()=>{const g=$('#megaOfertaMain .mega-grid'); if(g) delete g.dataset.all; megaLimit();});
+$('[data-mega="oferta"]')?.addEventListener('mouseenter',()=>requestAnimationFrame(megaLimit));
 megaUslugi($('#megaUslugiSide'), $('#megaUslugiMain'));
 document.querySelectorAll('[data-mega]').forEach(li=>{
   let t, ot=0; const open=()=>{clearTimeout(t); ot=Date.now();document.querySelectorAll('[data-mega]').forEach(x=>x!==li&&x.classList.remove('open'));li.classList.add('open')};
