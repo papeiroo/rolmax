@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082139">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082147">
 </head>
 <body>
 
@@ -100,7 +100,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082139"></script>
+<script src="data.js?v=202611082147"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -234,9 +234,7 @@ ${catWheelOn() ? "" : `<div class="cw-replay"><button onclick="replayWheel()">�
   </div>
 </section>
 
-<div class="jub-pin" id="jubPin">
 <section class="sec jubilee" id="jubileusz">
-  <div class="jub-show" id="jubShow" aria-hidden="true"></div>
   <div class="wrap jub-grid">
     <div class="reveal">
       <div class="big30 chrome-sheen">30</div>
@@ -261,9 +259,10 @@ ${catWheelOn() ? "" : `<div class="cw-replay"><button onclick="replayWheel()">�
     </div>
   </div>
 </section>
-</div>
 
-<section class="vband" aria-label="New Holland — marka premium">
+<div class="vb-pin" id="vbPin">
+<section class="vband" id="vbSec" aria-label="New Holland — marka premium">
+  <div class="vb-mask" aria-hidden="true"><svg id="vbSvg" width="100%" height="100%"><defs><mask id="vbM" maskUnits="userSpaceOnUse"><rect id="vbR" x="0" y="0" width="100%" height="100%" fill="#fff"/><g id="vbG"><text id="vbT" x="50%" y="50%" text-anchor="middle" dominant-baseline="central" fill="#000">NEW HOLLAND</text></g></mask></defs><rect x="0" y="0" width="100%" height="100%" fill="#030a1a" mask="url(#vbM)"/></svg><div class="vb-cue">Przewiń</div></div>
   <video autoplay muted loop playsinline data-start="8" poster="assets/poster.jpg"><source src="assets/hero.webm" type="video/webm"><source src="assets/hero.mp4" type="video/mp4"></video>
   <div class="wrap reveal">
     <div class="eyebrow">New Holland Agriculture</div>
@@ -276,6 +275,7 @@ ${catWheelOn() ? "" : `<div class="cw-replay"><button onclick="replayWheel()">�
     </div>
   </div>
 </section>
+</div>
 
 <section class="sec bg-steel" id="oferta-home">
   <div class="wrap">
@@ -461,40 +461,6 @@ function mountWheel(){
 }
 
 
-/* ===== Jubileusz: prezentacja liczb — duże kafelki przesuwane kółkiem, potem wracają na miejsce ===== */
-const JS_EXTRA=['Od 1997 roku razem z rolnikami Lubelszczyzny','Świdnik · Miączyn · Rudnik · Białka','Ciągniki, kombajny, prasy, ładowarki i więcej','Serwis w polu, gdy liczy się każda godzina'];
-let jsGeo=null;
-function mountJubShow(){
-  const pin=$('#jubPin'), sec=$('#jubileusz'), show=$('#jubShow'); jsGeo=null; if(!pin||!sec||!show) return;
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches){ pin.classList.add('off'); return; }
-  const stats=[...sec.querySelectorAll('.stat')];
-  show.innerHTML='<div class="js-bg"></div>'+stats.map((st,i)=>{ const b=st.querySelector('b'); const num=b.dataset.count||b.textContent; return `<div class="js-card"><div class="js-in"><b class="js-num chrome-sheen">${num}</b><h4 class="js-lbl chrome">${st.querySelector('span').textContent}</h4><p>${JS_EXTRA[i]||''}</p></div></div>`; }).join('');
-  jsGeo={pin,sec,show,stats,cards:[...show.querySelectorAll('.js-card')],bg:show.querySelector('.js-bg')};
-  jsLayout(); jsFrame();
-}
-function jsLayout(){ const g=jsGeo; if(!g) return; const vh=innerHeight, hh=($('.site-header')?.getBoundingClientRect().height)||84;
-  g.L=Math.round(vh*3.2); g.secH=g.sec.offsetHeight; g.pin.style.height=(g.secH+g.L)+'px';
-  g.T=Math.min(hh, vh-g.secH); g.sec.style.top=g.T+'px'; g.hh=hh;
-  g.W=Math.min(780, innerWidth*.84); g.H=Math.min(460, (vh-hh)*.66);
-  g.cards.forEach(c=>{ c.style.width=g.W+'px'; c.style.height=g.H+'px'; }); }
-function jsFrame(){ const g=jsGeo; if(!g||!g.pin.isConnected) return; const vh=innerHeight;
-  const r=g.pin.getBoundingClientRect(); const p=Math.max(0,Math.min(1,(g.T-r.top)/g.L));
-  const active=p>0&&p<1; g.show.classList.toggle('on',active); g.sec.classList.toggle('js-active',active);
-  if(!active){ g.stats.forEach(s=>s.style.opacity=''); return; }
-  const sr=g.sec.getBoundingClientRect(); const visTop=Math.max(sr.top,g.hh), visBot=Math.min(sr.bottom,vh);
-  const cx=sr.width/2, cy=(visTop+visBot)/2-sr.top; const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
-  const f = p<.1?0 : p<.8 ? (p-.1)/.7*3 : 3; const enter=Math.min(1,p/.1); const t=p>.8?ease((p-.8)/.2):0;
-  g.bg.style.opacity=(enter*(1-t)).toFixed(3);
-  g.cards.forEach((c,i)=>{ const d=i-f, ad=Math.abs(d);
-    let x=cx+d*g.W*1.08, y=cy, sc=1-Math.min(1,ad)*.2, op=ad<1.25?1:Math.max(0,1-(ad-1.25)*2.5), br=1-Math.min(1,ad)*.45;
-    if(p<.1){ sc*=.86+.14*enter; op*=enter; y+= (1-enter)*60; }
-    if(t>0){ const cr=g.stats[i].getBoundingClientRect(); const tx=cr.left-sr.left+cr.width/2, ty=cr.top-sr.top+cr.height/2, ts=cr.width/g.W;
-      x=x+(tx-x)*t; y=y+(ty-y)*t; sc=sc+(ts-sc)*t; op=op+(1-op)*t; br=br+(1-br)*t; if(t>.82) op*=Math.max(0,1-(t-.82)/.18); }
-    c.style.transform=`translate(${(x-g.W/2).toFixed(1)}px,${(y-g.H/2).toFixed(1)}px) scale(${sc.toFixed(4)})`; c.style.opacity=op.toFixed(3); c.style.filter=br<.999?`brightness(${br.toFixed(3)})`:'';
-    c.classList.toggle('cur',ad<.5&&t===0); });
-  const so=t>.82?Math.min(1,(t-.82)/.18):0; g.stats.forEach(s=>s.style.opacity=so.toFixed(3)); }
-let jsRaf=0; addEventListener('scroll',()=>{ if(!jsRaf) jsRaf=requestAnimationFrame(()=>{jsRaf=0; jsFrame();}); },{passive:true});
-addEventListener('resize',()=>{ jsLayout(); jsFrame(); });
 
 
 /* ===== Usługi — karty wjeżdżają w 3D i odwracają się ===== */
@@ -505,8 +471,32 @@ function mountFlip(){ const cards=[...document.querySelectorAll('.svc.flip')]; i
   cards.forEach(c=>c.addEventListener('keydown',e=>{ if(e.key==='Enter'&&e.target===c) c.classList.toggle('flipped'); }));
   document.querySelectorAll('.flip-hint').forEach(h=>{ if(!matchMedia('(hover: hover)').matches) h.textContent='Dotknij, aby zobaczyć więcej'; }); }
 
+
+/* ===== „Odsłonięcie przez napis” — wideo widoczne przez litery NEW HOLLAND, napis rośnie aż do pełnego ekranu ===== */
+const vbFx={raf:0};
+function vbLayout(){ const pin=$('#vbPin'), sec=$('#vbSec'), t=$('#vbT'); if(!pin||!sec||!t) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){ pin.classList.add('off'); return; }
+  const hh=($('.site-header')?.getBoundingClientRect().height)||84; vbFx.hh=hh; const H=innerHeight-hh;
+  sec.style.top=hh+'px'; sec.style.height=H+'px'; vbFx.L=Math.round(innerHeight*1.6); pin.style.height=(H+vbFx.L)+'px';
+  const W=sec.clientWidth; t.style.fontFamily=getComputedStyle(document.documentElement).getPropertyValue('--ff-display')||'sans-serif';
+  const two=W<700; let hIdx=4;
+  if(two){ t.innerHTML=`<tspan x="${W/2}" dy="-0.48em">NEW</tspan><tspan x="${W/2}" dy="0.96em">HOLLAND</tspan>`; hIdx=3; } else { t.textContent='NEW HOLLAND'; }
+  let fs=two?Math.min(W*0.3,H*0.3):Math.min(W*0.17, H*0.42); t.setAttribute('font-size',fs); let bb=t.getBBox(); if(bb.width>W*.92){ fs*=W*.92/bb.width; t.setAttribute('font-size',fs); }
+  t.setAttribute('x',W/2); t.setAttribute('y',H/2); const pre=hIdx;
+  // punkt przybliżenia: środek pionowej kreski litery „H” w słowie HOLLAND
+  try{ const e=t.getExtentOfChar(pre); vbFx.fx=e.x+e.width*0.16; vbFx.fy=e.y+e.height*0.5; }catch(_){ vbFx.fx=W/2; vbFx.fy=H/2; }
+  vbFrame(); }
+function vbFrame(){ vbFx.raf=0; const pin=$('#vbPin'), sec=$('#vbSec'); if(!pin||!sec||pin.classList.contains('off')) return;
+  const r=pin.getBoundingClientRect(); const p=Math.max(0,Math.min(1,(vbFx.hh-r.top)/vbFx.L));
+  const z=p<.12?0:Math.min(1,(p-.12)/.66); const ez=z*z*(3-2*z); const s=Math.exp(ez*Math.log(160));
+  $('#vbG').setAttribute('transform',`translate(${vbFx.fx} ${vbFx.fy}) scale(${s.toFixed(4)}) translate(${-vbFx.fx} ${-vbFx.fy})`);
+  const m=sec.querySelector('.vb-mask'); m.style.opacity=p<.7?1:Math.max(0,1-(p-.7)/.1); m.style.visibility=p>=.8?'hidden':'visible';
+  const c=p<.8?0:Math.min(1,(p-.8)/.15); sec.style.setProperty('--vbc',c.toFixed(3)); sec.querySelector('.vb-cue').style.opacity=Math.max(0,1-p*8); }
+addEventListener('scroll',()=>{ if(!vbFx.raf) vbFx.raf=requestAnimationFrame(vbFrame); },{passive:true});
+addEventListener('resize',vbLayout); if(document.fonts) document.fonts.ready.then(()=>vbLayout());
+
 function mountHome(){
-  mountFlip(); mountWheel(); mountJubShow(); setTimeout(railLayout,50); setTimeout(railLayout,900);
+  setTimeout(vbLayout,60); mountFlip(); mountWheel(); setTimeout(railLayout,50); setTimeout(railLayout,900);
   const ex=$('#exSide'); if(ex) megaOferta(ex,$('#exMain'),4);
   const tabs=$('#brTabs'); if(tabs){
     tabs.innerHTML=BR.map((b,i)=>`<button class="${i?'':'on'}" data-i="${i}"><b>${b.n}</b><span>${b.tag} · ${b.a}</span></button>`).join('');
