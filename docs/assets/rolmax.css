@@ -628,3 +628,10 @@ section{position:relative}
 .site-header #megaOfertaMain{max-height:none!important;overflow:visible}
 .site-header #megaOfertaMain:has(.mega-grid[data-all]){max-height:calc(100vh - var(--hh,126px) - 16px)!important;overflow:auto}
 .site-header #megaOfertaSide button{padding-top:12px;padding-bottom:12px}
+/* ===== Stała wysokość mega menu — kafelki po lewej mają zawsze ten sam rozmiar (bez migania przy najeżdżaniu) ===== */
+[data-mega="oferta"] .mega-inner{height:min(600px,calc(100vh - var(--hh,126px) - 16px));min-height:0}
+[data-mega="uslugi"] .mega-inner{height:min(450px,calc(100vh - var(--hh,126px) - 16px));min-height:0}
+[data-mega] .mega-inner>.mega-side{height:100%;overflow:hidden}
+[data-mega] .mega-inner>.mega-main{height:100%;max-height:none!important;overflow:auto!important}
+.site-header #megaOfertaSide button,.site-header #megaUslugiSide button{flex:1 1 0;min-height:0}
+.site-header #megaOfertaMain .tile img{aspect-ratio:16/9.5}
