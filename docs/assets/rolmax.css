@@ -869,3 +869,4 @@ font[style]{background:none!important;box-shadow:none!important}
 /* mega menu: aktywny jest tylko widoczny panel — wyjazd kursorem poza ramkę zamyka listę */
 .mega{pointer-events:none}
 .nav>li.open .mega .mega-inner{pointer-events:auto}
+.hero-badge .eyebrow{display:block;text-align:center;padding:0;margin:0 auto}.hero-badge .eyebrow::before,.hero-badge .eyebrow::after{display:none!important;content:none!important}
