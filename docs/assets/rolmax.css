@@ -926,3 +926,12 @@ font[style]{background:none!important;box-shadow:none!important}
 .btn-shine::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;z-index:-1;transform:skewX(-20deg);
   background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent);animation:ctaGlint 4.5s ease-in-out infinite}
 .btn-shine:hover{transform:translateY(-1px);filter:brightness(1.06)}
+/* logo — wyraźniejszy połysk (jak „Zapytaj o cenę”) */
+.site-header .logo::after,.f-brand>a::after{
+  background:
+    linear-gradient(105deg,transparent 0%,transparent 36%,rgba(255,255,255,0) 40%,#ffffff 48%,#ffffff 52%,rgba(255,255,255,0) 60%,transparent 64%,transparent 100%),
+    linear-gradient(110deg,#6f7c93 0%,#e9eef6 20%,#ffffff 32%,#8e9bb1 50%,#f4f7fb 66%,#7f8ca3 82%,#dfe6f0 100%);
+  background-size:260% 100%,260% 100%;background-repeat:no-repeat;
+  animation:logoGlint 4.5s ease-in-out infinite,ctaSheen 6s ease-in-out infinite;
+  filter:drop-shadow(0 0 1px rgba(255,255,255,.4)) drop-shadow(0 3px 6px rgba(0,0,0,.55))}
+@keyframes logoGlint{0%,50%{background-position:160% 0,0% 50%}100%{background-position:-60% 0,100% 50%}}
