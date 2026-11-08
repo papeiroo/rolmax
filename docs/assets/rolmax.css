@@ -886,3 +886,9 @@ font[style]{background:none!important;box-shadow:none!important}
 .br-map.drawn .br-pin{animation-duration:.5s}
 .br-map.drawn .br-pin[data-i="0"]{animation-delay:.65s}.br-map.drawn .br-pin[data-i="1"]{animation-delay:.78s}
 .br-map.drawn .br-pin[data-i="2"]{animation-delay:.91s}.br-map.drawn .br-pin[data-i="3"]{animation-delay:1.04s}
+/* mapa oddziałów — tempo pośrednie */
+#brShape{transition:stroke-dashoffset 1.8s cubic-bezier(.4,.1,.2,1),fill-opacity .9s ease 1s}
+.br-ref{transition:opacity .6s 1.3s}
+.br-map.drawn .br-pin{animation-duration:.6s}
+.br-map.drawn .br-pin[data-i="0"]{animation-delay:1.35s}.br-map.drawn .br-pin[data-i="1"]{animation-delay:1.55s}
+.br-map.drawn .br-pin[data-i="2"]{animation-delay:1.75s}.br-map.drawn .br-pin[data-i="3"]{animation-delay:1.95s}
