@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082120">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082124">
 </head>
 <body>
 
@@ -100,7 +100,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082120"></script>
+<script src="data.js?v=202611082124"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -292,6 +292,7 @@ ${catWheelOn() ? "" : `<div class="cw-replay"><button onclick="replayWheel()">�
   </div>
 </section>
 
+<div class="rail-pin" id="railPin">
 <section class="sec bg-steel" id="nowosci">
   <div class="wrap">
     <div class="sec-head reveal"><div><div class="eyebrow">Nowości New Holland 2026/2027</div><h2 class="display h2 chrome" style="margin-top:14px">Najnowsze maszyny w ofercie</h2></div>
@@ -299,6 +300,7 @@ ${catWheelOn() ? "" : `<div class="cw-replay"><button onclick="replayWheel()">�
     <div class="rail rail-auto reveal">${NEWS_ITEMS().map(it=>`<a class="rcard" href="#maszyna-${it.s}"><div class="rimg"><img src="${IMG(it)}" alt="New Holland ${it.n}">${BADGE(it)}</div><b>${it.n}</b><small>${it.pw}</small></a>`).join('')}</div>
   </div>
 </section>
+</div>
 
 <section class="promo-strip" aria-label="Oferty specjalne">
   <div class="wrap promo-grid">
@@ -490,7 +492,7 @@ let jsRaf=0; addEventListener('scroll',()=>{ if(!jsRaf) jsRaf=requestAnimationFr
 addEventListener('resize',()=>{ jsLayout(); jsFrame(); });
 
 function mountHome(){
-  mountWheel(); mountJubShow();
+  mountWheel(); mountJubShow(); setTimeout(railLayout,50); setTimeout(railLayout,900);
   const ex=$('#exSide'); if(ex) megaOferta(ex,$('#exMain'),4);
   const tabs=$('#brTabs'); if(tabs){
     tabs.innerHTML=BR.map((b,i)=>`<button class="${i?'':'on'}" data-i="${i}"><b>${b.n}</b><span>${b.tag} · ${b.a}</span></button>`).join('');
@@ -616,20 +618,19 @@ if(cur!=='pl'){ const tw=document.createTreeWalker(document.body,NodeFilter.SHOW
   const sc=document.createElement('script'); sc.src='https://translate.google.com/translate_a/element.js?cb=gtInit'; document.body.appendChild(sc); }
 })();
 
-/* ===== Pasek nowości: kursor nad paskiem → kółko myszy przewija pasek w miejscu (strona stoi), na końcu strona jedzie dalej ===== */
-(()=>{ const st=new WeakMap();
-  document.addEventListener('wheel',e=>{ const sec=e.target.closest&&e.target.closest('section'); const r=sec&&sec.querySelector('.rail-auto'); if(!r||e.ctrlKey) return;
-    { const b=r.getBoundingClientRect(), hb=($('.site-header')?.getBoundingClientRect().bottom)||0; if(b.top<hb-40||b.bottom>innerHeight+40) return; }
-    if(Math.abs(e.deltaX)>Math.abs(e.deltaY)) return;
-    const max=r.scrollWidth-r.clientWidth; if(max<=0) return;
-    let o=st.get(r); if(!o){ o={t:r.scrollLeft,raf:0}; st.set(r,o); }
-    if(!o.raf) o.t=r.scrollLeft;
-    const dy=e.deltaMode===1?e.deltaY*40:e.deltaMode===2?e.deltaY*r.clientWidth:e.deltaY;
-    if((dy>0&&o.t>=max-1)||(dy<0&&o.t<=1)) return;
-    e.preventDefault(); o.t=Math.max(0,Math.min(max,o.t+dy*1.6));
-    if(!o.raf){ const step=()=>{ const d=o.t-r.scrollLeft; if(Math.abs(d)<.6){ r.scrollLeft=o.t; o.raf=0; return; } r.scrollLeft+=d*.2; o.raf=requestAnimationFrame(step); }; o.raf=requestAnimationFrame(step); }
-  },{passive:false});
-})();
+/* ===== Pasek nowości: sekcja zatrzymuje się na ekranie, przewijanie strony przesuwa maszyny w bok, potem strona jedzie dalej ===== */
+const railPin={raf:0};
+function railLayout(){ const pin=$('#railPin'); if(!pin) return; const sec=pin.firstElementChild, r=pin.querySelector('.rail-auto'); if(!sec||!r) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||innerWidth<700){ pin.classList.add('off'); pin.style.height=''; sec.style.top=''; return; }
+  pin.classList.remove('off'); const max=r.scrollWidth-r.clientWidth; const hh=($('.site-header')?.getBoundingClientRect().height)||84;
+  const secH=sec.offsetHeight; const T=Math.max(Math.min(hh, innerHeight-secH), hh+(innerHeight-hh-secH)/2|0);
+  railPin.L=Math.max(0,Math.round(max*0.7)); railPin.T=Math.min(T, innerHeight-secH>hh?T:innerHeight-secH);
+  sec.style.top=railPin.T+'px'; pin.style.height=(secH+railPin.L)+'px'; railFrame(); }
+function railFrame(){ railPin.raf=0; const pin=$('#railPin'); if(!pin||pin.classList.contains('off')) return; const r=pin.querySelector('.rail-auto'); if(!r) return;
+  const max=r.scrollWidth-r.clientWidth; const p=railPin.L?Math.max(0,Math.min(1,(railPin.T-pin.getBoundingClientRect().top)/railPin.L)):0;
+  r.scrollLeft=p*max; }
+addEventListener('scroll',()=>{ if(!railPin.raf) railPin.raf=requestAnimationFrame(railFrame); },{passive:true});
+addEventListener('resize',railLayout); addEventListener('load',railLayout);
 /* odliczanie do jubileuszu 30-lecia — 1 lutego 2027, 00:00 czasu polskiego */
 (()=>{ const el=document.getElementById('jubCount'); if(!el) return; const T=Date.parse('2027-02-01T00:00:00+01:00');
   const q=u=>el.querySelector(`[data-u="${u}"]`), p=n=>String(n).padStart(2,'0'); let last={};

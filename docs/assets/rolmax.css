@@ -739,3 +739,7 @@ font[style]{background:none!important;box-shadow:none!important}
   .explorer .tile span{font-size:.92rem}
 }
 .rail.rail-auto{scroll-snap-type:none;scroll-behavior:auto}
+/* ===== Pasek nowości przypięty: przewijanie strony = przesuw maszyn ===== */
+.rail-pin{position:relative}
+.rail-pin:not(.off)>#nowosci{position:sticky;top:84px}
+.rail-pin:not(.off) .rail-auto{overflow-x:hidden}
