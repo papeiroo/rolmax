@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082205">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082211">
 </head>
 <body>
 
@@ -100,7 +100,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082205"></script>
+<script src="data.js?v=202611082211"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -330,7 +330,7 @@ ${catWheelOn() ? "" : `<div class="cw-replay"><button onclick="replayWheel()">�
 <section class="sec bg-steel" id="galeria">
   <div class="wrap">
     <div class="sec-head reveal"><div><div class="eyebrow">Galeria</div><h2 class="display h2 chrome" style="margin-top:14px">Rolmax w terenie</h2></div><a class="btn btn-ghost" href="#galeria">Wszystkie galerie</a></div>
-    <div class="gal reveal">${GAL.slice(0,5).map((g,i)=>`<figure><img src="assets/img/g_${i}.webp" alt="${g}"><figcaption>${g}</figcaption></figure>`).join('')}</div>
+    <div class="gal gal-collage" id="galC">${GAL.slice(0,5).map((g,i)=>`<figure data-i="${i}" tabindex="0" role="button" aria-label="Powiększ: ${g}"><div class="gph"><img src="assets/img/g_${i}.webp" alt="${g}"></div><figcaption>${g}</figcaption><span class="gpol">${g}</span></figure>`).join('')}</div>
   </div>
 </section>
 
@@ -542,8 +542,36 @@ function brMapMount(onPick){ const box=$('#brMap'); if(!box) return null;
   all.addEventListener('click',()=>api.reset());
   return api; }
 
+
+/* ===== galeria-kolaż — rozrzucone polaroidy układają się w siatkę + pełnoekranowy podgląd ===== */
+const galFx={raf:0,seeds:[[-.9,-.55,-11],[.55,-.7,9],[-.25,.6,-6],[.8,.45,13],[.05,-.2,4]]};
+function galLayout(){ const g=$('#galC'); if(!g) return; const r=g.getBoundingClientRect(); const cx=r.width/2, cy=r.height/2;
+  [...g.children].forEach((f,i)=>{ const s=galFx.seeds[i%galFx.seeds.length]; const fx=f.offsetLeft+f.offsetWidth/2, fy=f.offsetTop+f.offsetHeight/2;
+    const tx=(cx-fx)*.72 + s[0]*r.width*.16, ty=(cy-fy)*.62 + s[1]*r.height*.14;
+    f.style.setProperty('--sx',tx.toFixed(1)+'px'); f.style.setProperty('--sy',ty.toFixed(1)+'px'); f.style.setProperty('--sr',s[2]+'deg'); f.style.setProperty('--ss',f.offsetWidth>r.width*.4?'.62':'.86'); f.style.zIndex=5-i; });
+  galFrame(); }
+function galFrame(){ galFx.raf=0; const g=$('#galC'); if(!g) return; const r=g.getBoundingClientRect(), vh=innerHeight;
+  let q=Math.max(0,Math.min(1,(vh*.95-r.top)/(vh*.62))); q=q<.5?4*q*q*q:1-Math.pow(-2*q+2,3)/2; g.style.setProperty('--q',q.toFixed(4)); g.classList.toggle('settled',q>.98); }
+addEventListener('scroll',()=>{ if(!galFx.raf) galFx.raf=requestAnimationFrame(galFrame); },{passive:true});
+addEventListener('resize',galLayout);
+function galLightbox(start){ let i=start; const n=GAL.length;
+  const lb=document.createElement('div'); lb.className='glb'; lb.setAttribute('role','dialog'); lb.setAttribute('aria-label','Galeria');
+  lb.innerHTML=`<button class="glb-x" aria-label="Zamknij">✕</button><button class="glb-nav prev" aria-label="Poprzednie">‹</button><figure><img alt=""><figcaption><b></b><span></span></figcaption></figure><button class="glb-nav next" aria-label="Następne">›</button>`;
+  document.body.appendChild(lb); document.documentElement.style.overflow='hidden';
+  const img=lb.querySelector('img'), cap=lb.querySelector('figcaption b'), cnt=lb.querySelector('figcaption span');
+  const show=(k,dir)=>{ i=(k+n)%n; img.classList.remove('in'); img.style.setProperty('--dir',dir||0); img.src=`assets/img/g_${i}.webp`; img.alt=GAL[i]; cap.textContent=GAL[i]; cnt.textContent=`${i+1} / ${n}`; void img.offsetWidth; img.classList.add('in'); };
+  const close=()=>{ lb.classList.add('out'); document.documentElement.style.overflow=''; removeEventListener('keydown',key); setTimeout(()=>lb.remove(),300); };
+  const key=e=>{ if(e.key==='Escape') close(); if(e.key==='ArrowRight') show(i+1,1); if(e.key==='ArrowLeft') show(i-1,-1); };
+  addEventListener('keydown',key); lb.querySelector('.glb-x').onclick=close; lb.querySelector('.prev').onclick=()=>show(i-1,-1); lb.querySelector('.next').onclick=()=>show(i+1,1);
+  lb.addEventListener('click',e=>{ if(e.target===lb) close(); });
+  let x0=null; lb.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true}); lb.addEventListener('touchend',e=>{ if(x0==null) return; const d=e.changedTouches[0].clientX-x0; if(Math.abs(d)>50) show(i+(d<0?1:-1),d<0?1:-1); x0=null; });
+  requestAnimationFrame(()=>lb.classList.add('on')); show(i,0); }
+function mountGal(){ const g=$('#galC'); if(!g) return; if(matchMedia('(prefers-reduced-motion: reduce)').matches) g.style.setProperty('--q',1);
+  [...g.children].forEach(f=>{ const o=()=>galLightbox(+f.dataset.i); f.addEventListener('click',o); f.addEventListener('keydown',e=>{ if(e.key==='Enter') o(); }); });
+  galLayout(); setTimeout(galLayout,600); }
+
 function mountHome(){
-  setTimeout(tlFrame,60); setTimeout(vbLayout,60); mountFlip(); mountWheel(); setTimeout(railLayout,50); setTimeout(railLayout,900);
+  mountGal(); setTimeout(tlFrame,60); setTimeout(vbLayout,60); mountFlip(); mountWheel(); setTimeout(railLayout,50); setTimeout(railLayout,900);
   const ex=$('#exSide'); if(ex) megaOferta(ex,$('#exMain'),4);
   const tabs=$('#brTabs'); if(tabs){
     tabs.innerHTML=BR.map((b,i)=>`<button class="${i?'':'on'}" data-i="${i}"><b>${b.n}</b><span>${b.tag} · ${b.a}</span></button>`).join('');
