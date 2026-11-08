@@ -1,0 +1,8 @@
+# wyniki scrapera (duże pliki, generowane lokalnie)
+scraper/out/
+out/
+*.bak.json
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

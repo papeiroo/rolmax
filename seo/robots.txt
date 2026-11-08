@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /*?s=
+
+Sitemap: https://rolmax.net.pl/sitemap_index.xml

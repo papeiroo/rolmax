@@ -1,0 +1,33 @@
+# ====================================================================
+# ROLMAX — przekierowania SEO (Apache / WordPress)
+# Wklej NAD blokiem "# BEGIN WordPress" w .htaccess
+# Zasada: wszystkie dotychczasowe adresy zostają 1:1 (/pl/maszyny/..., /pl/uslugi/..., /pl/aktualnosci/..., /pl/galerie/...)
+# Poniżej tylko naprawa martwych linków + normalizacja domeny.
+# ====================================================================
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# 1) http -> https oraz www -> bez www (jeden kanoniczny host)
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://rolmax.net.pl/$1 [R=301,L]
+
+# 2) Strona główna "/" -> "/pl" (tak jak dotychczas — zachowujemy sygnały rankingowe /pl)
+RewriteRule ^$ /pl [R=301,L]
+
+# 3) Usunięcie końcowego ukośnika (stara strona nie używa "/" na końcu)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# 4) MARTWE LINKI: /galeria/<slug> -> /galerie/<slug>  (33 artykuły linkowały do nieistniejących adresów)
+RewriteRule ^(pl|en|de|uk)/galeria/(.+)$ /$1/galerie/$2 [R=301,L]
+
+# 5) MARTWY LINK w menu "Rolnictwo precyzyjne 2026" (zapisany jako względny)
+RewriteRule ^(pl|en|de|uk)/strony/https?:/+(.+)$ https://$2 [R=301,L,NE]
+
+# 6) Modele wycofane z katalogu New Holland -> następca (synchronizacja 8.11.2026)
+RewriteRule ^pl/maszyny/traktory/t7-heavy-duty-stage-v$ /pl/maszyny/traktory/t7-heavy-duty-z-plm-intelligence [R=301,L]
+RewriteRule ^pl/maszyny/traktory/t7-heavy-duty$ /pl/maszyny/traktory/t7-heavy-duty-z-plm-intelligence [R=301,L]
+RewriteRule ^pl/maszyny/traktory/t6-electro-command-dynamic-command-auto-command$ /pl/maszyny/traktory/t6-electro-dynamic-auto-command-stage-v [R=301,L]
+RewriteRule ^pl/maszyny/maszyny-budowlane/miniladowarki-burtowe-kolowe-i-gasienicowe-serii-200$ /pl/maszyny/maszyny-budowlane/miniladowarki-burtowe-kolowe-i-gasienicowe-serii-300 [R=301,L]
+</IfModule>

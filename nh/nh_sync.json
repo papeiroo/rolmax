@@ -1,0 +1,594 @@
+{
+ "generated": "2026-11-08",
+ "source": "https://agriculture.newholland.com/pl-pl/europe",
+ "existing": [
+  {
+   "category": "traktory",
+   "slug": "t8-genesis",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/t8-genesis",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/ccd04abfe63e46258a2d4f6488e897d3?v=064a37c1"
+  },
+  {
+   "category": "traktory",
+   "slug": "t7-heavy-duty-z-plm-intelligence",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/t7-heavy-duty-z-plm-intelligence",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/08a25c28c2d743498e8f1887dede00e8?v=fde34a17"
+  },
+  {
+   "category": "traktory",
+   "slug": "t7-heavy-duty-stage-v",
+   "status": "archiwalny",
+   "successor": "t7-heavy-duty-z-plm-intelligence"
+  },
+  {
+   "category": "traktory",
+   "slug": "t7-heavy-duty",
+   "status": "archiwalny",
+   "successor": "t7-heavy-duty-z-plm-intelligence"
+  },
+  {
+   "category": "traktory",
+   "slug": "t7-lwb-stage-v",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/t7-lwb-stage-v",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/e6024a33453841688c676ae6046be341?v=b0f77c5f"
+  },
+  {
+   "category": "traktory",
+   "slug": "t7-swb-stage-v",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/t7-swb-stage-v",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/c983d3abae554e7aadadaa45af553dac?v=8c0cbb65"
+  },
+  {
+   "category": "traktory",
+   "slug": "t7s-stage-v",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/t7s-stage-v",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/dfce8f648e23437abb3130c1c7cc3fbc?v=e19b2b3f"
+  },
+  {
+   "category": "traktory",
+   "slug": "t6-methane-power",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/t6-methane-power",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/8b5bd642416b438897357f6c905f17d0?v=191ca973"
+  },
+  {
+   "category": "traktory",
+   "slug": "t6-electro-dynamic-auto-command-stage-v",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/t6-stage-v",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/4721b232eec54051a1ce5842530525e3?v=d321bf04"
+  },
+  {
+   "category": "traktory",
+   "slug": "t6-electro-command-dynamic-command-auto-command",
+   "status": "archiwalny",
+   "successor": "t6-electro-dynamic-auto-command-stage-v"
+  },
+  {
+   "category": "traktory",
+   "slug": "t5-dynamic-command-i-auto-command",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/t5-dynamic-command-auto-command",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/64af95f6e2354c1998816ec4ed251648?v=dc89fdcc"
+  },
+  {
+   "category": "traktory",
+   "slug": "t5-electro-command",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/t5-electro-command-stage-v",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/0bdb51e74f764181a08d874688de04c8?v=15607136"
+  },
+  {
+   "category": "traktory",
+   "slug": "t5-utility-stage-v",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/t5-utility-stage-v",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/100e01f50dba45fbbd344e3b95572f06?v=1e7bbbeb"
+  },
+  {
+   "category": "traktory",
+   "slug": "t4-f-n-v",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/t4-fnv-stage-v",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/d27e8b81010b4307914bc29fb0d0f474?v=e0b3c4a1"
+  },
+  {
+   "category": "traktory",
+   "slug": "t4-stage-v",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/t4-stage-v",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/bcb8a8849ddb4b309d2a3cd0a0e60c75?v=cbb9d9c1"
+  },
+  {
+   "category": "traktory",
+   "slug": "t4s-stage-v",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/t4s-stage-v",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/57ccc6e2b6d448bea8b6be0ccc14b34b?v=a5eda075"
+  },
+  {
+   "category": "traktory",
+   "slug": "t3f",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/t3f-lp",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/c2711bf0ca3b4329b3ad0bee312553a1?v=8758b89d"
+  },
+  {
+   "category": "traktory",
+   "slug": "boomer-25-c-55",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/boomer-25c-55",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/83cf072d8476496e833decff20e8440b?v=61359eec"
+  },
+  {
+   "category": "ladowarki-teleskopowe",
+   "slug": "serii-th",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ladowarki-teleskopowe/serii-th",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/1c07a5ffea924acf991895bba8083414?v=276a0b27"
+  },
+  {
+   "category": "kombajny-zbozowe",
+   "slug": "ch",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/kombajny-zbozowe/ch",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/7454333a359e408f88112ba35056b9e3?v=0c00a58f"
+  },
+  {
+   "category": "kombajny-zbozowe",
+   "slug": "cr-revelation-stage-v",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/kombajny-zbozowe/seria-cr",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/9805d5e608de40988249a0c7c5bc10c7?v=e5444533"
+  },
+  {
+   "category": "kombajny-zbozowe",
+   "slug": "cx7-i-cx8-stage-v",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/kombajny-zbozowe/cx7-i-cx8-stage-v",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/1a6a52e359414a27b09d27ad85b0bdc3?v=6d9501fc"
+  },
+  {
+   "category": "kombajny-zbozowe",
+   "slug": "cx5-i-cx6-stage-v",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/kombajny-zbozowe/cx5-i-cx6-stage-v",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/4e2f94081983446c8f96754c37f288cd?v=171e0bb9"
+  },
+  {
+   "category": "kombajny-zbozowe",
+   "slug": "tc-stage-v",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/kombajny-zbozowe/tc-stage-v",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/409c6b38852147bbb926eb4200709028?v=172f1cd2"
+  },
+  {
+   "category": "prasy",
+   "slug": "bigbaler-high-density",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/prasy/bigbaler-high-density",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/be5fa0e9edfb4e37bc4e2fc5e5508b95?v=f5e82a5e"
+  },
+  {
+   "category": "prasy",
+   "slug": "bigbaler-plus",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/prasy/bigbaler-plus",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/3baa446a12464f32be7047b0c619eb46?v=b8787015"
+  },
+  {
+   "category": "prasy",
+   "slug": "roll-baler",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/prasy/roll-baler",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/a323513f8f97456693a476b07dd7f02e?v=259a24fe"
+  },
+  {
+   "category": "prasy",
+   "slug": "roll-belt",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/prasy/rollbelt",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/37c56e354396498f9125756c38deec70?v=4bb2a426"
+  },
+  {
+   "category": "prasy",
+   "slug": "roll-bar-125",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/prasy/roll-bar-125",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/f93b06b0fa6344b08b54b02669124f90?v=ebcbe7a3"
+  },
+  {
+   "category": "prasy",
+   "slug": "br-100",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/prasy/br-100",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/3ebee56d45c4420cb380913aa916d4b7?v=62300484"
+  },
+  {
+   "category": "sieczkarnie-samobiezne",
+   "slug": "fr-forage-cruiser-stage-v",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/sieczkarnie-samobiezne/fr-forage-cruiser-stage-v",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/8da86fdbcdbb47e7954516f7190c5473?v=e5ab0414"
+  },
+  {
+   "category": "maszyny-budowlane",
+   "slug": "kompaktowe-ladowarki-kolowe",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/budownictwo/kompaktowe-ladowarki-kolowe",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/bab7046c662243c58be4bbe4bff00a65?v=1d398e9c"
+  },
+  {
+   "category": "maszyny-budowlane",
+   "slug": "ladowarki-kolowe",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/budownictwo/ladowarki-kolowe-stage-v",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/9b62bde4367d4eb59a28f878d4fb9c81?v=4bcd6721"
+  },
+  {
+   "category": "maszyny-budowlane",
+   "slug": "koparko-ladowarki",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/budownictwo/koparko-ladowarki-stage-v",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/137e3998de1b420292501e7c2e912e0e?v=05018aa2"
+  },
+  {
+   "category": "maszyny-budowlane",
+   "slug": "miniladowarki-burtowe-kolowe-i-gasienicowe-serii-300",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/budownictwo/miniladowarki-burtowe-kolowe-i-gasienicowe-serii-300",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/dfd07d02b4084f80a1d6472a68b8c465?v=5f4e6bd1"
+  },
+  {
+   "category": "maszyny-budowlane",
+   "slug": "miniladowarki-burtowe-kolowe-i-gasienicowe-serii-200",
+   "status": "archiwalny",
+   "successor": "miniladowarki-burtowe-kolowe-i-gasienicowe-serii-300"
+  },
+  {
+   "category": "maszyny-budowlane",
+   "slug": "mini-koparki-gasienicowe",
+   "status": "aktualny",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/budownictwo/mini-koparki-gasienicowe-serii-d",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/8dd95d98b3dd49b0802e9dfb709c251e?v=dbb46176"
+  },
+  {
+   "category": "maszyny-uprawne",
+   "slug": "*",
+   "status": "brak-w-katalogu-nh",
+   "note": "Kategoria nie występuje w aktualnym katalogu New Holland PL — potwierdź w dziale sprzedaży, czy Rolmax nadal ją oferuje. Do tego czasu strony zostają (bez utraty pozycji), z przyciskiem „Zapytaj o dostępność”."
+  },
+  {
+   "category": "maszyny-zielonkowe",
+   "slug": "*",
+   "status": "brak-w-katalogu-nh",
+   "note": "Kategoria nie występuje w aktualnym katalogu New Holland PL — potwierdź w dziale sprzedaży, czy Rolmax nadal ją oferuje. Do tego czasu strony zostają (bez utraty pozycji), z przyciskiem „Zapytaj o dostępność”."
+  },
+  {
+   "category": "plugi",
+   "slug": "*",
+   "status": "brak-w-katalogu-nh",
+   "note": "Kategoria nie występuje w aktualnym katalogu New Holland PL — potwierdź w dziale sprzedaży, czy Rolmax nadal ją oferuje. Do tego czasu strony zostają (bez utraty pozycji), z przyciskiem „Zapytaj o dostępność”."
+  }
+ ],
+ "new": [
+  {
+   "category": "traktory",
+   "slug": "t7-xd",
+   "name": "T7 XD",
+   "url": "/pl/maszyny/traktory/t7-xd",
+   "power": "360–435 KM",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/t7-xd",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/4513fa63b7b74163be278d3718407ab6?v=dc1a4c65",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/7f7483ca68a6466d9c8dd095b600c2bd?v=a8831bb5",
+   "description": "Zupełnie nowa, najmocniejsza rodzina ciągników T7. Modele T7.360 XD, T7.390 XD i T7.440 XD z silnikiem FPT Cursor 9, przekładnią Auto Command i zintegrowanym rolnictwem precyzyjnym PLM powstały z myślą o usługodawcach i największych gospodarstwach polowych, które potrzebują mocy na WOM, wydajnej hydrauliki i szybkiego transportu w jednej maszynie."
+  },
+  {
+   "category": "traktory",
+   "slug": "nowy-t7-swb",
+   "name": "Nowy T7 SWB",
+   "url": "/pl/maszyny/traktory/nowy-t7-swb",
+   "power": "180–225 KM",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/nowy-t7-swb",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/ac2b07589d57409285a8dccfd10ae4f3?v=edccd4d5",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/73ef1629d3de431ba96dfd57c2c9c35e?v=98d57ae8",
+   "description": "Nowa generacja najpopularniejszej serii T7 ze standardowym rozstawem osi. Przeprojektowana oś przednia z zawieszeniem, nowe opcje zawieszenia kabiny, cichsze i bardziej przestronne wnętrze, konfigurowalne sterowanie i nowy design Dynamic Blue. Seria została wyróżniona nagrodą Red Dot Design Award 2026."
+  },
+  {
+   "category": "traktory",
+   "slug": "t7-lwb-z-plm-intelligence",
+   "name": "T7 LWB z PLM Intelligence™",
+   "url": "/pl/maszyny/traktory/t7-lwb-z-plm-intelligence",
+   "power": "do 300 KM",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/t7-lwb-z-plm-intelligence",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/3c2f80c64b8f4d9e83df7006840a80b9?v=b6d482dc",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/22b7613e5d784f5a94b78938e911b1e2?v=f42895cd",
+   "description": "Ciągnik o długim rozstawie osi z fabrycznie zintegrowaną platformą PLM Intelligence™. Kabina Horizon™ Ultra, podłokietnik SideWinder™ Ultra, zawieszenie kabiny Comfort Ride™ i silniki ECOBlue™ HI-eSCR 2 — dla gospodarstw, które łączą ciężkie prace polowe z pełną kontrolą danych."
+  },
+  {
+   "category": "traktory",
+   "slug": "t7-270-methane-power-z-plm-intelligence",
+   "name": "T7.270 Methane Power z PLM Intelligence™",
+   "url": "/pl/maszyny/traktory/t7-270-methane-power-z-plm-intelligence",
+   "power": "270 KM",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/t7-270-methane-power-z-plm-intelligence",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/9408556dd5af4b4d9a61b6aa8fb8f0a4?v=b5ce9f2e",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/ce80d08c6d7042ec8eb081d1d97b771f?v=19fd623f",
+   "description": "Ciągnik zasilany biometanem lub CNG o parametrach porównywalnych z klasycznym T7. Silnik FPT NEF 6,7 l, zbiorniki gazu o łącznej pojemności 201 kg wkomponowane w konstrukcję i niższe koszty paliwa — rozwiązanie dla gospodarstw z własną biogazownią i firm stawiających na zrównoważoną produkcję."
+  },
+  {
+   "category": "traktory",
+   "slug": "t4f-s",
+   "name": "T4F S",
+   "url": "/pl/maszyny/traktory/t4f-s",
+   "power": "75 KM",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ciagniki-rolnicze/t4f-s",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/fa88b08c6e7a4ab9a02636703aad3ec9?v=8c34ec00",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/8dcbc705d5134180819f87868458d9ee?v=d5814ce0",
+   "description": "Kompaktowy ciągnik specjalistyczny do sadów, winnic i ciasnych zabudowań. Silnik S8000, przekładnie Synchro Shuttle™ 12x12 lub 20x20 z biegiem pełzającym albo Powershuttle, wydajna hydraulika i nowa kabina z widocznością 360°."
+  },
+  {
+   "category": "traktory",
+   "slug": "t5s",
+   "name": "T5S (T5.90S / T5.100S)",
+   "url": "/pl/maszyny/traktory/t5s",
+   "power": "90–100 KM",
+   "badge": "NAJPOPULARNIEJSZY",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/uslugi-i-rozwiazania/oferty-specjalne-i-promocje/t590s-finasowanie-fabryczne-0",
+   "brochure_pdf": null,
+   "image_url": null,
+   "description": "Najczęściej wybierany ciągnik w Polsce w pierwszym półroczu 2025 roku (dane Agritrac). Czterocylindrowy silnik FPT 3,6 l o mocy 90 KM spełniający normę Stage V, czterosłupkowa kabina z klimatyzacją i widocznością 360° — uniwersalny ciągnik dla średnich gospodarstw i świetna maszyna pomocnicza w dużych."
+  },
+  {
+   "category": "ladowarki-teleskopowe",
+   "slug": "ladowarki-th6-26",
+   "name": "TH6.26",
+   "url": "/pl/maszyny/ladowarki-teleskopowe/ladowarki-th6-26",
+   "power": "73 KM",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/ladowarki-teleskopowe/ladowarki-th6-26",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/f26f0fbb8e9f4b0e9aa962c9f49ea0cc?v=6b293ce9",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/6b18feec86514db3bf53e0b10a587582?v=ff942283",
+   "description": "Najmniejsza ładowarka teleskopowa New Holland: szerokość poniżej 2 m i wysokość podnoszenia 6 m. Idealna do obór, kurników, sadów i magazynów, gdzie liczy się zwrotność — bez rezygnacji z komfortu pełnowymiarowej kabiny."
+  },
+  {
+   "category": "kombajny-zbozowe",
+   "slug": "cr11",
+   "name": "CR11",
+   "url": "/pl/maszyny/kombajny-zbozowe/cr11",
+   "power": "flagowy",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/kombajny-zbozowe/cr11",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/72e1b872663243bba03540c7e8f1c29c?v=d125b5f1",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/b79fcff30d6044a7b5251a1a23240287?v=a4d22b53",
+   "description": "Flagowy kombajn rotorowy nowej generacji z technologią Twin Rotor™. Zbiornik ziarna 20 000 l, rozładunek do 210 l/s, automatyka ustawień i kamera oceny jakości ziarna. Współpracuje z hederami MacDon FD2 o szerokości ponad 15 m. Pierwszy egzemplarz w Polsce przekazano w 2025 roku."
+  },
+  {
+   "category": "kombajny-zbozowe",
+   "slug": "seria-cr",
+   "name": "Seria CR (CR10 i CR9.90)",
+   "url": "/pl/maszyny/kombajny-zbozowe/seria-cr",
+   "power": "do 653 KM",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/kombajny-zbozowe/seria-cr",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/9805d5e608de40988249a0c7c5bc10c7?v=e5444533",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/06626d34c8744dbc9124fe7113ed3a5d?v=8b8cc8f0",
+   "description": "Rodzina kombajnów z podwójnym rotorem Twin Rotor™ — delikatny omłot, wysoka jakość ziarna i słomy, kabina Harvest Suite™ Ultra i silniki zgodne z normą Stage V. W 2026 roku New Holland szczególnie promuje model CR10 do omłotu kukurydzy."
+  },
+  {
+   "category": "kombajny-zbozowe",
+   "slug": "hedery-zbozowe-varifeed",
+   "name": "Hedery zbożowe Varifeed™",
+   "url": "/pl/maszyny/kombajny-zbozowe/hedery-zbozowe-varifeed",
+   "power": "4,9–12,5 m",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/kombajny-zbozowe/hedery-zbozowe-varifeed",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/22feaba9c8e54a638aead8fa3d6dc452?v=e580f989",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/33b7cb83567f41aeb8612fc39936e058?v=394cd1c0",
+   "description": "Hedery z regulacją położenia kosy w zakresie 575 mm — jeden zespół żniwny do zbóż i rzepaku. Szerokości od 4,9 do 12,5 m, zaawansowane prowadzenie hedera i pełna integracja z kombajnami New Holland."
+  },
+  {
+   "category": "kombajny-zbozowe",
+   "slug": "hedery-superflex",
+   "name": "Hedery Superflex",
+   "url": "/pl/maszyny/kombajny-zbozowe/hedery-superflex",
+   "power": "6,1–10,67 m",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/kombajny-zbozowe/hedery-superflex",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/22feaba9c8e54a638aead8fa3d6dc452?v=e580f989",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/53ff6d30da4549af8f73fde2e389f3a7?v=6e9c127b",
+   "description": "Heder z elastyczną listwą tnącą, która kopiuje ukształtowanie terenu i zostawia równe, niskie ściernisko — dobry wybór do soi, grochu i zbóż wylegających. Szerokości od 6,1 do 10,67 m."
+  },
+  {
+   "category": "kombajny-zbozowe",
+   "slug": "hedery-zbozowe-high-capacity",
+   "name": "Hedery zbożowe High-Capacity",
+   "url": "/pl/maszyny/kombajny-zbozowe/hedery-zbozowe-high-capacity",
+   "power": "4,5–12,5 m",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/kombajny-zbozowe/hedery-zbozowe-high-capacity",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/22feaba9c8e54a638aead8fa3d6dc452?v=e580f989",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/d7fd63db5adf4166aea917d0d9d8b75c?v=61f5a4f6",
+   "description": "Niezawodne hedery o szerokości od 4,5 do 12,5 m, kompatybilne z kombajnami TC, CX, CH i CR. Prosta konstrukcja, wysoka wydajność i szybkie zbiory w standardowych warunkach."
+  },
+  {
+   "category": "kombajny-zbozowe",
+   "slug": "hedery-do-zbioru-kukurydzy",
+   "name": "Hedery do zbioru kukurydzy",
+   "url": "/pl/maszyny/kombajny-zbozowe/hedery-do-zbioru-kukurydzy",
+   "power": "sztywne i składane",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/kombajny-zbozowe/hedery-do-zbioru-kukurydzy",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/22feaba9c8e54a638aead8fa3d6dc452?v=e580f989",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/92b8a012f87444c7af8523246ffb155a?v=423d0ebe",
+   "description": "Przystawki do kukurydzy w wersjach sztywnych i składanych, opcjonalnie z rozdrabnianiem łodyg. Niskie straty kolb i ziarna, przygotowane pole pod kolejną uprawę."
+  },
+  {
+   "category": "kombajny-zbozowe",
+   "slug": "zaawansowane-podbieracze",
+   "name": "Podbieracze do kombajnów",
+   "url": "/pl/maszyny/kombajny-zbozowe/zaawansowane-podbieracze",
+   "power": "3,65–4,57 m",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/kombajny-zbozowe/zaawansowane-podbieracze",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/22feaba9c8e54a638aead8fa3d6dc452?v=e580f989",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/ca316f98621d43baa7cbf196d3837723?v=54755dde",
+   "description": "Podbieracze o szerokości od 3,65 do 4,57 m do zbioru z pokosów: traw nasiennych, rzepaku i grochu. Współpracują z kombajnami CR i CX."
+  },
+  {
+   "category": "kombajny-zbozowe",
+   "slug": "zespoly-zniwne-fd2-flexdraper-firmy-macdon",
+   "name": "MacDon FD2 FlexDraper®",
+   "url": "/pl/maszyny/kombajny-zbozowe/zespoly-zniwne-fd2-flexdraper-firmy-macdon",
+   "power": "do ponad 15 m",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/kombajny-zbozowe/zespoly-zniwne-fd2-flexdraper-firmy-macdon",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/22feaba9c8e54a638aead8fa3d6dc452?v=e580f989",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/60be9e9cb1ee48a7a4f6696adacdf1e7?v=21e56b78",
+   "description": "Heder taśmowy MacDon z elastyczną listwą tnącą zapewnia równomierne podawanie materiału nawet przy największych szerokościach roboczych. Kompatybilny z kombajnami New Holland CR i CX."
+  },
+  {
+   "category": "prasy",
+   "slug": "roll-belt-plus",
+   "name": "Roll-Belt™ Plus (150 Plus / 180 Plus)",
+   "url": "/pl/maszyny/prasy/roll-belt-plus",
+   "power": "zmienna komora",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/prasy/roll-belt-plus",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/adeb1ab438fd4f14be23b3ce31f84ae1?v=78181510",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/4143b1a37e554d6fb4caf3c924c480ee?v=1b1922bb",
+   "description": "Nowe prasy zwijające ze zmienną komorą i najwyższą gęstością beli w gamie New Holland. Wzmocnione podbieracze, rotor ActiveSweep™ do delikatnych materiałów i wybór systemu owijania — mniej kosztów składowania i transportu paszy."
+  },
+  {
+   "category": "prasy",
+   "slug": "pro-belt",
+   "name": "Pro-Belt™",
+   "url": "/pl/maszyny/prasy/pro-belt",
+   "power": "zmienna komora",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/prasy/pro-belt",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/c3bfc361e4ef40a18fd399b87cebdb99?v=c83142d4",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/50522af742994e9f8082d5e0b9b38b8a?v=cf8c7fcf",
+   "description": "Profesjonalna prasa zmiennokomorowa dla usługodawców: rotor 52 cm, systemy SuperFeed™ lub CropCutter® z 13 albo 25 nożami, przekładnia TwinDrive i bardzo gęste, równe bele w każdych warunkach."
+  },
+  {
+   "category": "prasy",
+   "slug": "roll-bar-utility",
+   "name": "Roll-Bar™ Utility (120 / 150)",
+   "url": "/pl/maszyny/prasy/roll-bar-utility",
+   "power": "stała komora",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/prasy/roll-bar-utility",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/fc74112c19f047c58656d22b5a432d4d?v=8ed88f6f",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/7429cce9183846ccb4558ac8328ec57c?v=da038fc0",
+   "description": "Prosta, wytrzymała i przystępna cenowo prasa zwijająca dla małych i średnich gospodarstw. Bele o średnicy 1,20 m lub 1,50 m, łatwa regulacja gęstości i nowa stylistyka z bocznymi osłonami ułatwiającymi serwis."
+  },
+  {
+   "category": "maszyny-budowlane",
+   "slug": "ladowarki-kolowe-w100d",
+   "name": "Ładowarka kołowa W100D",
+   "url": "/pl/maszyny/maszyny-budowlane/ladowarki-kolowe-w100d",
+   "power": "112 KM",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/budownictwo/ladowarki-kolowe-w100d",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/3daa32e49087491da2853efd857fa048?v=e3cd9b51",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/c4612a82ec7e45a8a642acdcf6877221?v=d02feb13",
+   "description": "Kompaktowa ładowarka kołowa do prac w gospodarstwie i firmie: napęd na wszystkie koła, inteligentna hydraulika z regulacją reakcji, szybka wymiana osprzętu, silnik Stage V i kabina z widocznością 360°."
+  },
+  {
+   "category": "maszyny-budowlane",
+   "slug": "ladowarki-kolowe-w170d-forage-power",
+   "name": "Ładowarka kołowa W170D+ Forage Power",
+   "url": "/pl/maszyny/maszyny-budowlane/ladowarki-kolowe-w170d-forage-power",
+   "power": "255 KM",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/budownictwo/ladowarki-kolowe-w170d-forage-power",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/afb3f092e37c46e5bccc4479a2552d39?v=688cd272",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/ba3194bc45874dab94ac18d9d3da0447?v=455a2d9a",
+   "description": "Ładowarka stworzona do pracy na pryzmie kiszonki i w biogazowniach. Zbiornik paliwa 400 l na pełną zmianę, 6-biegowa przekładnia maksymalizująca siłę pchania i kabina D+ z widocznością niemal 360°. Tytuł FARM MACHINE 2026 na targach Agritechnica."
+  },
+  {
+   "category": "maszyny-budowlane",
+   "slug": "midi-koparki-gasienicowe-serii-d",
+   "name": "Midi koparki gąsienicowe serii D",
+   "url": "/pl/maszyny/maszyny-budowlane/midi-koparki-gasienicowe-serii-d",
+   "power": "5 modeli",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/budownictwo/midi-koparki-gasienicowe-serii-d",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/80a3b179ec5d47918f03f74379cd6579?v=1b7d07b4",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/810770d2e9024223924e668221b2fff8?v=cd943b7e",
+   "description": "Pięć modeli midi koparek z wysięgnikiem przednim lub bocznym, automatycznym smarowaniem i zintegrowanym lemieszem. Kompaktowe, a wydajne — do budowy, kształtowania terenu i prac komunalnych."
+  },
+  {
+   "category": "maszyny-budowlane",
+   "slug": "mini-ladowarka-gasienicowa",
+   "name": "Mini ładowarka gąsienicowa C314 / C314X",
+   "url": "/pl/maszyny/maszyny-budowlane/mini-ladowarka-gasienicowa",
+   "power": "C314X — elektryczna",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/budownictwo/mini-ladowarka-gasienicowa",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/5c811dfced2e4875b08e7f3f708b24f0?v=a3f0bb4a",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/65c84b025d6e4e43a3c1e8b458be1394?v=0f7d6708",
+   "description": "Najmniejsza ładowarka gąsienicowa New Holland do pracy w ciasnych miejscach, z szeroką gamą osprzętu (świdry, koparki do rowów, chwytaki). Wersja C314X jest w pełni elektryczna — cicha i bezemisyjna."
+  },
+  {
+   "category": "technologia-precyzyjna",
+   "slug": "fieldops",
+   "name": "New Holland FieldOps™",
+   "url": "/pl/maszyny/technologia-precyzyjna/fieldops",
+   "power": "aplikacja",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/technologia-precyzyjna/lacznosc-i-fieldops/fieldops",
+   "brochure_pdf": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/8dcb0bbe53e5453eb72faa72fc4b0d6c?v=13059f7c",
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/33b7a412c359485cac1d65fac1ccdf28?v=ef774997",
+   "description": "Platforma do zarządzania gospodarstwem na telefonie, tablecie i komputerze: lokalizacja i stan maszyn w czasie rzeczywistym, poziom paliwa, postęp prac, mapy plonów i zdalny podgląd wyświetlacza — także dla flot mieszanych."
+  },
+  {
+   "category": "technologia-precyzyjna",
+   "slug": "intellisteer",
+   "name": "Automatyczne prowadzenie IntelliSteer™",
+   "url": "/pl/maszyny/technologia-precyzyjna/intellisteer",
+   "power": "15 cm – 2,5 cm RTK+",
+   "badge": "NOWOŚĆ",
+   "manufacturer_url": "https://agriculture.newholland.com/pl-pl/europe/produkty/technologia-precyzyjna/rozwiazania-w-zakresie-prowadzenia-i-sterowania/intellisteer",
+   "brochure_pdf": null,
+   "image_url": "https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/c5535ca694ac4141b67582a10a051493?v=8f3496a5",
+   "description": "Fabryczny autopilot do ciągników, kombajnów i pras z kompensacją terenu i dokładnością od 15 cm do 2,5 cm (RTK+). Mniej nakładek i omijaków, mniejsze zmęczenie operatora i niższe zużycie środków."
+  }
+ ],
+ "redirects": [
+  [
+   "/pl/maszyny/traktory/t7-heavy-duty-stage-v",
+   "/pl/maszyny/traktory/t7-heavy-duty-z-plm-intelligence"
+  ],
+  [
+   "/pl/maszyny/traktory/t7-heavy-duty",
+   "/pl/maszyny/traktory/t7-heavy-duty-z-plm-intelligence"
+  ],
+  [
+   "/pl/maszyny/traktory/t6-electro-command-dynamic-command-auto-command",
+   "/pl/maszyny/traktory/t6-electro-dynamic-auto-command-stage-v"
+  ],
+  [
+   "/pl/maszyny/maszyny-budowlane/miniladowarki-burtowe-kolowe-i-gasienicowe-serii-200",
+   "/pl/maszyny/maszyny-budowlane/miniladowarki-burtowe-kolowe-i-gasienicowe-serii-300"
+  ]
+ ],
+ "categories_new": [
+  {
+   "slug": "technologia-precyzyjna",
+   "name": "Technologia precyzyjna",
+   "url": "/pl/maszyny/technologia-precyzyjna"
+  }
+ ]
+}

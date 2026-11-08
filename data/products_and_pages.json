@@ -1,0 +1,2280 @@
+{
+ "prod": [
+  {
+   "c": "Traktory",
+   "s": "traktory",
+   "items": [
+    {
+     "n": "T8 GENESIS™",
+     "s": "t8-genesis",
+     "img": "1/624319e2c6cbe_t8-genesis-overview.png",
+     "br": 1,
+     "t": "KONFIGUROWALNE STEROWANIE Gdy podczas pracy na polu wymagana jest precyzja, nie ma miejsca na kompromisy. Każdy operator ma niepowtarzalne preferencje i wymagan"
+    },
+    {
+     "n": "T7 HEAVY DUTY Z PLM INTELLIGENCE™",
+     "s": "t7-heavy-duty-z-plm-intelligence",
+     "img": "2/62431dda5a49a_t7-havy-duty-with-plmi-overview.png",
+     "br": 1,
+     "t": "OPRACOWANY PRZEZ WAS DLA WAS W wyniku rozmów z Klientami prowadzącymi gospodarstwa rolne w różnych krajach opracowaliśmy ciągnik T7 Heavy Duty z systemem PLM In"
+    },
+    {
+     "n": "T7 HEAVY DUTY - STAGE V",
+     "s": "t7-heavy-duty-stage-v",
+     "img": "3/62431f02d1590_t7-heavy-duty-stage-v-overview.png",
+     "br": 1,
+     "t": "WIĘCEJ MOCY Zwiększona moc T7, sięgająca 313 KM, wystarcza, by pracować z narzędziami wymagającymi największej mocy. WIĘKSZY KOMFORT Pakiet nawet 20 świateł rob"
+    },
+    {
+     "n": "T7 HEAVY DUTY",
+     "s": "t7-heavy-duty",
+     "img": "4/62431f1b9c307_t7-heavy-duty-overview.png",
+     "br": 1,
+     "t": "WIĘCEJ MOCY Zwiększona moc T7, sięgająca 313 KM, wystarcza, by pracować z narzędziami wymagającymi największej mocy. WIĘKSZY KOMFORT Pakiet nawet 20 świateł rob"
+    },
+    {
+     "n": "T7 LWB - STAGE V",
+     "s": "t7-lwb-stage-v",
+     "img": "5/62431f32c9c16_t7-lwb-stage-v-overview.png",
+     "br": 1,
+     "t": "SZEŚĆ MODELI DOPASOWANYCH DO POTRZEB TWOJEGO GOSPODARSTWA Gama modeli T7 została opracowana po intensywnych konsultacjach z klientami marki New Holland, w tym z"
+    },
+    {
+     "n": "T7 SWB - STAGE V",
+     "s": "t7-swb-stage-v",
+     "img": "6/62431f5f196c2_t7-swb-stage-v-overview.png",
+     "br": 1,
+     "t": "PIĘĆ MODELI DOPASOWANYCH DO POTRZEB TWOJEGO GOSPODARSTWA Gama modeli T7 została opracowana po intensywnych konsultacjach z klientami New Holland, w tym z usługo"
+    },
+    {
+     "n": "T7S - STAGE V",
+     "s": "t7s-stage-v",
+     "img": "7/62431fe707ed2_t7s-overview.png",
+     "br": 1,
+     "t": "PODSTAWY, KTÓRYCH POTRZEBUJESZ Modele z serii T7 S oferują wysoką moc i parametry techniczne, za którymi stoi jakość marki z segmentu premium. Ciągniki te, zapr"
+    },
+    {
+     "n": "T6 METHANE POWER",
+     "s": "t6-methane-power",
+     "img": "8/62431ffa14bda_t6-methane-power-overview.png",
+     "br": 1,
+     "t": "TE 6 KORZYŚCI JEST TYLKO DLA CIEBIE. BEZKONKURENCYJNY PAKIET Z CIĄGNIKIEM T6. 1. Kredyt 0%. 2. Serwis w cenie . 3. Gwarancja Premium. 4. Pług New Holland jako d"
+    },
+    {
+     "n": "T6 ELECTRO / DYNAMIC / AUTO COMMAND - STAGE V",
+     "s": "t6-electro-dynamic-auto-command-stage-v",
+     "img": "9/6243201c767e2_t6-tier-4b-overview.png",
+     "br": 1,
+     "t": "TE 6 KORZYŚCI JEST TYLKO DLA CIEBIE. BEZKONKURENCYJNY PAKIET Z CIĄGNIKIEM T6. 1. Kredyt 0%. 2. Serwis w cenie . 3. Gwarancja Premium. 4. Pług New Holland jako d"
+    },
+    {
+     "n": "T6 ELECTRO COMMAND / DYNAMIC COMMAND / AUTO COMMAND",
+     "s": "t6-electro-command-dynamic-command-auto-command",
+     "img": "10/624320438a802_t6-tier-4b-overview.png",
+     "br": 1,
+     "t": "TE 6 KORZYŚCI JEST TYLKO DLA CIEBIE. BEZKONKURENCYJNY PAKIET Z CIĄGNIKIEM T6. 1. Kredyt 0%. 2. Serwis w cenie . 3. Gwarancja Premium. 4. Pług New Holland jako d"
+    },
+    {
+     "n": "T5 DYNAMIC COMMAND™ I AUTO COMMAND™",
+     "s": "t5-dynamic-command-i-auto-command",
+     "img": "11/624320597d4e2_t5-dynamic-auto-command-overview.png",
+     "br": 1,
+     "t": "POTWIERDZONA WSZECHSTRONNOŚĆ Sprawdzoną serię ciągników T5 stworzono, aby zapewnić wysoką wydajność podczas wykonywania rozmaitych prac rolniczych: od zastosowa"
+    },
+    {
+     "n": "T5 ELECTRO COMMAND",
+     "s": "t5-electro-command",
+     "img": "12/62432086467a4_t5-tier-4b-overview.png",
+     "br": 1,
+     "t": "KOMFORT Po raz pierwszy w historii, ciągniki serii T5 Electro Command wyposażono w sprawdzony układ zawieszenia osi przedniej Terraglide™ marki New Holland. DOS"
+    },
+    {
+     "n": "T5 UTILITY - STAGE V",
+     "s": "t5-utility-stage-v",
+     "img": "13/624434a8d0733_t5-utility-overview.png",
+     "br": 1,
+     "t": "WIĘKSZA STABILNOŚĆ I WYDAJNOŚĆ Maksymalna dopuszczalna masa całkowita pojazdu Opcjonalna rama do ładowacza o szerokości 1100 mm WIĘKSZA ELASTYCZNOŚĆ I WSZECHSTR"
+    },
+    {
+     "n": "T4 F/N/V",
+     "s": "t4-f-n-v",
+     "img": "14/6244350602e8d_t4-fnv-overview.png",
+     "br": 1,
+     "t": "NOWY T4 F/N/V. CZYSTSZY, CICHSZY I JESZCZE BARDZIEJ WYDAJNY Firma New Holland, uznany lider w dziedzinie projektowania ciągników specjalistycznych, wprowadził u"
+    },
+    {
+     "n": "T4 - STAGE V",
+     "s": "t4-stage-v",
+     "img": "16/6244355f62d14_t4-tier-4b-overview.png",
+     "br": 1,
+     "t": "NIEZRÓWNANA PRZYJEMNOŚĆ Z JAZDY Nawet najdłuższy dzień pracy mija błyskawicznie w kabinie deluxe VisionView™, która została zaprojektowana specjalnie w celu mak"
+    },
+    {
+     "n": "T4S - STAGE V",
+     "s": "t4s-stage-v",
+     "img": "17/62443613267bb_t4s-overview.png",
+     "br": 1,
+     "t": "PROSTA EKSPLOATACJA Ciągniki T4S Stage V są przeznaczone do ciężkiej pracy, a jednocześnie oferują wydłużone okresy międzyobsługowe wynoszące do 600 godzin. ABS"
+    },
+    {
+     "n": "T3.F",
+     "s": "t3f",
+     "img": "18/62443637bbfe9_t3f-overview.png",
+     "br": 1,
+     "t": "MOCNE I KOMPAKTOWE Ciągniki z serii T3F, w tym flagowy model T3.75F o mocy 72 KM, napędzane są oszczędnymi i żywotnymi silnikami trzycylindrowymi i oferują niez"
+    },
+    {
+     "n": "BOOMER 25 C–55",
+     "s": "boomer-25-c-55",
+     "img": "19/62443685a85d1_boomer-25c-55-series-overview.png",
+     "br": 1,
+     "t": "DZIESIĘĆ DOWODÓW NA TO, ŻE CIĄGNIK BOOMER JEST BEZKONKURENCYJNY Bardzo komfortowa kabina Boomer Suite™ w modelach klasy 2 i 3 Boomer 35 - 55 Opcje przekładni me"
+    }
+   ]
+  },
+  {
+   "c": "Ładowarki teleskopowe",
+   "s": "ladowarki-teleskopowe",
+   "items": [
+    {
+     "n": "SERII TH",
+     "s": "serii-th",
+     "img": "20/6244581b17656_th-range-overview.png",
+     "br": 1,
+     "t": "DOSKONAŁA WIDOCZNOŚĆ I NAJWYŻSZY KOMFORT Nową serię TH wyróżnia nowoczesna, bardziej komfortowa kabina o lepszym zawieszeniu i większej widoczności, zapewniając"
+    }
+   ]
+  },
+  {
+   "c": "Kombajny zbożowe",
+   "s": "kombajny-zbozowe",
+   "items": [
+    {
+     "n": "CH",
+     "s": "ch",
+     "img": "21/6244592763af8_ch-combine-overview.png",
+     "br": 1,
+     "t": "CROSSOVER HARVESTING. TO, CO NAJLEPSZE Z OBU ŚWIATÓW. Od dziesięcioleci kombajny New Holland charakteryzują się wydajnością wyznaczającą standardy, zarówno w se"
+    },
+    {
+     "n": "CR REVELATION - STAGE V",
+     "s": "cr-revelation-stage-v",
+     "img": "22/62445973ee9ab_cr-relevation-overview.png",
+     "br": 1,
+     "t": "NADZWYCZAJNA WYDAJNOŚĆ Najbardziej zaawansowany silnik FPT Industrial Cursor 16 o mocy 700 KM, który napędza model CR10.90, zapewnia stałą i niezawodną moc, co "
+    },
+    {
+     "n": "CX7 I CX8 - STAGE V",
+     "s": "cx7-i-cx8-stage-v",
+     "img": "23/624459bd48537_cx7-cx8-stage-v-overview.png",
+     "br": 1,
+     "t": "NADZWYCZAJNA WYDAJNOŚĆ Seria kombajnów CX7 i CX8 w pełni zasługuje na ten tytuł, będąc najsilniejszymi konwencjonalnymi kombajnami New Holland o mocy sięgającej"
+    },
+    {
+     "n": "CX5 I CX6 - STAGE V",
+     "s": "cx5-i-cx6-stage-v",
+     "img": "24/624459e9edffa_cx5-cx6-overview.png",
+     "br": 1,
+     "t": "DOSKONAŁA WYDAJNOŚĆ Nowe kombajny CX5 i CX6 wyróżniają się nadzwyczajną wydajnością podczas żniw. NAJSZERSZA UNIWERSALNOŚĆ W SWOJEJ KLASIE Elastyczność przy zmi"
+    },
+    {
+     "n": "TC - STAGE V",
+     "s": "tc-stage-v",
+     "img": "25/62445a050b323_tc-stage-v-overview.png",
+     "br": 1,
+     "t": ""
+    }
+   ]
+  },
+  {
+   "c": "Maszyny zielonkowe",
+   "s": "maszyny-zielonkowe",
+   "items": [
+    {
+     "n": "KOSIARKI CZOŁOWE",
+     "s": "kosiarki-czolowe",
+     "img": "26/62445b085a819_front-mounted-mowers-overview.png",
+     "br": 1,
+     "t": "DURADISC™ I DISCCUTTER™ Seria montowanych z przodu kosiarek New Holland dostępna jest w dwóch różnych wariantach. NAJNOWOCZEŚNIEJSZE TECHNOLOGIE PRODUKCJI Zaawa"
+    },
+    {
+     "n": "KOSIARKI MOCOWANE Z TYŁU",
+     "s": "kosiarki-mocowane-z-tylu",
+     "img": "27/62445b5aa39c8_rear-mounted-mowers-overview.png",
+     "br": 1,
+     "t": "DURADISC™ I DISCCUTTER™ Gama kosiarek DuraDisc ™ mocowanych z tyłu wykorzystuje mechaniczny układ zawieszenia, który zawsze dostosowuje się do profilu gleby. Se"
+    },
+    {
+     "n": "KOSIARKI CIĄGANE",
+     "s": "kosiarki-ciagane",
+     "img": "28/62445b7dcd5a5_trailed-mowers-overview.png",
+     "br": 1,
+     "t": "DISCCUTTER™ C KOSIARKI CIĄGANE CENTRALNIE Wszystkie modele są oferowane z trzema różnymi wersjami spulchniacza: z palcami z PE, ze stalowymi bijakami i gumowymi"
+    },
+    {
+     "n": "KOSIARKI MEGACUTTER™",
+     "s": "kosiarki-megacutter",
+     "img": "29/62445ba1bada3_mega-cutter-mowers-overview.png",
+     "br": 1,
+     "t": "KOSIARKI SERII MEGACUTTER™ Kosiarki MegaCutter™ marki New Holland zostały stworzone z myślą o zapewnieniu najwyższej wydajności. NAJNOWOCZEŚNIEJSZE TECHNOLOGIE "
+    },
+    {
+     "n": "PRZETRZĄSACZE",
+     "s": "przetrzasacze",
+     "img": "30/62445bc894cc1_tedders-overview.png",
+     "br": 1,
+     "t": "PRZETRZĄSACZE SERII PROTED™ Przetrząsacze serii ProTed™ dostępne są w wersji mocowanej do układu zawieszenia narzędzi jak i w wersji ciąganej. NAJNOWOCZEŚNIEJSZ"
+    },
+    {
+     "n": "ZGRABIARKI PROROTOR™",
+     "s": "zgrabiarki-prorotor",
+     "img": "31/62445c04ef431_prorotor-rakes-overview.png",
+     "br": 1,
+     "t": "Jednowirnikowe zgrabiarki karuzelowe ProRotor™ umożliwiają boczne odkładanie grabiącego materiału, jego szerokość można regulować za pomocą fartucha pokosowego."
+    },
+    {
+     "n": "ZGRABIARKI PROROTOR™ C",
+     "s": "zgrabiarki-prorotor-c",
+     "img": "32/62445c31c69d9_prorotor-c-rakes-overview.png",
+     "br": 1,
+     "t": "Dwuwirnikowe zgrabiarki karuzelowe ProRotor™ C umożliwiają centralne odkładanie formowanego materiału. Zaczepiane za pomocą dolnych ramion, a do transportu hydr"
+    },
+    {
+     "n": "ZGRABIARKI PROROTOR™ L",
+     "s": "zgrabiarki-prorotor-l",
+     "img": "33/62445c6ae2ed8_prorotor-l-rakes-overview.png",
+     "br": 1,
+     "t": "Modele serii ProRotor L to dwuwirnikowe zgrabiarki,któe mogą formować jeden lub opcjonalnie 2 pokosy boczne. Hydrauliczna regulacja szerokości roboczej odbywa s"
+    }
+   ]
+  },
+  {
+   "c": "Prasy",
+   "s": "prasy",
+   "items": [
+    {
+     "n": "BIGBALER HIGH DENSITY",
+     "s": "bigbaler-high-density",
+     "img": "34/62445e0773037_bigbaler-high-density-overview.png",
+     "br": 1,
+     "t": "HISTORIA INNOWACJI W PRASACH WIELKOGABARYTOWYCH Marka New Holland produkuje prasy wielkogabarytowe od ponad trzydziestu lat. Od czasu pierwszej dużej prasy kost"
+    },
+    {
+     "n": "BIGBALER PLUS",
+     "s": "bigbaler-plus",
+     "img": "35/62445e380b521_bigbaler-plus-overview.png",
+     "br": 1,
+     "t": "PROFESJONALNE PRASY MARKI NEW HOLLAND Marka New Holland króluje w segmencie pras wielkogabarytowych od 33 lat, wprowadzając szereg udoskonaleń, które zrewolucjo"
+    },
+    {
+     "n": "ROLL BALER",
+     "s": "roll-baler",
+     "img": "36/62445ec9d210a_roll-baler-overview.png",
+     "br": 1,
+     "t": "EWOLUCJA PRASY ROLUJĄCEJ ROLL BALER DAJE PRZEWAGĘ Modele pras walcowych Roll Baler 125 oraz Roll Baler 125 Combi oferują gospodarstwom hodowlanym oraz usługodaw"
+    },
+    {
+     "n": "ROLL-BELT",
+     "s": "roll-belt",
+     "img": "37/62445ef4254e7_roll-belt-overview.png",
+     "br": 1,
+     "t": "WYŚMIENITA WYDAJNOŚĆ Szukasz wydajnej prasy zmiennokomorowej? Sięgnij po rolujące prasy pasowe Roll-Belt marki New Holland. JAKOŚĆ BEL Rolujące prasy pasowe Rol"
+    },
+    {
+     "n": "ROLL-BAR™ 125",
+     "s": "roll-bar-125",
+     "img": "38/62445f283f76d_roll-bar-125-overview.png",
+     "br": 1,
+     "t": "NOWOCZESNE WZORNICTWO. SPRAWDZONA PROSTOTA. Nowa prasa stałokomorowa Roll-Bar™ 125 formuje bele o średnicy 1,25 m i kontynuuje najlepsze tradycje rekordzistów w"
+    },
+    {
+     "n": "BR 100",
+     "s": "br-100",
+     "img": "39/62445f6a65a64_br-round-baler-overview.png",
+     "br": 1,
+     "t": "NOWOCZESNA EFEKTYWNOŚĆ. SPRAWDZONA PROSTOTA. PRZEDSTAWIAMY NOWĄ SERIĘ BR100. Stałokomorowe prasy zwijające New Holland BR120 Utility i BR150 Utility formują bel"
+    }
+   ]
+  },
+  {
+   "c": "Sieczkarnie samobieżne",
+   "s": "sieczkarnie-samobiezne",
+   "items": [
+    {
+     "n": "FR FORAGE CRUISER STAGE V",
+     "s": "fr-forage-cruiser-stage-v",
+     "img": "40/6244620b5ebf6_fr-stage-v-overview.png",
+     "br": 1,
+     "t": "NIEZRÓWNANA WYDAJNOŚĆ Marka New Holland zdaje sobie sprawę, iż wydajność sieczkarni samobieżnych ma kluczowe znaczenie oraz że użytkownicy naszych maszyn marzą "
+    }
+   ]
+  },
+  {
+   "c": "Pługi",
+   "s": "plugi",
+   "items": [
+    {
+     "n": "ZAWIESZANE PŁUGI OBRACALNE",
+     "s": "zawieszane-plugi-obracalne",
+     "img": "41/6244625e0bc3d_full-mounted-reversible-overview.png",
+     "br": 1,
+     "t": "EFEKTYWNA ORKA Na przestrzeni wieków orka należała do najskuteczniejszych metod usuwania chwastów. Wśród licznych zalet orki można by wymienić przerywanie kapil"
+    },
+    {
+     "n": "ZAWIESZANE PŁUGI OBRACALNE ZE ZMIENNĄ SZEROKOŚCIĄ ROBOCZĄ",
+     "s": "zawieszane-plugi-obracalne-ze-zmienna-szerokoscia-robocza",
+     "img": "42/62446281e5b59_full-mounted-reversible-overview.png",
+     "br": 1,
+     "t": "EFEKTYWNA ORKA Na przestrzeni wieków orka należała do najskuteczniejszych metod usuwania chwastów. Wśród licznych zalet orki można by wymienić przerywanie kapil"
+    },
+    {
+     "n": "PÓŁZAWIESZANE PŁUGI OBRACALNE",
+     "s": "polzawieszane-plugi-obracalne",
+     "img": "43/6244629cb5673_semi-mounted-reversible-overview.png",
+     "br": 1,
+     "t": "EFEKTYWNA ORKA Na przestrzeni wieków orka należała do najskuteczniejszych metod usuwania chwastów. Wśród licznych zalet orki można by wymienić przerywanie kapil"
+    },
+    {
+     "n": "PÓŁZAWIESZANE PŁUGI OBRACALNE ZE ZMIENNĄ SZEROKOŚCIĄ ROBOCZĄ",
+     "s": "polzawieszane-plugi-obracalne-ze-zmienna-szerokoscia-robocza",
+     "img": "44/624462c01a5c6_semi-mounted-reversible-overview.png",
+     "br": 1,
+     "t": "EFEKTYWNA ORKA Na przestrzeni wieków orka należała do najskuteczniejszych metod usuwania chwastów. Wśród licznych zalet orki można by wymienić przerywanie kapil"
+    }
+   ]
+  },
+  {
+   "c": "Maszyny uprawne",
+   "s": "maszyny-uprawne",
+   "items": [
+    {
+     "n": "KULTYWATORY ŚCIERNISKOWE",
+     "s": "kultywatory-scierniskowe",
+     "img": "45/624463697a887_stubble-cultivators-overview.png",
+     "br": 1,
+     "t": "KORZYŚCI Z KULTYWACJI ŚCIERNISKA Inteligentne wykorzystanie ścierniska może przynieść znaczące korzyści agronomiczne dla rolników prowadzących duże gospodarstwa"
+    },
+    {
+     "n": "KULTYWATORY UPRAWOWE",
+     "s": "kultywatory-uprawowe",
+     "img": "46/6244638ced03c_seedbed-cultivators-overview.png",
+     "br": 1,
+     "t": "KULTYWATORY UPRAWOWE W PRACY Gama kultywatorów uprawowych New Holland może pracować z precyzyjną głębokością roboczą ze względu na brak sił zewnętrznych przenos"
+    },
+    {
+     "n": "MASZYNY UPRAWOWE KOMPAKTOWE BRONY TALERZOWE SDM I SDH",
+     "s": "maszyny-uprawowe-kompaktowe-brony-talerzowe-sdm-i-sdh",
+     "img": "47/624463e15ee67_sdm-sdh-disc-cultivator-overview.png",
+     "br": 1,
+     "t": "ZAPROJEKTOWANE Z KORZYŚCIĄ DLA TWOJEJ GLEBY Oprócz sprawdzonych korzyści dla środowiska, dobry stan gleby to kluczowy czynnik dla wydajności produkcyjnej oraz t"
+    },
+    {
+     "n": "MASZYNY UPRAWOWE GŁĘBOSZE SUM I SUH",
+     "s": "maszyny-uprawowe-glebosze-sum-i-suh",
+     "img": "48/6244640c93834_sum-suh-subsoilers-overview.png",
+     "br": 1,
+     "t": "ZADBAJ O ŻYZNOŚĆ GLEBY Głębosze New Holland serii SUM przeznaczone do pracy w umiarkowanie ciężkich warunkach i SUH do pracy ciężkiej charakteryzują się wyjątko"
+    },
+    {
+     "n": "MASZYNY UPRAWOWE PIELNIKI MIĘDZYRZĘDOWE",
+     "s": "maszyny-uprawowe-pielniki-miedzyrzedowe",
+     "img": "49/6244642878e33_interrow-cultivator-overview.png",
+     "br": 1,
+     "t": "UPRAWA MIĘDZYRZĘDOWA Gama pielników międzyrzędowych SRC marki New Holland pomaga zwalczać chwasty przy jednoczesnym zmniejszeniu zużycia herbicydów czyniąc prac"
+    }
+   ]
+  },
+  {
+   "c": "Maszyny budowlane",
+   "s": "maszyny-budowlane",
+   "items": [
+    {
+     "n": "KOMPAKTOWE ŁADOWARKI KOŁOWE",
+     "s": "kompaktowe-ladowarki-kolowe",
+     "img": "50/624464d65463e_compact-wheel-loaders-overview.png",
+     "br": 1,
+     "t": "NISKI CAŁKOWITY KOSZT POSIADANIA Modele serii C są wyposażone w zaawansowany, 4-cylindrowy, silnik Common Rail o pojemności 3,4 litra z turbodoładowaniem i wtry"
+    },
+    {
+     "n": "ŁADOWARKI KOŁOWE",
+     "s": "ladowarki-kolowe",
+     "img": "51/62446545ca676_wheel-loaders-overview.png",
+     "br": 1,
+     "t": "SKUPIENIE NA ROLNICTWIE. PRODUKTYWNOŚĆ PRZEMYSŁOWA. Ładowarki kołowe New Holland W110 D, W130 D, W170 D i W190 D zostały zaprojektowane z myślą o potrzebach rol"
+    },
+    {
+     "n": "KOPARKO-ŁADOWARKI",
+     "s": "koparko-ladowarki",
+     "img": "52/624465881938a_backhoe-loaders-overview.png",
+     "br": 1,
+     "t": "IDEALNE DO TWOICH POTRZEB Wielu przedsiębiorców potrzebuje ładowarki oferującej wszechstronność, aby wykonać znacznie szerszy zakres prac, niż tylko przenoszeni"
+    },
+    {
+     "n": "MINIŁADOWARKI BURTOWE KOŁOWE I GĄSIENICOWE SERII 300",
+     "s": "miniladowarki-burtowe-kolowe-i-gasienicowe-serii-300",
+     "img": "53/624465a34c9b9_300-series-skid-steer-compact-track-loaders-overview.png",
+     "br": 1,
+     "t": "STWORZONE Z MYŚLĄ O TOBIE Ładowarki ze sterowaniem burtowym i kompaktowe ładowarki gąsienicowe marki New Holland to niezawodne maszyny robocze, które podołają k"
+    },
+    {
+     "n": "MINIŁADOWARKI BURTOWE KOŁOWE I GĄSIENICOWE SERII 200",
+     "s": "miniladowarki-burtowe-kolowe-i-gasienicowe-serii-200",
+     "img": "54/62446611e5fb7_skid-steer-loader-overview.png",
+     "br": 1,
+     "t": "ZBUDOWANY WOKÓŁ CIEBIE Nowe miniładowarki kołowe oraz gąsienicowe Holland to niezawodne konie robocze, które sprostają każdemu wyzwaniu. Seria 200 firmy New Hol"
+    },
+    {
+     "n": "MINI KOPARKI GĄSIENICOWE",
+     "s": "mini-koparki-gasienicowe",
+     "img": "55/6244662d99601_mini-crawler-excavators-overview.png",
+     "br": 1,
+     "t": "WŁAŚCIWE NARZĘDZIE DO TEJ PRACY Mini koparki gąsienicowe New Holland mają udźwig od 1,7 do 6,0 ton. W ofercie znajdują się modele z zadaszeniem lub kabiną, o ko"
+    }
+   ]
+  }
+ ],
+ "pl": [
+  [
+   "/pl",
+   200,
+   "Autoryzowany Przedstawiciel New Holland",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny",
+   200,
+   "Oferta",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/traktory",
+   200,
+   "Traktory",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/ladowarki-teleskopowe",
+   200,
+   "Ładowarki teleskopowe",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/kombajny-zbozowe",
+   200,
+   "Kombajny zbożowe",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-zielonkowe",
+   200,
+   "Maszyny zielonkowe",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/prasy",
+   200,
+   "Prasy",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/sieczkarnie-samobiezne",
+   200,
+   "Sieczkarnie samobieżne",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/plugi",
+   200,
+   "Pługi",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-uprawne",
+   200,
+   "Maszyny uprawne",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-budowlane",
+   200,
+   "Maszyny budowlane",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/uslugi",
+   200,
+   "Usługi",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/uslugi/czesci",
+   200,
+   "Części",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/uslugi/serwis",
+   200,
+   "Serwis",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/uslugi/finansowanie",
+   200,
+   "Finansowanie",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/uslugi/likwidacja-szkod",
+   200,
+   "Likwidacja szkód",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/uslugi/rolnictwo-precyzyjne",
+   200,
+   "Rolnictwo precyzyjne",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci",
+   200,
+   "Aktualności",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/strony/o-nas",
+   200,
+   "O nas",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/strony/praca",
+   200,
+   "Praca",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/strony/praca/mechanik-maszyn-rolniczych-pomocnik-mechanika-widnik-lub-miczyn-kolonia-koo-zamocia",
+   200,
+   "Mechanik maszyn rolniczych, pomocnik mechanika - Świdnik lub Miączyn Kolonia koło Zamościa",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/strony/praca/specjalista-ds-sprzedazy-maszyn-rolniczych-woj-lubelskie",
+   200,
+   "Specjalista ds. sprzedaży maszyn rolniczych - woj. lubelskie",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/strony/praca/magazynier-widnik",
+   200,
+   "Magazynier - Świdnik",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galerie",
+   200,
+   "Galeria",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/kontakt",
+   200,
+   "Kontakt",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/kontakt/order",
+   200,
+   "Potrzebujesz profesjonalnego serwisu?",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/kontakt/support",
+   200,
+   "Potrzebujesz profesjonalnego serwisu?",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/akcja-promocyjna-listopad-2026",
+   200,
+   "AKCJA PROMOCYJNA LISTOPAD 2026",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/w-sezonie-jesienno-zimowym-dzia-czci-nie-pracuje-w-soboty",
+   200,
+   "W sezonie jesienno-zimowym dział części nie pracuje w soboty!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/akcja-promocyjna-wrzesie-2026",
+   200,
+   "AKCJA PROMOCYJNA WRZESIEŃ 2026",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/strony/https://cnhi-dealer-rolmax.webmag.io/rolnictwo-precyzyjne-2026/start",
+   404,
+   "Autoryzowany Przedstawiciel New Holland",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/traktory/t8-genesis",
+   200,
+   "T8 GENESIS™",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/traktory/t7-heavy-duty-z-plm-intelligence",
+   200,
+   "T7 HEAVY DUTY Z PLM INTELLIGENCE™",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/traktory/t7-heavy-duty-stage-v",
+   200,
+   "T7 HEAVY DUTY - STAGE V",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/traktory/t7-heavy-duty",
+   200,
+   "T7 HEAVY DUTY",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/traktory/t7-lwb-stage-v",
+   200,
+   "T7 LWB - STAGE V",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/traktory/t7-swb-stage-v",
+   200,
+   "T7 SWB - STAGE V",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/traktory/t7s-stage-v",
+   200,
+   "T7S - STAGE V",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/traktory/t6-methane-power",
+   200,
+   "T6 METHANE POWER",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/traktory/t6-electro-dynamic-auto-command-stage-v",
+   200,
+   "T6 ELECTRO / DYNAMIC / AUTO COMMAND - STAGE V",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/traktory/t6-electro-command-dynamic-command-auto-command",
+   200,
+   "T6 ELECTRO COMMAND / DYNAMIC COMMAND / AUTO COMMAND",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/traktory/t5-dynamic-command-i-auto-command",
+   200,
+   "T5 DYNAMIC COMMAND™ I AUTO COMMAND™",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/traktory/t5-electro-command",
+   200,
+   "T5 ELECTRO COMMAND",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/traktory/t5-utility-stage-v",
+   200,
+   "T5 UTILITY - STAGE V",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/traktory/t4-f-n-v",
+   200,
+   "T4 F/N/V",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/traktory/t4-stage-v",
+   200,
+   "T4 - STAGE V",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/traktory/t4s-stage-v",
+   200,
+   "T4S - STAGE V",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/traktory/t3f",
+   200,
+   "T3.F",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/traktory/boomer-25-c-55",
+   200,
+   "BOOMER 25 C–55",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/ladowarki-teleskopowe/serii-th",
+   200,
+   "SERII TH",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/kombajny-zbozowe/ch",
+   200,
+   "CH",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/kombajny-zbozowe/cr-revelation-stage-v",
+   200,
+   "CR REVELATION - STAGE V",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/kombajny-zbozowe/cx7-i-cx8-stage-v",
+   200,
+   "CX7 I CX8 - STAGE V",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/kombajny-zbozowe/cx5-i-cx6-stage-v",
+   200,
+   "CX5 I CX6 - STAGE V",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/kombajny-zbozowe/tc-stage-v",
+   200,
+   "TC - STAGE V",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-zielonkowe/kosiarki-czolowe",
+   200,
+   "KOSIARKI CZOŁOWE",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-zielonkowe/kosiarki-mocowane-z-tylu",
+   200,
+   "KOSIARKI MOCOWANE Z TYŁU",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-zielonkowe/kosiarki-ciagane",
+   200,
+   "KOSIARKI CIĄGANE",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-zielonkowe/kosiarki-megacutter",
+   200,
+   "KOSIARKI MEGACUTTER™",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-zielonkowe/przetrzasacze",
+   200,
+   "PRZETRZĄSACZE",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-zielonkowe/zgrabiarki-prorotor",
+   200,
+   "ZGRABIARKI PROROTOR™",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-zielonkowe/zgrabiarki-prorotor-c",
+   200,
+   "ZGRABIARKI PROROTOR™ C",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-zielonkowe/zgrabiarki-prorotor-l",
+   200,
+   "ZGRABIARKI PROROTOR™ L",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/prasy/bigbaler-high-density",
+   200,
+   "BIGBALER HIGH DENSITY",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/prasy/bigbaler-plus",
+   200,
+   "BIGBALER PLUS",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/prasy/roll-baler",
+   200,
+   "ROLL BALER",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/prasy/roll-belt",
+   200,
+   "ROLL-BELT",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/prasy/roll-bar-125",
+   200,
+   "ROLL-BAR™ 125",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/prasy/br-100",
+   200,
+   "BR 100",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/sieczkarnie-samobiezne/fr-forage-cruiser-stage-v",
+   200,
+   "FR FORAGE CRUISER STAGE V",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/plugi/zawieszane-plugi-obracalne",
+   200,
+   "ZAWIESZANE PŁUGI OBRACALNE",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/plugi/zawieszane-plugi-obracalne-ze-zmienna-szerokoscia-robocza",
+   200,
+   "ZAWIESZANE PŁUGI OBRACALNE ZE ZMIENNĄ SZEROKOŚCIĄ ROBOCZĄ",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/plugi/polzawieszane-plugi-obracalne",
+   200,
+   "PÓŁZAWIESZANE PŁUGI OBRACALNE",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/plugi/polzawieszane-plugi-obracalne-ze-zmienna-szerokoscia-robocza",
+   200,
+   "PÓŁZAWIESZANE PŁUGI OBRACALNE ZE ZMIENNĄ SZEROKOŚCIĄ ROBOCZĄ",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-uprawne/kultywatory-scierniskowe",
+   200,
+   "KULTYWATORY ŚCIERNISKOWE",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-uprawne/kultywatory-uprawowe",
+   200,
+   "KULTYWATORY UPRAWOWE",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-uprawne/maszyny-uprawowe-kompaktowe-brony-talerzowe-sdm-i-sdh",
+   200,
+   "MASZYNY UPRAWOWE KOMPAKTOWE BRONY TALERZOWE SDM I SDH",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-uprawne/maszyny-uprawowe-glebosze-sum-i-suh",
+   200,
+   "MASZYNY UPRAWOWE GŁĘBOSZE SUM I SUH",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-uprawne/maszyny-uprawowe-pielniki-miedzyrzedowe",
+   200,
+   "MASZYNY UPRAWOWE PIELNIKI MIĘDZYRZĘDOWE",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-budowlane/kompaktowe-ladowarki-kolowe",
+   200,
+   "KOMPAKTOWE ŁADOWARKI KOŁOWE",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-budowlane/ladowarki-kolowe",
+   200,
+   "ŁADOWARKI KOŁOWE",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-budowlane/koparko-ladowarki",
+   200,
+   "KOPARKO-ŁADOWARKI",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-budowlane/miniladowarki-burtowe-kolowe-i-gasienicowe-serii-300",
+   200,
+   "MINIŁADOWARKI BURTOWE KOŁOWE I GĄSIENICOWE SERII 300",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-budowlane/miniladowarki-burtowe-kolowe-i-gasienicowe-serii-200",
+   200,
+   "MINIŁADOWARKI BURTOWE KOŁOWE I GĄSIENICOWE SERII 200",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/maszyny/maszyny-budowlane/mini-koparki-gasienicowe",
+   200,
+   "MINI KOPARKI GĄSIENICOWE",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/akcja-promocyjna-sierpie-2026",
+   200,
+   "AKCJA PROMOCYJNA SIERPIEŃ 2026",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/akcja-promocyjna-lipiec-2026",
+   200,
+   "AKCJA PROMOCYJNA LIPIEC 2026",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/wspieramy-polskie-rolnictwo",
+   200,
+   "WSPIERAMY POLSKIE ROLNICTWO!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/akcja-promocyjna-czerwiec-2026",
+   200,
+   "AKCJA PROMOCYJNA CZERWIEC 2026",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/finansowanie-na-twoich-zasadach-do-10-lat",
+   200,
+   "Finansowanie na Twoich zasadach do 10 lat",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/t5s-ciagnik-ktory-si-opaca-",
+   200,
+   "T5S - CIAGNIK, KTORY SIĘ OPŁACA ❗",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/akcja-promocyjna-maj-2026",
+   200,
+   "AKCJA PROMOCYJNA MAJ 2026",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galerie/pokazy-polowe-widnik-2024",
+   200,
+   "Pokazy polowe Świdnik 2024",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galerie/targi-rolnicze-agro-park-2024",
+   200,
+   "Targi Rolnicze AGRO-PARK 2024",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galerie/sitno-2023",
+   200,
+   "Sitno 2023",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galerie/dni-otwarte-rudnik-2023",
+   200,
+   "Dni otwarte Rudnik 2023",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galerie/agropark-lublin-2023",
+   200,
+   "AgroPark Lublin 2023",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galerie/sitno-2022",
+   200,
+   "Sitno 2022",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galerie/dni-otwarte-rolmax-2019",
+   200,
+   "Dni otwarte Rolmax 2019",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galerie/targi-agrotech-2019",
+   200,
+   "Targi Agrotech 2019",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galerie/targi-agro-park-2019",
+   200,
+   "Targi Agro-Park 2019",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galerie/jagodowe-trendy-2019",
+   200,
+   "Jagodowe Trendy 2019",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galerie/rolmax-na-best-berries-2018",
+   200,
+   "Rolmax na Best Berries 2018",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/wiosna-jest-tu-za-rogiem",
+   200,
+   "Wiosna jest tuż za rogiem!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/jedna-wystawa-dwie-nagrody",
+   200,
+   "Jedna wystawa, dwie nagrody",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/informacje-o-dofinansowaniach-prow",
+   200,
+   "Informacje o dofinansowaniach PROW",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/jesien-2017-zniwa-cenowe",
+   200,
+   "JESIEŃ 2017 - ŻNIWA CENOWE",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/akcja-promocyjna-padziernik-2026",
+   200,
+   "Aktualności",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/yczenia-witeczne",
+   200,
+   "Życzenia świąteczne",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/podkr-swoj-wydajno",
+   200,
+   "Podkręć swoją WYDAJNOŚĆ!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/lipcowa-akcja-promocyjna",
+   200,
+   "LIPCOWA AKCJA PROMOCYJNA",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/grudniowa-akcja-promocyjna",
+   200,
+   "GRUDNIOWA AKCJA PROMOCYJNA",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/inwentaryzacja",
+   200,
+   "Inwentaryzacja",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/dni-otwarte-rolmax-2018",
+   200,
+   "Dni otwarte Rolmax 2018",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/kombajn-cr-nagrodzony",
+   200,
+   "Kombajn CR nagrodzony!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/listopadowa-akcja-promocyjna",
+   200,
+   "LISTOPADOWA AKCJA PROMOCYJNA",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/uwaga-konkurs-2",
+   200,
+   "UWAGA KONKURS",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/zaplac-karta-w-rolmaxie",
+   200,
+   "Zapłać kartą w Rolmax'ie",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/biegamy-i-pomagamy",
+   200,
+   "Biegamy i pomagamy",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/powtrz-sukces",
+   200,
+   "Powtórz sukces!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/wrzeniowa-akcja-promocyjna",
+   200,
+   "WRZEŚNIOWA AKCJA PROMOCYJNA",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/zamw-cignik-z-serii-t7-hd-i-wyjed-z-nami-do-wiednia",
+   200,
+   "Zamów ciągnik z serii T7 HD i wyjedź z nami do WIEDNIA!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/bd-gotowy-na-sezon",
+   200,
+   "Bądź gotowy na sezon",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/goraca-niedziela-w-konskowoli",
+   200,
+   "Gorąca niedziela w Końskowoli",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/sitno-2018",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/specjalna-promocja-na-zniwa",
+   200,
+   "Specjalna promocja na żniwa",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/jagodowe-trendy-krasnik-2016",
+   200,
+   "Jagodowe Trendy Kraśnik 2016",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/targi-agro-park-lublin-2016",
+   200,
+   "Targi Agro-Park Lublin 2016",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/nasze-pierwsze-dni-pola-w-obrokach",
+   200,
+   "Nasze pierwsze Dni Pola w Obrokach",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/jesienny-przeglad-ciagnika-z-15-rabatem",
+   200,
+   "Jesienny przegląd ciągnika z 15% rabatem",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/naprawy-zimowe-z-rabatem",
+   200,
+   "Naprawy zimowe z rabatem",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/targi-rolnicze-agro-park-2024",
+   200,
+   "Targi Rolnicze AGRO-PARK 2024",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/yczenia-wielkanocne",
+   200,
+   "Życzenia Wielkanocne",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/sezon-w-peni-z-olejami-ambra",
+   200,
+   "Sezon w pełni z olejami AMBRA!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/przeglady-z-15-rabatem-gratis",
+   200,
+   "Przeglądy z 15% rabatem. Gratis!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/uwaga-konkurs-5",
+   200,
+   "UWAGA KONKURS",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/zapraszamy-na-przeglad-kombajnu",
+   200,
+   "Zapraszamy na przegląd kombajnu",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/goraca-niedziela-w-konskowoli",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/finansowanie-pras-50x50",
+   200,
+   "Finansowanie PRAS 50x50!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/wyprzeda-rocznika-finansowanie-ju-od-0",
+   200,
+   "WYPRZEDAŻ ROCZNIKA Finansowanie już od 0%",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/konkurs-dla-gosci-dni-otwartych",
+   200,
+   "Konkurs dla gości Dni Otwartych",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/kampania-wiosenna-rabaty-na-oryginalne-czci-zamienne",
+   200,
+   "Kampania wiosenna - rabaty na oryginalne części zamienne",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/agro-show-2013",
+   200,
+   "Agro Show 2013",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/sitno-2013",
+   200,
+   "Sitno 2013",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/pokazy-polowe-widnik-2024",
+   200,
+   "Pokazy polowe Świdnik 2024",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/promocja-serwis-zimowy",
+   200,
+   "Promocja: Serwis zimowy",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/demo-tour-2013",
+   200,
+   "Demo Tour 2013",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/nowy-oddzial-firmy-w-bialce-kolo-radzynia-podlaskiego",
+   200,
+   "Nowy oddział firmy w Białce koło Radzynia Podlaskiego",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/sigaj-dalej-rabat-na-czci-niwne",
+   200,
+   "Sięgaj dalej - rabat na części żniwne",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/sierpniowa-akcja-promocyjna",
+   200,
+   "SIERPNIOWA AKCJA PROMOCYJNA",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/styczniowa-akcja-promocyjna",
+   200,
+   "STYCZNIOWA AKCJA PROMOCYJNA",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/targi-rolnicze-agro-park-2024-podsumowanie",
+   200,
+   "Targi Rolnicze AGRO-PARK 2024 - podsumowanie",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/targi-agrotech-kielce-2015",
+   200,
+   "Targi Agrotech Kielce 2015",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/wigilia-2021",
+   200,
+   "Wigilia 2021",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/akcja-promocyjna-luty-2026",
+   200,
+   "AKCJA PROMOCYJNA LUTY 2026",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/niebiesko-zolto-w-sitnie",
+   200,
+   "Niebiesko-żółto w Sitnie",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/dni-otwarte-rolmax-2018",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/dozynki-2015",
+   200,
+   "Dożynki 2015",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/jagodowe-trendy-krasnik-2018",
+   200,
+   "Jagodowe Trendy Kraśnik 2018",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/blue-week",
+   200,
+   "BLUE WEEK",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/agrotech-2018",
+   200,
+   "Agrotech 2018",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/rolmax-na-best-berries-2017",
+   200,
+   "Rolmax na Best Berries 2017",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/uwaga-konkurs",
+   200,
+   "Uwaga KONKURS",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/promocja-filtry-oleju-10-taniej",
+   200,
+   "PROMOCJA - Filtry oleju 10% taniej",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/wyniki-konkursu-targowego",
+   200,
+   "Wyniki konkursu targowego",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/biegamy-i-pomagamy",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/promocja-boomer-25-oraz-boomer-35",
+   200,
+   "Promocja Boomer 25 oraz Boomer 35",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/sezon-dozynkowy-czas-start",
+   200,
+   "Sezon dożynkowy - czas start",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/rolmax-w-agrolidze",
+   200,
+   "Rolmax w Agrolidze",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/rolmax-na-jagodowych-trendach",
+   200,
+   "Rolmax na Jagodowych Trendach",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/posezonowe-czyszczenie-magazynw",
+   200,
+   "Aktualności",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/wyniki-konkursu",
+   200,
+   "WYNIKI KONKURSU",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/ostatnie-kombajny-na-sezon-2022",
+   200,
+   "Ostatnie kombajny na sezon 2022",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/prezentacja-nowego-ciagnika-new-holland-serii-t7000-blue-power",
+   200,
+   "Prezentacja nowego ciągnika NEW HOLLAND serii T7000 Blue Power",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/dni-produktu-plm-z-10-rabatu",
+   200,
+   "Dni Produktu: PLM z 10% rabatu",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/kverneland-promocja",
+   200,
+   "Kverneland promocja",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/przewodnik-po-systemie-scr",
+   200,
+   "Przewodnik po systemie SCR",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/jagodowe-trendy-2016",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/pandemia-koronowirusa",
+   200,
+   "Pandemia Koronowirusa",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/wielkanoc-2023",
+   200,
+   "Wielkanoc 2023",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/zmiany-godziny-pracy-23092022-r",
+   200,
+   "Zmiany godziny pracy 23.09.2022 r.",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/innowacyjne-uslugi",
+   200,
+   "Innowacyjne usługi",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/nasze-pierwsze-dni-pola-w-obrokach",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/promocja-filtry-do-20-taniej",
+   200,
+   "PROMOCJA - Filtry do 20% taniej",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/majowe-okazje",
+   200,
+   "Majowe okazje",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/nowy-sezon-nowe-wymagania-",
+   200,
+   "Nowy sezon, nowe wymagania ❗",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/swieto-plonow-w-gorzkowie-2017",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/w-dniu-1112023-wszystkie-placwki-zamknite",
+   200,
+   "W dniu 1.11.2023 wszystkie placówki zamknięte!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/promocja-kup-kombajn-dostaniesz-rower",
+   200,
+   "PROMOCJA Kup kombajn dostaniesz rower",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/zielone-demo-wiosna-2016",
+   200,
+   "Zielone DEMO Wiosna 2016",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/przedsezonowa-oferta-na-kombajny",
+   200,
+   "PrzedsezoNOWA oferta na kombajny",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/finansowanie-fabryczne-jedynie-z-10-wkadem-wasnym",
+   200,
+   "Finansowanie fabryczne jedynie z 10% wkładem własnym!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/sobota-31032013",
+   200,
+   "Sobota 31.03.2013",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/zapraszamy-na-dni-otwarte-1516092017",
+   200,
+   "Zapraszamy na Dni Otwarte 15,16.09.2017",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/akcja-promocyjna-kwiecie-2026",
+   200,
+   "AKCJA PROMOCYJNA KWIECIEŃ 2026",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/prawdziwe-0-na-kombajny",
+   200,
+   "Prawdziwe 0% na kombajny",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/fotorelacja-z-pokazow-polowych",
+   200,
+   "Fotorelacja z pokazów polowych",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/new-holland-lider-rynku-po-raz-dziewiaty",
+   200,
+   "New Holland - Lider Rynku po raz dziewiąty",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/w-dniach-24-26122024-oraz-28122024-wszystkie-nasze-placwki-bd-zamknite",
+   200,
+   "W dniach 24-26.12.2024 oraz 28.12.2024 wszystkie nasze placówki będą zamknięte!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/jagodowe-trendy-2017",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/uwaga-konkurs-3",
+   200,
+   "UWAGA KONKURS",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/targi-rolnicze-agro-park-2023",
+   200,
+   "Targi Rolnicze AGRO-PARK 2023",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/wez-udzial-w-losowaniu-i-wygraj",
+   200,
+   "Weź udział w losowaniu i wygraj!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/tylko-teraz-system-plm-za-jedyne-990-zl",
+   200,
+   "Tylko teraz system PLM za jedyne 990 zł!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/agrotech-kielce-2017-17-19-marca-2017",
+   200,
+   "AGROTECH KIELCE 2017 - 17-19 marca 2017",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/rolmax-na-best-berries-2017",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/zapraszamy-na-dni-otwarte",
+   200,
+   "Zapraszamy na Dni Otwarte",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/21052022-r-sklepy-stacjonarne-nieczynne",
+   200,
+   "21.05.2022 r. sklepy stacjonarne NIECZYNNE",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/targi-agrotech-2017",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/padziernikowa-akcja-promocyjna",
+   200,
+   "PAŹDZIERNIKOWA AKCJA PROMOCYJNA",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/zielone-demo-wiosna-2016",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/nawet-8-kombajnow-na-zmiane",
+   200,
+   "Nawet 8 kombajnów na zmianę",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/wizyta-w-fabryce-new-holland",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/nie-zwalniaj-tempa",
+   200,
+   "Nie zwalniaj tempa!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/new-holland-t590s-najczciej-kupowanym-cignikiem-rolniczym-w-polsce-w-2024-roku",
+   200,
+   "New Holland T5.90S najczęściej kupowanym ciągnikiem rolniczym w Polsce w 2024 roku!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/czerwcowa-akcja-promocyjna",
+   200,
+   "CZERWCOWA AKCJA PROMOCYJNA",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/przed-sezonem-taniej",
+   200,
+   "Przed sezonem taniej",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/rudnik",
+   200,
+   "Rudnik",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/fina-sezonu-przegld-posezonowy",
+   200,
+   "FINAŁ SEZONU - Przegląd posezonowy!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/regenerowane-czci-new-holland",
+   200,
+   "Regenerowane części New Holland",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/zapraszamy-wszystkich-na-dni-otwarte-w-rolmax",
+   200,
+   "Zapraszamy wszystkich na Dni otwarte w Rolmax",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/akcja-promocyjna-marzec-2026",
+   200,
+   "AKCJA PROMOCYJNA MARZEC 2026",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/uzyskaj-200-000-z-dofinansowania",
+   200,
+   "Uzyskaj 200 000 zł dofinansowania!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/zabawki-w-naszym-sklepie",
+   200,
+   "Zabawki w naszym sklepie",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/wirtualne-targi-rolnicze-youniverse",
+   200,
+   "Wirtualne targi rolnicze YOUNIVERSE",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/targi-agrotech-2015",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/targi-agro-park-2019",
+   200,
+   "Targi Agro-Park 2019",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/targi-agro-park-2019",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/relacja-z-sitna",
+   200,
+   "Relacja z Sitna",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/wygraj-wyjazd-do-londynu",
+   200,
+   "Wygraj wyjazd do Londynu",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/sitno-2017",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/galeria/sitno-2016",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/zapraszamy-na-agro-park-lublin",
+   200,
+   "Zapraszamy na Agro-Park Lublin",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/wydajno-produktywno-synchronizacja",
+   200,
+   "Wydajność. Produktywność. Synchronizacja.",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/agro-park-2018",
+   200,
+   "Agro-Park 2018",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/targi-agro-park-2018",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/wiosenny-przeglad-kombajnow-new-holland",
+   200,
+   "Wiosenny przegląd kombajnów New Holland",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/godziny-pracy-wielkanoc-2023",
+   200,
+   "Godziny pracy Wielkanoc 2023",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/dni-otwarte-rolmax-2015",
+   200,
+   "Dni otwarte Rolmax 2015",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/czci-regenerowane-reman",
+   200,
+   "Części regenerowane REMAN",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/nawet-20-taniej-na-zniwa",
+   200,
+   "Nawet 20% taniej na żniwa",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/dozynki-powiatu-lubartowskiego-2015",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/galeria/dozynki-powiatu-radzynskiego-2015",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/galeria/dozynki-gminy-ostrow-lubelski-2015",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/szkolenie-polowe-unia-group",
+   200,
+   "Szkolenie polowe Unia Group",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/dozynki-rudno-pow-parczewski-2015",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/top-10-czesci-rolmax",
+   200,
+   "Top 10 Części Rolmax",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/jagodowe-trendy-2019",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/rolmax-dla-sadownikow",
+   200,
+   "Rolmax dla sadowników",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/uwaga-konkurs-4",
+   200,
+   "UWAGA KONKURS",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/targi-agrotech-2018",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/midzynarodowe-targi-rolnicze-agro-show-2022",
+   200,
+   "Międzynarodowe Targi Rolnicze AGRO SHOW 2022",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/uwaga-konkurs-zniwa-zniwa-i-po-zniwach",
+   200,
+   "UWAGA KONKURS! Żniwa, żniwa i po żniwach...",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/rolmax-w-agrolidze",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/rolmax-na-best-berries-2018",
+   200,
+   "Rolmax na Best Berries 2018",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/finansowanie-fabryczne-ju-od-0-dla-cignikw-z-serii-boomer",
+   200,
+   "Finansowanie fabryczne już od 0% dla ciągników z serii BOOMER!",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/cignik-new-holland-t5-dual-command-wszechstronny-nowoczesny-niezawodny",
+   200,
+   "Ciągnik New Holland T5 Dual Command - WSZECHSTRONNY. NOWOCZESNY. NIEZAWODNY.",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/dni-produktu-czesci-tnace-i-do-hedera-10-taniej",
+   200,
+   "DNI PRODUKTU - Części tnące i do hedera 10% taniej",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/wielkanoc-2022",
+   200,
+   "Wielkanoc 2022",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/sitno-2022",
+   200,
+   "Sitno 2022",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/yczenia-z-okazji-wit-boego-narodzenia",
+   200,
+   "Życzenia z okazji Świąt Bożego Narodzenia",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/uroczyste-otwarcie-oddzialu-w-miaczynie",
+   200,
+   "Uroczyste otwarcie oddziału w Miączynie",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/wigilia-2020",
+   200,
+   "Aktualności",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/dni-otwarte-rolmax-2019",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/dni-otwarte-rolmax-2019",
+   200,
+   "Dni Otwarte Rolmax 2019",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/rolmax-dla-sadownikow",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/inwentaryzacja-2023",
+   200,
+   "Inwentaryzacja 2023",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/spotkania-na-polach-demonstracyjnych-rzepaku-2017",
+   200,
+   "Spotkania na polach demonstracyjnych rzepaku 2017",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/spotkania-na-polach-demonstracyjnych-rzepaku-2017",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/galeria/szkolenie-polowe-unia-group",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/wygraj-kalendarz-rolmaxu",
+   200,
+   "Wygraj kalendarz Rolmax'u",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/kampania-filtry-2024",
+   200,
+   "Kampania filtry 2024",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/rolmax-na-swieta",
+   200,
+   "Rolmax na Święta",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/fotorelacja-z-pokazow-polowych",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/rolmax-na-agro-show-w-ulezu",
+   200,
+   "Rolmax na Agro Show w Ułężu",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/udany-debiut-t7-hd-w-polsce",
+   200,
+   "Udany debiut T7 HD w Polsce",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/aktualnosci/targi-agrotech-kielce-2016",
+   200,
+   "Targi Agrotech Kielce 2016",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/targi-agrotech-2016",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/targi-agro-park-lublin-2015",
+   200,
+   "Targi Agro-Park Lublin 2015",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/targi-agro-park-2015",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/galeria/rolmax-na-best-berries-2018",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/wyprzedaz-rocznika-2018",
+   200,
+   "Wyprzedaż Rocznika 2018",
+   "public/images/template/loader.svg"
+  ],
+  [
+   "/pl/galeria/dni-otwarte-rolmax-2015",
+   404,
+   "",
+   ""
+  ],
+  [
+   "/pl/aktualnosci/wyprzedaz-nowa-lista-maszyn",
+   200,
+   "WYPRZEDAŻ - nowa lista maszyn",
+   "public/images/template/loader.svg"
+  ]
+ ],
+ "bad": [
+  [
+   "/pl/strony/https://cnhi-dealer-rolmax.webmag.io/rolnictwo-precyzyjne-2026/start",
+   "/pl"
+  ],
+  [
+   "/pl/galeria/sitno-2018",
+   "/pl/aktualnosci/jedna-wystawa-dwie-nagrody"
+  ],
+  [
+   "/pl/galeria/goraca-niedziela-w-konskowoli",
+   "/en/aktualnosci/goraca-niedziela-w-konskowoli"
+  ],
+  [
+   "/pl/galeria/dni-otwarte-rolmax-2018",
+   "/pl/aktualnosci/dni-otwarte-rolmax-2018"
+  ],
+  [
+   "/pl/galeria/biegamy-i-pomagamy",
+   "/pl/aktualnosci/biegamy-i-pomagamy"
+  ],
+  [
+   "/pl/galeria/jagodowe-trendy-2016",
+   "/pl/aktualnosci/jagodowe-trendy-krasnik-2016"
+  ],
+  [
+   "/pl/galeria/nasze-pierwsze-dni-pola-w-obrokach",
+   "/pl/aktualnosci/nasze-pierwsze-dni-pola-w-obrokach"
+  ],
+  [
+   "/pl/galeria/swieto-plonow-w-gorzkowie-2017",
+   "/en/aktualnosci/sezon-dozynkowy-czas-start"
+  ],
+  [
+   "/pl/galeria/jagodowe-trendy-2017",
+   "/en/aktualnosci/rolmax-na-jagodowych-trendach"
+  ],
+  [
+   "/pl/galeria/rolmax-na-best-berries-2017",
+   "/en/aktualnosci/rolmax-na-best-berries-2017"
+  ],
+  [
+   "/pl/galeria/targi-agrotech-2017",
+   "/de/aktualnosci/agrotech-kielce-2017-17-19-marca-2017"
+  ],
+  [
+   "/pl/galeria/zielone-demo-wiosna-2016",
+   "/de/aktualnosci/zielone-demo-wiosna-2016"
+  ],
+  [
+   "/pl/galeria/wizyta-w-fabryce-new-holland",
+   "/de/aktualnosci/nawet-8-kombajnow-na-zmiane"
+  ],
+  [
+   "/pl/galeria/targi-agrotech-2015",
+   "/uk/aktualnosci/targi-agrotech-kielce-2015"
+  ],
+  [
+   "/pl/galeria/targi-agro-park-2019",
+   "/uk/aktualnosci/targi-agro-park-2019"
+  ],
+  [
+   "/pl/galeria/sitno-2017",
+   "/uk/aktualnosci/relacja-z-sitna"
+  ],
+  [
+   "/pl/galeria/sitno-2016",
+   "/uk/aktualnosci/niebiesko-zolto-w-sitnie"
+  ],
+  [
+   "/pl/galeria/targi-agro-park-2018",
+   "/uk/aktualnosci/agro-park-2018"
+  ],
+  [
+   "/pl/galeria/dozynki-powiatu-lubartowskiego-2015",
+   "/pl/aktualnosci/dozynki-2015"
+  ],
+  [
+   "/pl/galeria/dozynki-powiatu-radzynskiego-2015",
+   "/pl/aktualnosci/dozynki-2015"
+  ],
+  [
+   "/pl/galeria/dozynki-gminy-ostrow-lubelski-2015",
+   "/pl/aktualnosci/dozynki-2015"
+  ],
+  [
+   "/pl/galeria/dozynki-rudno-pow-parczewski-2015",
+   "/pl/aktualnosci/dozynki-2015"
+  ],
+  [
+   "/pl/galeria/jagodowe-trendy-2019",
+   "/pl/aktualnosci/jagodowe-trendy-krasnik-2018"
+  ],
+  [
+   "/pl/galeria/targi-agrotech-2018",
+   "/pl/aktualnosci/agrotech-2018"
+  ],
+  [
+   "/pl/galeria/rolmax-w-agrolidze",
+   "/pl/aktualnosci/rolmax-w-agrolidze"
+  ],
+  [
+   "/pl/galeria/dni-otwarte-rolmax-2019",
+   "/en/aktualnosci/dni-otwarte-rolmax-2019"
+  ],
+  [
+   "/pl/galeria/rolmax-dla-sadownikow",
+   "/en/aktualnosci/rolmax-dla-sadownikow"
+  ],
+  [
+   "/pl/galeria/spotkania-na-polach-demonstracyjnych-rzepaku-2017",
+   "/uk/aktualnosci/spotkania-na-polach-demonstracyjnych-rzepaku-2017"
+  ],
+  [
+   "/pl/galeria/szkolenie-polowe-unia-group",
+   "/de/aktualnosci/szkolenie-polowe-unia-group"
+  ],
+  [
+   "/pl/galeria/fotorelacja-z-pokazow-polowych",
+   "/pl/aktualnosci/fotorelacja-z-pokazow-polowych"
+  ],
+  [
+   "/pl/galeria/targi-agrotech-2016",
+   "/uk/aktualnosci/targi-agrotech-kielce-2016"
+  ],
+  [
+   "/pl/galeria/targi-agro-park-2015",
+   "/en/aktualnosci/targi-agro-park-lublin-2015"
+  ],
+  [
+   "/pl/galeria/rolmax-na-best-berries-2018",
+   "/de/aktualnosci/rolmax-na-best-berries-2018"
+  ],
+  [
+   "/pl/galeria/dni-otwarte-rolmax-2015",
+   "/uk/aktualnosci/dni-otwarte-rolmax-2015"
+  ]
+ ]
+}

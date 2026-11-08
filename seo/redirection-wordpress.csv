@@ -1,0 +1,8 @@
+source,target,regex,code
+^/(pl|en|de|uk)/galeria/(.*)$,/$1/galerie/$2,1,301
+^/(pl|en|de|uk)/strony/https?://(.*)$,https://$2,1,301
+^/$,/pl,1,301
+/pl/maszyny/traktory/t7-heavy-duty-stage-v,/pl/maszyny/traktory/t7-heavy-duty-z-plm-intelligence,0,301
+/pl/maszyny/traktory/t7-heavy-duty,/pl/maszyny/traktory/t7-heavy-duty-z-plm-intelligence,0,301
+/pl/maszyny/traktory/t6-electro-command-dynamic-command-auto-command,/pl/maszyny/traktory/t6-electro-dynamic-auto-command-stage-v,0,301
+/pl/maszyny/maszyny-budowlane/miniladowarki-burtowe-kolowe-i-gasienicowe-serii-200,/pl/maszyny/maszyny-budowlane/miniladowarki-burtowe-kolowe-i-gasienicowe-serii-300,0,301
