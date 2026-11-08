@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082016">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082019">
 </head>
 <body>
 
@@ -80,7 +80,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082016"></script>
+<script src="data.js?v=202611082019"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -132,7 +132,7 @@ const cap = t => t.charAt(0)+t.slice(1).toLowerCase();
 
 /* ---------- mega panels (left selector + right tiles) ---------- */
 function megaOferta(side, main, cols){
-  side.innerHTML = RX.map((c,i)=>`<button data-c="${c.s}" class="${i?'':'on'}">${c.c}<small>${c.items.length}</small></button>`).join('');
+  side.innerHTML = RX.map((c,i)=>`<button data-c="${c.s}" class="${i?'':'on'}">${c.c}</button>`).join('');
   const show = s => { const c=catOf(s);
     side.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.c===s));
     main.innerHTML = `<div class="mega-head"><h3>${c.c}</h3><a href="#oferta-${c.s}">Zobacz wszystkie →</a></div>
