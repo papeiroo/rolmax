@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082113">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082115">
 </head>
 <body>
 
@@ -100,7 +100,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082113"></script>
+<script src="data.js?v=202611082115"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -296,7 +296,7 @@ ${catWheelOn() ? "" : `<div class="cw-replay"><button onclick="replayWheel()">�
   <div class="wrap">
     <div class="sec-head reveal"><div><div class="eyebrow">Nowości New Holland 2026/2027</div><h2 class="display h2 chrome" style="margin-top:14px">Najnowsze maszyny w ofercie</h2></div>
       <p class="lead">Oferta zsynchronizowana z katalogiem New Holland Polska — ${NEWS_ITEMS().length} nowych modeli i rozwiązań.</p></div>
-    <div class="rail reveal">${NEWS_ITEMS().map(it=>`<a class="rcard" href="#maszyna-${it.s}"><div class="rimg"><img src="${IMG(it)}" alt="New Holland ${it.n}">${BADGE(it)}</div><b>${it.n}</b><small>${it.pw}</small></a>`).join('')}</div>
+    <div class="rail rail-auto reveal">${NEWS_ITEMS().map(it=>`<a class="rcard" href="#maszyna-${it.s}"><div class="rimg"><img src="${IMG(it)}" alt="New Holland ${it.n}">${BADGE(it)}</div><b>${it.n}</b><small>${it.pw}</small></a>`).join('')}</div>
   </div>
 </section>
 
@@ -614,6 +614,23 @@ if(cur!=='pl'){ const tw=document.createTreeWalker(document.body,NodeFilter.SHOW
   window.gtInit=()=>{ new google.translate.TranslateElement({pageLanguage:'pl',autoDisplay:false},'gt_el'); };
   const d=document.createElement('div'); d.id='gt_el'; d.style.display='none'; document.body.appendChild(d);
   const sc=document.createElement('script'); sc.src='https://translate.google.com/translate_a/element.js?cb=gtInit'; document.body.appendChild(sc); }
+})();
+
+/* ===== Pasek nowości przesuwa się sam przy przewijaniu strony kółkiem ===== */
+(()=>{ let raf=0; const st=new WeakMap();
+  function frame(){ raf=0; const vh=innerHeight; let again=false;
+    document.querySelectorAll('.rail-auto').forEach(r=>{ const max=r.scrollWidth-r.clientWidth; if(max<=0) return;
+      let o=st.get(r); if(!o){ o={x:r.scrollLeft,user:0}; st.set(r,o);
+        const pause=()=>{o.user=Date.now()+2500}; r.addEventListener('pointerdown',pause); r.addEventListener('touchstart',pause,{passive:true});
+        r.addEventListener('wheel',e=>{ if(Math.abs(e.deltaX)>Math.abs(e.deltaY)) pause(); },{passive:true}); }
+      if(Date.now()<o.user){ o.x=r.scrollLeft; return; }
+      const b=r.getBoundingClientRect(); if(b.bottom<-200||b.top>vh+200) return;
+      const p=Math.max(0,Math.min(1,(vh*.98-b.top)/(vh*.98+b.height*.6)));
+      const target=p*max; o.x+= (target-o.x)*.18; if(Math.abs(target-o.x)>.5) again=true; else o.x=target;
+      r.scrollLeft=o.x; });
+    if(again) raf=requestAnimationFrame(frame); }
+  const kick=()=>{ if(!raf) raf=requestAnimationFrame(frame); };
+  addEventListener('scroll',kick,{passive:true}); addEventListener('resize',kick); setInterval(()=>{ if(document.querySelector('.rail-auto')) kick(); },1500);
 })();
 /* odliczanie do jubileuszu 30-lecia — 1 lutego 2027, 00:00 czasu polskiego */
 (()=>{ const el=document.getElementById('jubCount'); if(!el) return; const T=Date.parse('2027-02-01T00:00:00+01:00');

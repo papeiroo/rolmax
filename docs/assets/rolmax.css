@@ -738,3 +738,4 @@ font[style]{background:none!important;box-shadow:none!important}
   .explorer .tile img{aspect-ratio:16/9.5}
   .explorer .tile span{font-size:.92rem}
 }
+.rail.rail-auto{scroll-snap-type:none;scroll-behavior:auto}
