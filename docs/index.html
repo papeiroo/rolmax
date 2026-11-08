@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082235">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082236">
 </head>
 <body>
 
@@ -101,7 +101,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082235"></script>
+<script src="data.js?v=202611082236"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -750,6 +750,12 @@ addEventListener('resize',railLayout); addEventListener('load',railLayout);
   const upd=()=>{ raf=0; b.classList.toggle('show',scrollY>innerHeight*.8); };
   addEventListener('scroll',()=>{ if(!raf) raf=requestAnimationFrame(upd); },{passive:true}); upd();
   b.addEventListener('click',()=>{ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches; window.scrollTo({top:0,behavior:reduce?'auto':'smooth'}); }); })();
+/* ===== Stopka: plakietka „30 lat” wyśrodkowana nad tekstem ===== */
+(()=>{ const fit=()=>{ const f=document.querySelector('.f-brand'); if(!f) return; const chip=f.querySelector('.jubilee-chip'), ps=[...f.querySelectorAll('p')]; if(!chip||!ps.length) return;
+    chip.style.marginLeft='0'; const R=document.createRange(); let L=1e9,Rr=-1e9;
+    ps.forEach(p=>{ R.selectNodeContents(p); [...R.getClientRects()].forEach(r=>{ if(r.width){ L=Math.min(L,r.left); Rr=Math.max(Rr,r.right);} }); });
+    const c=chip.getBoundingClientRect(); const off=Math.max(0,(L+Rr)/2-c.width/2-c.left); chip.style.marginLeft=off.toFixed(1)+'px'; };
+  addEventListener('load',fit); addEventListener('resize',fit); if(document.fonts) document.fonts.ready.then(fit); setTimeout(fit,300); })();
 /* odliczanie do jubileuszu 30-lecia — 1 lutego 2027, 00:00 czasu polskiego */
 (()=>{ const el=document.getElementById('jubCount'); if(!el) return; const T=Date.parse('2027-02-01T00:00:00+01:00');
   const q=u=>el.querySelector(`[data-u="${u}"]`), p=n=>String(n).padStart(2,'0'); let last={};
