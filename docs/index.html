@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082308">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082312">
 </head>
 <body>
 
@@ -99,7 +99,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082308"></script>
+<script src="data.js?v=202611082312"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -438,7 +438,7 @@ let cwState=null;
 function cwEnd(){ try{sessionStorage.setItem(CW_KEY,1)}catch(e){} cwForce=false; const y=$('#katalog')?.offsetTop||0; const app=$('#app'); app.dataset.view=''; route();
   requestAnimationFrame(()=>{const c=$('.catstrip'); window.scrollTo({top:(c?c.offsetTop:y)-((($('.site-header')?.offsetHeight)||84)+10),behavior:'auto'})}); }
 function cwFit(el){ if(!el) return; el.style.fontSize=''; el.style.height=''; let fs=parseFloat(getComputedStyle(el).fontSize); el.style.height=Math.ceil(fs*1.12)+'px'; let w=el.parentElement.clientWidth; let g=0; while(el.scrollWidth>w && fs>14 && g++<60){ fs-=1; el.style.fontSize=fs+'px'; } }
-function cwSkip(){ try{sessionStorage.setItem(CW_KEY,1)}catch(e){} cwForce=false; const app=$('#app'); app.dataset.view=''; route(); requestAnimationFrame(()=>scrollToSec('uslugi')); }
+function cwSkip(){ try{sessionStorage.setItem(CW_KEY,1)}catch(e){} cwForce=false; if(cwState&&cwState.collapse){ cwState.collapse(); } else { const app=$('#app'); app.dataset.view=''; route(); } scrollToSec('uslugi'); }
 function mountWheel(){
   const sec=$('#katalog'); if(!sec){ if(cwState){ cancelAnimationFrame(cwState.raf); removeEventListener('wheel',cwState.wheel); removeEventListener('touchend',cwState.touch); } cwState=null; return; }
   const cats=CW_CATS(), N=cats.length, items=[...sec.querySelectorAll('.cw-item')], dots=[...sec.querySelectorAll('.cw-dots i')];
@@ -477,7 +477,7 @@ function mountWheel(){
   addEventListener('wheel',wheel,{passive:false}); addEventListener('touchend',touch,{passive:true});
   items.forEach((el,i)=>el.addEventListener('click',e=>{ if(Math.round(cur)!==i){ e.preventDefault(); go(i);} }));
   dots.forEach((d,i)=>d.addEventListener('click',()=>go(i)));
-  cwState={wheel,touch,raf:0}; info(0); addEventListener('resize',()=>cwFit($('#cwName'))); cwState.raf=requestAnimationFrame(draw);
+  cwState={wheel,touch,raf:0,collapse}; info(0); addEventListener('resize',()=>cwFit($('#cwName'))); cwState.raf=requestAnimationFrame(draw);
 }
 
 
