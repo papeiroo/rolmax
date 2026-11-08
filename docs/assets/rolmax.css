@@ -649,12 +649,3 @@ section{position:relative}
 @media (max-width:1320px){.hdr-sep,.nh-badge{display:none}}
 @media (max-width:1560px){.hdr-sep{margin:0 12px;height:34px}.nh-badge{padding:7px 10px;margin-right:10px}.nh-badge img{height:15px}}
 @media (max-width:1400px){.hdr-sep,.nh-badge{display:none}}
-/* logo Rolmax i New Holland bliżej srebrnej kreski (kreska zostaje w tym samym miejscu) */
-@media (min-width:1401px){
-  .site-header .wrap{justify-content:flex-start}
-  .site-header .nav{margin-left:auto}
-  .site-header .logo{margin-left:20px;margin-right:-6px}
-  .site-header .hdr-sep{margin:0!important}
-  .site-header .nh-badge{margin-left:-6px;margin-right:0}
-}
-@media (min-width:1401px) and (max-width:1560px){.site-header .logo{margin-left:24px}}
