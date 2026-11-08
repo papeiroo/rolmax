@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082023">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082024">
 </head>
 <body>
 
@@ -80,7 +80,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082023"></script>
+<script src="data.js?v=202611082024"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -153,15 +153,6 @@ function megaUslugi(side, main){
 }
 megaOferta($('#megaOfertaSide'), $('#megaOfertaMain'));
 megaUslugi($('#megaUslugiSide'), $('#megaUslugiMain'));
-/* puste miejsce pod listą w mega menu → plakietka „30 lat Rolmax” */
-['#megaOfertaSide','#megaUslugiSide'].forEach(sel=>{ const side=$(sel); if(!side) return;
-  side.insertAdjacentHTML('beforeend',`<a href="#jubileusz" class="mega-anniv" aria-label="30 lat Rolmax 1997–2027"><span class="ma-card"><span class="ma-num chrome-sheen">30</span><span class="ma-lbl chrome">lat Rolmax</span><span class="ma-yrs">1997 — 2027</span></span></a>`);
-});
-function fitMegaAnniv(){ document.querySelectorAll('.mega-anniv').forEach(a=>{ const side=a.parentElement; const btns=[...side.querySelectorAll('button')]; if(!btns.length) return;
-  const top=btns[btns.length-1].offsetTop+btns[btns.length-1].offsetHeight; const free=side.clientHeight-top;
-  a.style.top=top+'px'; a.classList.toggle('show', free>=190 && side.offsetParent!==null && getComputedStyle(side).display!=='none' && side.clientWidth>150); }); }
-document.querySelectorAll('[data-mega]').forEach(li=>{ new MutationObserver(()=>requestAnimationFrame(fitMegaAnniv)).observe(li,{attributes:true,attributeFilter:['class'],subtree:true,childList:true}); });
-addEventListener('resize',fitMegaAnniv);
 document.querySelectorAll('[data-mega]').forEach(li=>{
   let t, ot=0; const open=()=>{clearTimeout(t); ot=Date.now();document.querySelectorAll('[data-mega]').forEach(x=>x!==li&&x.classList.remove('open'));li.classList.add('open')};
   const close=()=>{t=setTimeout(()=>li.classList.remove('open'),180)};
