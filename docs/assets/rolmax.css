@@ -956,3 +956,12 @@ font[style]{background:none!important;box-shadow:none!important}
 /* newsletter — w prawym dolnym rogu (nad przyciskiem „na górę”) */
 .nl{left:auto!important;right:24px!important;bottom:92px!important}
 @media (max-width:700px){.nl{right:12px!important;left:12px!important;bottom:72px!important}}
+/* znak New Holland zawsze widoczny: pełny napis na szerokich ekranach, sam liść na węższych */
+.nh-badge .nh-leaf{display:none}
+@media (max-width:1400px){
+  .hdr-sep,.nh-badge{display:flex!important}
+  .hdr-sep{margin:0 10px!important;height:30px!important}
+  .nh-badge{padding:6px!important;margin-right:8px!important;border-radius:8px!important}
+  .nh-badge .nh-full{display:none}.nh-badge .nh-leaf{display:block;height:20px!important;width:auto}
+}
+@media (max-width:700px){.hdr-sep{margin:0 6px!important;height:24px!important}.nh-badge{padding:4px!important;margin-right:4px!important}.nh-badge .nh-leaf{height:16px!important}}
