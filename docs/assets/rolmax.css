@@ -781,3 +781,40 @@ font[style]{background:none!important;box-shadow:none!important}
 @keyframes tlPop{0%{transform:scale(.6)}55%{transform:scale(1.35)}100%{transform:scale(1)}}
 @keyframes tlRing{0%{transform:scale(1);opacity:1}100%{transform:scale(3.2);opacity:0}}
 @media (prefers-reduced-motion: reduce){.tl-draw{--tp:1!important}.tl-draw .tl b,.tl-draw .tl p{opacity:1;transform:none}}
+/* ===== mapa oddziałów ===== */
+.branches.br-v2{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);grid-template-areas:"map side" "dept dept";align-items:stretch;gap:24px 30px}
+.br-v2 .br-map{grid-area:map;position:relative;min-height:520px;border-radius:22px;overflow:hidden;background:radial-gradient(90% 80% at 40% 40%,#0e2a63,#040d22 75%)}
+.br-v2 .br-side{grid-area:side;display:flex;flex-direction:column;justify-content:center}
+.br-v2 .br-dept{grid-area:dept}
+.br-map svg{position:absolute;inset:0;width:100%;height:100%}
+#brShape{transition:stroke-dashoffset 2.6s cubic-bezier(.4,.1,.2,1),fill-opacity 1.2s ease 1.4s;fill-opacity:0}
+.br-map.drawn #brShape{stroke-dashoffset:0!important;fill-opacity:1}
+.br-ref circle{fill:#9fb2d2}.br-ref text{fill:#7f93b5;font-size:4.2px;font-family:var(--ff-display);letter-spacing:.08em;text-transform:uppercase}
+.br-ref{opacity:0;transition:opacity .8s 2.2s}.br-map.drawn .br-ref{opacity:1}
+.br-pin{cursor:pointer;opacity:0;transform-box:fill-box}
+.br-map.drawn .br-pin{animation:pinIn .7s cubic-bezier(.2,.75,.2,1.3) forwards}
+.br-map.drawn .br-pin[data-i="0"]{animation-delay:2.2s}.br-map.drawn .br-pin[data-i="1"]{animation-delay:2.45s}
+.br-map.drawn .br-pin[data-i="2"]{animation-delay:2.7s}.br-map.drawn .br-pin[data-i="3"]{animation-delay:2.95s}
+@keyframes pinIn{0%{opacity:0;translate:0 -8px}100%{opacity:1;translate:0 0}}
+.br-pin .drop{fill:url(#brLine);stroke:#061430;stroke-width:.5}
+.br-pin .dot{fill:#0a1f47}
+.br-pin .halo{fill:rgba(160,195,255,.12)}
+.br-pin .pulse{fill:none;stroke:rgba(200,220,255,.7);stroke-width:.5;transform-box:fill-box;transform-origin:center;animation:pinPulse 2.4s ease-out infinite}
+.br-pin .lbl{fill:#e6ecf5;font-size:5px;font-family:var(--ff-display);font-weight:800;letter-spacing:.06em;text-transform:uppercase;paint-order:stroke;stroke:#040d22;stroke-width:1.4px}
+.br-pin:hover .drop,.br-pin.on .drop{fill:#fff}
+.br-pin.on .halo{fill:rgba(160,195,255,.28)}
+@keyframes pinPulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(2.6);opacity:0}}
+.br-map.zoomed .br-pin:not(.on){opacity:.45}
+.br-card{position:absolute;right:18px;bottom:18px;width:min(300px,calc(100% - 36px));padding:20px 22px;border-radius:16px;
+  background:rgba(4,13,34,.88);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(220,230,245,.45);box-shadow:0 20px 50px -20px rgba(0,0,0,.8)}
+.br-card.in{animation:tileIn .5s .5s both}
+.br-card h4{font-family:var(--ff-display);font-weight:800;text-transform:uppercase;font-size:1.7rem;margin:6px 0 4px}
+.br-card p{margin:0;color:#c9d5e6;font-size:.92rem}.br-card .hrs{color:#8fa3c4;margin-top:4px;font-size:.85rem}
+.br-card .row{display:flex;gap:10px;margin-top:14px}.br-card .btn{padding:10px 16px;font-size:.78rem}
+.br-card .tag{font-family:var(--ff-display);font-weight:700;letter-spacing:.2em;font-size:.68rem;text-transform:uppercase;color:var(--ice-300)}
+.br-all{position:absolute;left:16px;top:16px;padding:8px 14px;border-radius:999px;border:1px solid rgba(220,230,245,.4);background:rgba(4,13,34,.7);color:#dce6f5;
+  font-family:var(--ff-display);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.72rem;cursor:pointer}
+.br-all:hover{background:rgba(255,255,255,.12)}
+@media (max-width:1100px){.branches.br-v2{grid-template-columns:1fr;grid-template-areas:"map" "side" "dept"}.br-v2 .br-map{min-height:440px}}
+@media (max-width:700px){.br-v2 .br-map{min-height:420px}.br-card{left:12px;right:12px;bottom:12px;width:auto;padding:16px}.br-card h4{font-size:1.4rem}}
+@media (prefers-reduced-motion: reduce){#brShape{transition:none;stroke-dashoffset:0!important;fill-opacity:1}.br-pin{opacity:1;animation:none!important}.br-ref{opacity:1}}
