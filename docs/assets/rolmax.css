@@ -893,9 +893,9 @@ font[style]{background:none!important;box-shadow:none!important}
 .br-map.drawn .br-pin[data-i="0"]{animation-delay:1.35s}.br-map.drawn .br-pin[data-i="1"]{animation-delay:1.55s}
 .br-map.drawn .br-pin[data-i="2"]{animation-delay:1.75s}.br-map.drawn .br-pin[data-i="3"]{animation-delay:1.95s}
 /* ===== Logo Rolmax — srebrne, mieniące się (jak „Zapytaj o cenę”) ===== */
-.site-header .logo{position:relative;display:inline-block}
-.site-header .logo .logo-img{opacity:0}
-.site-header .logo::after{content:"";position:absolute;inset:0;pointer-events:none;
+.site-header .logo,.f-brand>a{position:relative;display:inline-block}
+.site-header .logo .logo-img,.f-brand>a .f-logo{opacity:0}
+.site-header .logo::after,.f-brand>a::after{content:"";position:absolute;inset:0;pointer-events:none;
   -webkit-mask:url(logo-rolmax.png) center/contain no-repeat;mask:url(logo-rolmax.png) center/contain no-repeat;
   background:
     linear-gradient(105deg,transparent 0%,transparent 40%,rgba(255,255,255,.95) 50%,transparent 60%,transparent 100%),
@@ -904,5 +904,5 @@ font[style]{background:none!important;box-shadow:none!important}
   animation:logoGlint 5s ease-in-out infinite,ctaSheen 6s ease-in-out infinite;
   filter:drop-shadow(0 1px 0 rgba(255,255,255,.35)) drop-shadow(0 3px 6px rgba(0,0,0,.55))}
 @keyframes logoGlint{0%,55%{background-position:150% 0,0% 50%}100%{background-position:-60% 0,100% 50%}}
-.site-header .logo:hover::after{animation-duration:1.6s,6s}
-@media (prefers-reduced-motion: reduce){.site-header .logo::after{animation:none}}
+.site-header .logo:hover::after,.f-brand>a:hover::after{animation-duration:1.6s,6s}
+@media (prefers-reduced-motion: reduce){.site-header .logo::after,.f-brand>a::after{animation:none}}
