@@ -552,3 +552,19 @@ section{position:relative}
 .cw-img img{max-height:100%;max-width:100%}
 .cwheel{background:#061430}
 @media (max-width:900px){.cw-item{width:84vw}.cw-img{height:30vh}}
+/* ===== Katalog v4: statyczny panel — zmienia się tylko nazwa i modele ===== */
+#cwName{white-space:nowrap;overflow:visible;line-height:1.05;min-height:1.1em}
+.cw-info{transition:none!important}
+.cw-info *{animation:none!important}
+.cw-models{min-height:84px;max-height:84px;overflow:hidden;align-content:flex-start}
+.cw-actions{display:flex;align-items:center;gap:22px;margin-top:22px}
+.cw-actions .cw-skip{margin:0;white-space:nowrap}
+.cw-end{color:var(--ice-300)}
+.cw-end:hover{color:#fff}
+@media (max-width:900px){
+  .cw-actions{position:absolute;left:18px;right:18px;bottom:22px;margin:0;justify-content:space-between}
+  .cw-actions .cw-skip{position:static;font-size:.72rem}
+  #cwGo{margin-bottom:46px}
+}
+#cwName{display:flex;align-items:flex-end;min-height:0}
+.cw-models a{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
