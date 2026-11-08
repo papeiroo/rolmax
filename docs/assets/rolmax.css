@@ -866,3 +866,6 @@ font[style]{background:none!important;box-shadow:none!important}
 .hero-badge b{font-family:var(--ff-display);font-weight:800;font-size:clamp(3rem,8vw,7rem);line-height:.9;text-transform:uppercase;text-shadow:0 10px 40px rgba(0,0,0,.5)}
 .hero-pin.off .hero-frame,.hero-pin.off .hero-badge{display:none}
 @media (max-width:700px){.hero-badge .eyebrow{letter-spacing:.14em;font-size:.62rem;white-space:nowrap}.hero-badge .eyebrow::before{display:none}}
+/* mega menu: aktywny jest tylko widoczny panel — wyjazd kursorem poza ramkę zamyka listę */
+.mega{pointer-events:none}
+.nav>li.open .mega .mega-inner{pointer-events:auto}
