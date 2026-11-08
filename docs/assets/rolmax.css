@@ -568,3 +568,6 @@ section{position:relative}
 }
 #cwName{display:flex;align-items:flex-end;min-height:0}
 .cw-models a{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+/* aktywna maszyna zawsze na wierzchu — bez przenikania 3D */
+.cw-stage{transform-style:flat!important}
+.cw-item.on{z-index:200!important}
