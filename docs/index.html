@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082251">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082253">
 </head>
 <body>
 
@@ -99,7 +99,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082251"></script>
+<script src="data.js?v=202611082253"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -679,6 +679,17 @@ function newsletter(){ try{ if(sessionStorage.getItem('rxnl')) return; }catch(e)
     document.body.appendChild(d); const close=()=>{d.remove(); try{sessionStorage.setItem('rxnl',1)}catch(e){}};
     d.querySelector('.x').onclick=close; d.querySelector('form').onsubmit=e=>{e.preventDefault(); d.querySelector('form').outerHTML='<p><b>Dziękujemy!</b> (podgląd — zapis podepniemy w WordPressie)</p>'; setTimeout(close,2500)}; },9000); }
 
+/* przewiń do sekcji z uwzględnieniem wstążki; powtarzamy po przeliczeniu przypiętych sekcji (wideo, nowości) */
+let stTimers=[];
+function scrollToSec(id){ stTimers.forEach(clearTimeout); stTimers=[];
+  const go=()=>{ const el=document.getElementById(id); if(!el) return; const hh=($('.site-header')?.getBoundingClientRect().height)||84;
+    window.scrollTo({top:Math.max(0,el.getBoundingClientRect().top+scrollY-hh-8),behavior:'auto'}); };
+  go(); [80,350,1000,1600].forEach(t=>stTimers.push(setTimeout(go,t)));
+  const stop=()=>{ stTimers.forEach(clearTimeout); stTimers=[]; removeEventListener('wheel',stop); removeEventListener('touchstart',stop); };
+  addEventListener('wheel',stop,{passive:true,once:true}); addEventListener('touchstart',stop,{passive:true,once:true}); }
+/* klik w link do sekcji, gdy adres już na nią wskazuje (np. drugi klik „Zapytaj o cenę”) */
+document.addEventListener('click',e=>{ const a=e.target.closest&&e.target.closest('a[href^="#"]'); if(!a) return; const h=a.getAttribute('href');
+  if(h.length>1 && h===location.hash && $('#app').dataset.view==='home' && document.getElementById(h.slice(1))){ e.preventDefault(); scrollToSec(h.slice(1)); } });
 function route(){
   const h=location.hash.slice(1); const app=$('#app');
   document.querySelectorAll('[data-mega]').forEach(x=>x.classList.remove('open'));
@@ -691,7 +702,7 @@ function route(){
   else if(h.startsWith('wpis-')) app.innerHTML=postPage(h.slice(5));
   else if(h==='promocje') app.innerHTML=promoPage();
   else { if(!$('.hero video')||app.dataset.view!=='home'){ app.innerHTML=home(); app.dataset.view='home'; mountHome(); animate(); }
-         if(h && document.getElementById(h)) document.getElementById(h).scrollIntoView(); else window.scrollTo(0,0); return; }
+         if(h && document.getElementById(h)) scrollToSec(h); else window.scrollTo(0,0); return; }
   app.dataset.view='sub'; mountHome(); animate(); window.scrollTo(0,0);
 }
 
