@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082118">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082120">
 </head>
 <body>
 
@@ -100,7 +100,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082118"></script>
+<script src="data.js?v=202611082120"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -618,7 +618,8 @@ if(cur!=='pl'){ const tw=document.createTreeWalker(document.body,NodeFilter.SHOW
 
 /* ===== Pasek nowości: kursor nad paskiem → kółko myszy przewija pasek w miejscu (strona stoi), na końcu strona jedzie dalej ===== */
 (()=>{ const st=new WeakMap();
-  document.addEventListener('wheel',e=>{ const r=e.target.closest&&e.target.closest('.rail-auto'); if(!r||e.ctrlKey) return;
+  document.addEventListener('wheel',e=>{ const sec=e.target.closest&&e.target.closest('section'); const r=sec&&sec.querySelector('.rail-auto'); if(!r||e.ctrlKey) return;
+    { const b=r.getBoundingClientRect(), hb=($('.site-header')?.getBoundingClientRect().bottom)||0; if(b.top<hb-40||b.bottom>innerHeight+40) return; }
     if(Math.abs(e.deltaX)>Math.abs(e.deltaY)) return;
     const max=r.scrollWidth-r.clientWidth; if(max<=0) return;
     let o=st.get(r); if(!o){ o={t:r.scrollLeft,raf:0}; st.set(r,o); }
