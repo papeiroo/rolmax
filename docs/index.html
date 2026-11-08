@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611082124">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611082139">
 </head>
 <body>
 
@@ -100,7 +100,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611082124"></script>
+<script src="data.js?v=202611082139"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -220,8 +220,13 @@ ${catWheelOn() ? "" : `<div class="cw-replay"><button onclick="replayWheel()">�
       <p class="lead">Sprzedaż, serwis, części i finansowanie — kompletna obsługa w czterech oddziałach i online.</p>
     </div>
     <div class="svc-grid">
-      ${SVC.map((c,i)=>`<a class="svc chrome-frame reveal ${i<2?'wide':''}" style="transition-delay:${i*80}ms" href="#usluga-${c.s}">
-        <img src="${c.img}" alt="${c.n}"><div class="body"><span class="tag">${c.tag}</span><h3 class="chrome">${c.n}</h3><p>${c.d}</p><span class="more">Szczegóły</span></div></a>`).join('')}
+      ${SVC.map((c,i)=>`<div class="svc flip ${i<2?'wide':''}" style="--d:${i*110}ms" tabindex="0">
+        <div class="flip-in">
+          <div class="face front chrome-frame"><img src="${c.img}" alt="${c.n}"><div class="body"><span class="tag">${c.tag}</span><h3 class="chrome">${c.n}</h3><p>${c.d}</p><span class="more flip-hint">Najedź, aby zobaczyć więcej</span></div><a class="flip-link" href="#usluga-${c.s}" aria-label="${c.n} — szczegóły"></a></div>
+          <div class="face back chrome-frame"><span class="tag">${c.tag}</span><h3 class="chrome">${c.n}</h3>
+            <ul>${(c.li||[]).slice(0,3).map(x=>`<li>${x}</li>`).join('')}</ul>
+            <div class="back-cta"><a class="btn btn-chrome" href="tel:+48817216785">Zadzwoń</a><a class="btn btn-ghost" href="#usluga-${c.s}">Szczegóły</a></div></div>
+        </div></div>`).join('')}
       <a class="svc banner shop-banner chrome-frame reveal" href="https://www.rolmax-sklep.pl/">
         <img src="assets/img/sklep-banner.webp" srcset="assets/img/sklep-banner-1200.webp 1200w, assets/img/sklep-banner.webp 2172w" sizes="(max-width:900px) 100vw, 1300px" alt="Części i akcesoria do maszyn rolniczych — sklep Rolmax" loading="lazy" width="2172" height="724">
         <div class="body"><span class="tag">Online 24h</span><h3 class="chrome">Sklep internetowy</h3><p>Tysiące części i akcesoriów z wysyłką — rolmax-sklep.pl</p><span class="more">Przejdź do sklepu</span></div></a>
@@ -491,8 +496,17 @@ function jsFrame(){ const g=jsGeo; if(!g||!g.pin.isConnected) return; const vh=i
 let jsRaf=0; addEventListener('scroll',()=>{ if(!jsRaf) jsRaf=requestAnimationFrame(()=>{jsRaf=0; jsFrame();}); },{passive:true});
 addEventListener('resize',()=>{ jsLayout(); jsFrame(); });
 
+
+/* ===== Usługi — karty wjeżdżają w 3D i odwracają się ===== */
+function mountFlip(){ const cards=[...document.querySelectorAll('.svc.flip')]; if(!cards.length) return;
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.2});
+  cards.forEach(c=>io.observe(c));
+  if(!matchMedia('(hover: hover)').matches){ cards.forEach(c=>c.addEventListener('click',e=>{ if(e.target.closest('.back a')) return; if(!c.classList.contains('flipped')){ e.preventDefault(); cards.forEach(x=>x!==c&&x.classList.remove('flipped')); c.classList.add('flipped'); } })); }
+  cards.forEach(c=>c.addEventListener('keydown',e=>{ if(e.key==='Enter'&&e.target===c) c.classList.toggle('flipped'); }));
+  document.querySelectorAll('.flip-hint').forEach(h=>{ if(!matchMedia('(hover: hover)').matches) h.textContent='Dotknij, aby zobaczyć więcej'; }); }
+
 function mountHome(){
-  mountWheel(); mountJubShow(); setTimeout(railLayout,50); setTimeout(railLayout,900);
+  mountFlip(); mountWheel(); mountJubShow(); setTimeout(railLayout,50); setTimeout(railLayout,900);
   const ex=$('#exSide'); if(ex) megaOferta(ex,$('#exMain'),4);
   const tabs=$('#brTabs'); if(tabs){
     tabs.innerHTML=BR.map((b,i)=>`<button class="${i?'':'on'}" data-i="${i}"><b>${b.n}</b><span>${b.tag} · ${b.a}</span></button>`).join('');

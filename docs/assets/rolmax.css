@@ -743,3 +743,27 @@ font[style]{background:none!important;box-shadow:none!important}
 .rail-pin{position:relative}
 .rail-pin:not(.off)>#nowosci{position:sticky;top:84px}
 .rail-pin:not(.off) .rail-auto{overflow-x:hidden}
+/* ===== Usługi — odwracane karty 3D ===== */
+.svc.flip{background:transparent;overflow:visible;isolation:auto;perspective:1600px;display:block;outline:none}
+.svc.flip::after{display:none}
+.svc.flip .flip-in{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .85s cubic-bezier(.2,.75,.2,1)}
+.svc.flip .face{position:absolute;inset:0;border-radius:18px;overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden;isolation:isolate;display:flex;align-items:flex-end;background:var(--navy-800)}
+.svc.flip .front::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(3,10,24,0) 25%,rgba(3,10,24,.92) 88%)}
+.svc.flip .flip-link{position:absolute;inset:0;z-index:3}
+.svc.flip .flip-hint::after{content:"↻"}
+.svc.flip .back{transform:rotateY(180deg);flex-direction:column;align-items:flex-start;justify-content:center;padding:34px 36px;
+  background:radial-gradient(120% 90% at 0% 0%,rgba(30,106,224,.45),transparent 60%),linear-gradient(150deg,#0f3478 0%,#071a40 55%,#040d22 100%)}
+.svc.flip .back::before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(115deg,transparent 0 60px,rgba(255,255,255,.03) 60px 61px)}
+.svc.flip .back h3{font-family:var(--ff-display);font-weight:800;text-transform:uppercase;font-size:2rem;line-height:1;margin:6px 0 18px}
+.svc.flip .back ul{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:10px}
+.svc.flip .back li{display:flex;gap:12px;align-items:center;color:#dbe5f3;font-size:1rem}
+.svc.flip .back li::before{content:"";flex:0 0 18px;height:2px;background:linear-gradient(90deg,#fff,#8d99aa)}
+.svc.flip .back-cta{display:flex;gap:12px;flex-wrap:wrap}
+@media (hover:hover){.svc.flip:hover .flip-in,.svc.flip:focus-within .flip-in{transform:rotateY(180deg)}}
+.svc.flip.flipped .flip-in{transform:rotateY(180deg)}
+/* wejście kart w 3D */
+.svc.flip{opacity:0;transform:translateY(70px) rotateX(18deg) scale(.96);transform-origin:50% 100%;transition:opacity .8s ease var(--d,0ms),transform 1s cubic-bezier(.2,.75,.2,1) var(--d,0ms)}
+.svc.flip.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.svc.flip{opacity:1;transform:none;transition:none}.svc.flip .flip-in{transition:none}}
+@media (max-width:700px){.svc.flip .back{padding:24px}.svc.flip .back h3{font-size:1.6rem}}
+@media (max-width:700px){.svc-grid{grid-template-columns:1fr!important}.svc.flip{min-height:380px}}
