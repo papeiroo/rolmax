@@ -970,3 +970,7 @@ font[style]{background:none!important;box-shadow:none!important}
 .lp-group button .lp-n{display:flex;flex-direction:column;line-height:1.25}
 .lp-group button .lp-n small{font-size:.72rem;color:#8a97ab;margin-top:2px}
 .lp-group button.on .lp-n small{color:#4a5a73}
+/* lista krajów wg kontynentów */
+.lp-group{display:grid;grid-template-columns:1fr 1fr;column-gap:4px}
+.lp-group h6{grid-column:1/-1}
+.lp-group button{display:block!important;grid-template-columns:none!important;padding:8px 12px!important;font-size:.88rem;line-height:1.25}
