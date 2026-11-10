@@ -1341,3 +1341,15 @@ html,body{overflow-x:clip}
 .shop-empty p{color:#475569;margin-bottom:18px;max-width:520px}
 @media (max-width:1100px){.shop-grid{grid-template-columns:repeat(2,1fr)}}
 .shop-grid{align-items:start}
+/* mega Części — ten sam układ co Oferta */
+[data-mega="czesci"] .mega-inner{height:min(600px,calc(100vh - var(--hh,126px) - 16px));min-height:0}
+.site-header #megaCzesciSide button{flex:1 1 0;min-height:0;padding-top:12px;padding-bottom:12px}
+.site-header #megaCzesciSide{display:flex;flex-direction:column}
+.site-header #megaCzesciMain .mega-grid{grid-template-columns:repeat(4,1fr);gap:14px}
+.site-header #megaCzesciMain .tile{padding:12px 12px 14px}
+.site-header #megaCzesciMain .tile img{aspect-ratio:16/9.5;object-fit:contain;background:#fff}
+.site-header #megaCzesciMain .tile span{font-size:.92rem}
+.site-header #megaCzesciMain .tile.is-prod span{font-family:var(--ff-body);text-transform:none;font-weight:500;font-size:.84rem;letter-spacing:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.shop-noimg{display:block;aspect-ratio:16/9.5;border-radius:8px;background:#eef2f7 url(nh-leaf.svg) center/42px no-repeat;opacity:.55}
+@media (max-width:1100px){.site-header #megaCzesciMain .mega-grid{grid-template-columns:repeat(3,1fr)!important}}
+@media (max-width:700px){.site-header #megaCzesciMain .mega-grid{grid-template-columns:repeat(2,1fr)!important}}
