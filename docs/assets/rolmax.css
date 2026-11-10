@@ -1324,3 +1324,20 @@ html,body{overflow-x:clip}
 .site-header .nav>li+li::before{display:none!important}
 .site-header .nav>li+li>a::before,.site-header .nav>li+li>button::before{content:"";position:absolute;left:0;top:50%;width:3px;height:3px;border-radius:50%;background:#7d8aa0;transform:translate(-50%,-50%);pointer-events:none}
 .nhx-model.nhx-mhide{display:none}
+/* mega: Części (kategorie sklepu) */
+.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.shop-card{background:#fff;border:1px solid #e3e9f2;border-radius:12px;padding:12px 14px;animation:tileIn .4s both;transition:border-color .2s,box-shadow .2s}
+.shop-card:hover{border-color:#9db8e6;box-shadow:0 8px 20px -12px rgba(15,63,145,.45)}
+.shop-cn{display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:var(--ff-display);font-weight:700;font-size:.98rem;letter-spacing:.05em;text-transform:uppercase;color:var(--navy-800)}
+.shop-cn i{font-style:normal;color:var(--blue-600);font-size:.85rem}
+.shop-cn:hover{color:var(--blue-600)}
+.shop-card ul{list-style:none;margin-top:8px;display:grid;gap:3px}
+.shop-card li a{font-size:.86rem;color:#475569}
+.shop-card li a:hover{color:var(--blue-600)}
+.shop-card li a.more{color:var(--blue-600);font-weight:600}
+.shop-empty{display:grid;grid-template-columns:220px 1fr;gap:26px;align-items:center;animation:tileIn .4s both}
+.shop-empty:not(:has(img)){grid-template-columns:1fr}
+.shop-empty img{width:220px;height:170px;object-fit:contain;background:#fff;border-radius:12px;border:1px solid #e3e9f2}
+.shop-empty p{color:#475569;margin-bottom:18px;max-width:520px}
+@media (max-width:1100px){.shop-grid{grid-template-columns:repeat(2,1fr)}}
+.shop-grid{align-items:start}
