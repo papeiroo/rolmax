@@ -1163,7 +1163,3 @@ html,body{overflow-x:clip}
   .nhx-modal{padding:0;align-items:end}.nhx-dlg{max-height:92vh;border-radius:20px 20px 0 0}
   .nhx-dbody{padding:22px 20px 28px}.nhx-sub{grid-template-columns:1fr}.nhx-sub img{width:100%;height:170px}
 }
-
-/* logo Rolmax dosunięte do srebrnej linii */
-.site-header .wrap>.hdr-sep{margin-left:-8px!important}
-@media (max-width:700px){.site-header .wrap>.hdr-sep{margin-left:-4px!important}}
