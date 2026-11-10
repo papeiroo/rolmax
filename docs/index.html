@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611101310">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611101400">
 </head>
 <body>
 
@@ -104,7 +104,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611101310"></script>
+<script src="data.js?v=202611101400"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -402,7 +402,7 @@ function prodPage(s){ const [c,it]=findProd(s); if(!it) return home(); const idx
       <div class="eyebrow">New Holland · ${c.c}</div>
       <h1 class="display chrome-sheen" style="margin-top:14px">${it.n}</h1>
       <p class="desc"${it.new?'':' data-nhdesc'}>${it.new?it.t:cap(it.t)+'…'}</p>${it.pw?`<p class="pw chrome">${it.pw}</p>`:''}${it.ask?'<p class="ask">Dostępność tej maszyny potwierdzi doradca Rolmax.</p>':''}
-      <div class="actions"><a class="btn btn-chrome" href="#oddzialy">${it.ask?'Zapytaj o dostępność':'Zapytaj o cenę'}</a>${it.br?`<a class="btn btn-blue" href="${it.br}" target="_blank" rel="noopener">Pobierz broszurę (PDF)</a>`:''}<a class="btn btn-ghost" href="https://agriculture.newholland.com/pl-pl/europe/uslugi-i-rozwiazania/konfigurator">Konfigurator</a><a class="btn btn-ghost" href="#usluga-finansowanie">Finansowanie</a></div>${NHX[it.s]?`<p class="nhx-jump">${NHX[it.s][0]?`<a class="more-link" href="#" data-nhgo="nhModels">${NHX[it.s][0]} ${plM(NHX[it.s][0])} do wyboru ↓</a>`:''}${NHX[it.s][1]?`<a class="more-link" href="#" data-nhgo="nhSpec">Pełna specyfikacja techniczna ↓</a>`:''}</p>`:(it.man?`<p style="margin-top:14px"><a class="more-link" href="${it.man}" target="_blank" rel="noopener">Pełna specyfikacja na stronie New Holland ↗</a></p>`:'')}
+      <div class="actions"><a class="btn btn-chrome" href="#oddzialy">${it.ask?'Zapytaj o dostępność':'Zapytaj o cenę'}</a><a class="btn btn-ghost" href="#" data-drive="${it.s}">Umów jazdę próbną</a>${it.br?`<a class="btn btn-blue" href="${it.br}" target="_blank" rel="noopener">Pobierz broszurę (PDF)</a>`:''}<a class="btn btn-ghost" href="https://agriculture.newholland.com/pl-pl/europe/uslugi-i-rozwiazania/konfigurator">Konfigurator</a><a class="btn btn-ghost" href="#usluga-finansowanie">Finansowanie</a></div>${NHX[it.s]?`<p class="nhx-jump">${NHX[it.s][0]?`<a class="more-link" href="#" data-nhgo="nhModels">${NHX[it.s][0]} ${plM(NHX[it.s][0])} do wyboru ↓</a>`:''}${NHX[it.s][1]?`<a class="more-link" href="#" data-nhgo="nhSpec">Pełna specyfikacja techniczna ↓</a>`:''}</p>`:(it.man?`<p style="margin-top:14px"><a class="more-link" href="${it.man}" target="_blank" rel="noopener">Pełna specyfikacja na stronie New Holland ↗</a></p>`:'')}
       <p style="margin-top:22px;color:var(--steel-500);font-size:.85rem">URL bez zmian: <code>/pl/maszyny/${c.s}/${it.s}</code></p>
     </div>
   </div>
@@ -872,6 +872,154 @@ async function mountNhx(){
      else if(li.dataset.mega==='uslugi') on=/^usluga-(likwidacja|rolnictwo)/.test(h);
      else on=href==='#'+h; li.classList.toggle('is-active',on); }); };
  addEventListener('hashchange',mark); mark(); })();
+/* ===================== JAZDA PRÓBNA — panel rezerwacji ===================== */
+const DR_POW=[["powiat łukowski","M64.1 33.1 L64.8 35.1 L64.8 38.1 L61.2 38.2 L59.8 41.3 L60.6 42.1 L60.9 45.4 L57.3 47.7 L55.8 46.4 L55.3 49.4 L53.6 50.8 L51.5 48.5 L49.8 49.6 L48.4 48.9 L47.4 50.8 L48.6 51.5 L47.2 53.7 L48.8 54.6 L52.4 60.4 L50.0 63.6 L48.1 69.2 L45.4 69.9 L44.3 67.7 L43.2 71.2 L37.2 69.0 L34.9 68.2 L35.2 66.5 L33.8 64.5 L29.7 62.2 L29.0 61.2 L29.1 57.0 L24.1 56.5 L22.3 55.6 L21.4 52.4 L19.9 51.0 L18.5 51.7 L15.4 50.9 L17.9 49.0 L19.6 46.4 L19.3 44.7 L17.9 43.8 L18.2 42.2 L16.7 40.7 L18.1 37.7 L21.6 35.8 L23.0 36.1 L26.7 33.4 L28.2 32.9 L29.9 34.4 L33.7 34.4 L34.6 32.2 L41.0 34.6 L43.0 33.1 L43.7 31.3 L45.3 31.3 L44.9 33.6 L46.7 35.3 L49.1 33.4 L51.7 33.5 L53.6 32.0 L55.3 28.3 L57.4 28.2 L59.4 30.6 L63.2 31.3 L64.1 33.1Z",41.2,46.2],["powiat tomaszowski","M126.8 166.6 L128.7 166.9 L129.8 166.0 L133.0 165.7 L131.8 167.7 L132.8 170.1 L136.2 171.0 L135.2 172.6 L134.9 175.2 L136.5 176.1 L138.2 175.8 L141.0 177.4 L141.5 179.4 L143.4 179.3 L145.4 177.2 L148.1 178.2 L149.6 180.2 L147.7 180.5 L148.0 182.4 L145.3 184.6 L144.3 186.9 L142.6 187.9 L145.1 189.4 L146.5 191.0 L149.8 191.8 L148.8 193.7 L138.1 194.5 L133.3 196.2 L131.8 197.5 L130.7 201.8 L127.8 203.0 L124.1 208.4 L122.1 209.8 L119.6 208.9 L120.2 206.0 L119.0 205.1 L117.2 205.6 L116.4 204.7 L113.2 204.4 L115.1 200.5 L113.1 198.6 L111.5 198.2 L109.9 194.8 L107.6 195.7 L106.9 197.0 L103.5 198.5 L99.2 195.4 L96.6 198.3 L90.7 192.8 L93.7 189.4 L95.0 190.8 L95.0 188.3 L99.0 185.4 L101.2 184.4 L102.6 186.3 L105.8 185.9 L107.4 184.7 L108.1 181.0 L106.2 180.3 L107.1 177.5 L107.3 174.1 L112.5 174.1 L114.6 175.8 L118.4 175.7 L122.6 174.9 L125.2 173.6 L125.5 171.1 L125.1 167.1 L126.8 166.6Z",123.4,186.0],["powiat Chełm","M118.4 124.7 L116.1 123.4 L114.0 120.1 L116.7 118.2 L119.1 119.9 L121.9 120.9 L120.9 124.0 L118.4 124.7Z",118.2,122.0],["powiat włodawski","M107.8 69.3 L108.5 67.4 L110.2 66.4 L113.7 62.8 L112.9 61.2 L115.7 60.8 L115.8 58.5 L116.9 56.9 L120.2 59.0 L121.0 60.7 L122.7 64.8 L122.1 66.6 L122.7 68.5 L121.5 69.5 L121.7 75.0 L123.3 77.4 L123.1 81.6 L124.9 81.5 L126.9 83.6 L126.6 85.4 L129.7 86.8 L128.5 90.5 L131.6 94.0 L130.4 97.0 L128.8 99.1 L128.8 101.1 L127.6 102.1 L128.8 106.3 L130.7 106.0 L132.2 107.3 L128.7 107.3 L127.1 108.5 L125.3 107.4 L122.8 103.3 L119.6 102.5 L119.6 99.2 L117.7 97.6 L116.4 99.6 L114.8 98.6 L111.9 99.7 L109.7 99.9 L105.6 98.8 L104.6 102.0 L102.4 102.2 L101.3 100.1 L100.0 99.2 L96.5 98.4 L93.5 98.3 L93.6 97.2 L91.7 92.9 L93.4 88.8 L94.2 88.4 L98.8 89.1 L99.8 88.3 L101.3 83.6 L97.4 79.4 L98.9 75.4 L100.4 73.6 L102.0 74.4 L103.8 73.9 L103.6 71.8 L107.2 72.2 L107.8 69.3Z",114.1,85.8],["powiat Lublin","M54.2 111.4 L54.3 109.5 L55.9 106.8 L60.9 106.4 L63.0 106.9 L66.7 110.8 L65.1 113.6 L63.4 114.1 L63.9 117.0 L59.8 117.4 L59.8 120.1 L55.4 120.6 L54.6 119.1 L57.4 116.4 L54.6 113.7 L54.2 111.4Z",58.9,113.4],["powiat hrubieszowski","M148.8 193.7 L149.8 191.8 L146.5 191.0 L145.1 189.4 L142.6 187.9 L144.3 186.9 L145.3 184.6 L148.0 182.4 L147.7 180.5 L149.6 180.2 L148.1 178.2 L145.4 177.2 L143.4 179.3 L141.5 179.4 L141.0 177.4 L138.2 175.8 L136.5 176.1 L134.9 175.2 L135.2 172.6 L136.2 171.0 L132.8 170.1 L131.8 167.7 L133.0 165.7 L129.8 166.0 L128.7 166.9 L126.8 166.6 L126.9 164.1 L129.7 163.7 L128.2 161.1 L129.0 159.7 L129.1 155.9 L127.6 153.7 L128.0 151.4 L128.4 149.6 L124.1 147.7 L125.5 147.2 L125.1 145.4 L125.3 141.9 L128.5 140.9 L131.2 140.9 L132.9 142.8 L136.1 142.6 L137.0 141.8 L140.2 140.8 L143.3 141.6 L142.6 137.7 L145.8 137.5 L146.4 134.7 L148.3 137.1 L148.5 139.9 L150.3 142.3 L154.1 145.8 L155.8 146.1 L159.4 149.2 L156.4 151.4 L153.2 151.6 L151.9 150.9 L149.7 151.3 L148.1 153.6 L147.7 155.6 L148.4 157.4 L151.0 157.8 L151.7 160.3 L151.5 162.5 L153.3 163.3 L154.9 162.9 L154.3 166.6 L155.8 168.1 L156.6 175.1 L156.1 178.8 L154.8 184.7 L152.5 190.5 L150.7 191.5 L150.2 193.8 L148.8 193.7Z",142.3,163.4],["powiat kraśnicki","M35.6 130.6 L36.2 131.5 L41.9 131.9 L48.0 130.7 L48.6 131.3 L49.3 135.1 L53.4 136.7 L53.1 137.8 L55.1 140.1 L53.5 143.3 L54.8 143.7 L54.4 146.3 L51.3 146.3 L50.1 151.6 L47.6 154.1 L45.8 155.2 L42.3 153.6 L42.6 152.6 L40.6 150.8 L35.3 155.3 L28.3 153.0 L24.7 156.7 L23.3 156.2 L21.9 157.8 L18.5 157.0 L16.6 154.7 L16.7 152.8 L15.1 150.6 L15.5 148.8 L14.8 147.2 L14.5 144.5 L13.3 141.6 L13.6 137.6 L15.1 136.8 L17.2 137.1 L20.7 139.1 L22.6 138.7 L24.9 135.8 L27.2 136.3 L26.3 132.9 L27.0 129.8 L28.4 129.1 L30.2 130.3 L33.8 130.0 L35.6 130.6Z",33.0,142.7],["powiat łęczyński","M86.5 92.6 L88.0 93.3 L89.0 91.6 L91.7 92.9 L93.6 97.2 L93.5 98.3 L96.5 98.4 L100.0 99.2 L101.3 100.1 L102.4 102.2 L104.6 102.0 L102.4 103.6 L100.7 108.8 L97.9 109.0 L96.4 111.3 L93.5 110.7 L92.2 112.8 L90.3 114.5 L90.3 116.6 L87.7 117.1 L86.2 115.4 L82.9 117.6 L79.9 116.9 L78.9 113.5 L78.0 111.5 L78.8 109.6 L78.0 107.9 L75.7 106.6 L73.3 107.2 L74.2 105.0 L69.3 102.7 L67.5 100.3 L67.0 98.6 L69.7 96.3 L71.5 96.2 L73.9 94.8 L77.1 96.2 L79.7 96.4 L83.7 94.2 L86.2 95.1 L86.5 92.6Z",85.8,103.6],["powiat opolski","M13.9 108.7 L16.3 107.5 L16.7 105.6 L18.2 104.1 L21.1 107.9 L22.0 105.8 L23.8 104.9 L26.5 105.8 L27.5 107.0 L29.0 105.6 L30.6 107.2 L35.6 109.3 L33.2 112.2 L35.3 113.1 L35.5 116.1 L34.1 117.6 L32.6 117.9 L32.9 119.8 L36.5 119.6 L36.2 121.3 L38.9 122.3 L39.6 124.2 L39.0 126.2 L38.6 130.5 L35.6 130.6 L33.8 130.0 L30.2 130.3 L28.4 129.1 L27.0 129.8 L26.3 132.9 L27.2 136.3 L24.9 135.8 L22.6 138.7 L20.7 139.1 L17.2 137.1 L15.1 136.8 L13.6 137.6 L13.8 134.1 L12.7 132.8 L14.2 130.3 L12.7 127.8 L11.7 120.5 L11.8 114.8 L13.6 111.9 L13.0 109.6 L13.9 108.7Z",25.1,120.8],["powiat rycki","M37.2 69.0 L36.9 70.6 L38.4 74.6 L36.8 76.6 L32.6 78.1 L28.9 77.7 L25.7 77.5 L22.0 81.5 L20.9 80.5 L18.0 82.0 L15.7 80.2 L14.6 80.2 L13.6 78.6 L11.4 78.1 L9.8 79.0 L6.0 78.0 L3.5 76.8 L3.0 74.7 L1.0 73.2 L2.5 72.4 L2.3 69.6 L3.3 69.2 L7.1 71.5 L9.3 73.8 L10.0 71.0 L15.0 69.8 L16.0 67.3 L17.5 65.6 L17.0 61.8 L14.8 60.6 L16.7 58.1 L18.6 58.1 L22.3 55.6 L24.1 56.5 L29.1 57.0 L29.0 61.2 L29.7 62.2 L33.8 64.5 L35.2 66.5 L34.9 68.2 L37.2 69.0Z",19.5,70.6],["powiat Zamość","M106.9 160.6 L106.6 163.4 L105.1 165.4 L103.9 165.8 L101.5 164.7 L101.1 162.6 L104.7 160.2 L106.9 160.6Z",104.6,162.9],["powiat biłgorajski","M57.6 176.7 L62.3 175.8 L65.5 172.5 L67.6 169.8 L66.1 168.6 L65.5 166.0 L63.5 163.7 L65.8 162.4 L65.4 161.1 L67.3 158.2 L65.3 155.5 L64.2 154.6 L63.5 151.8 L61.3 151.2 L62.7 151.1 L65.8 149.2 L67.6 150.2 L69.7 147.0 L73.4 146.6 L75.3 147.2 L75.8 151.5 L78.6 153.5 L80.6 152.9 L80.7 154.2 L79.4 156.6 L77.0 156.6 L75.0 158.1 L73.1 157.9 L74.1 162.6 L76.6 163.5 L74.8 166.2 L75.2 169.3 L74.3 170.7 L77.4 174.1 L77.4 171.9 L80.3 170.8 L79.8 171.4 L81.6 175.5 L83.4 174.9 L84.2 177.7 L86.8 178.4 L88.0 182.8 L94.8 181.6 L97.1 183.0 L99.0 185.4 L95.0 188.3 L95.0 190.8 L93.7 189.4 L90.7 192.8 L96.6 198.3 L93.3 202.0 L91.9 202.7 L91.1 204.4 L88.8 206.3 L86.8 205.6 L84.2 205.8 L80.2 204.9 L77.8 205.2 L76.5 204.8 L72.2 204.7 L70.1 205.5 L69.4 205.9 L69.0 205.5 L65.1 204.7 L63.8 204.2 L63.1 203.9 L63.9 201.7 L66.9 201.1 L67.1 199.5 L66.5 199.5 L65.4 199.2 L62.4 200.1 L59.5 199.3 L57.3 200.4 L53.3 197.9 L53.4 196.1 L51.4 195.0 L50.5 195.6 L50.9 192.7 L53.0 193.1 L53.7 189.8 L56.2 189.5 L57.7 188.6 L59.2 189.8 L60.6 186.7 L60.8 184.0 L59.0 184.4 L58.5 181.3 L58.7 177.8 L57.6 176.7Z",70.8,182.1],["powiat chełmski","M104.6 102.0 L105.6 98.8 L109.7 99.9 L111.9 99.7 L114.8 98.6 L116.4 99.6 L117.7 97.6 L119.6 99.2 L119.6 102.5 L122.8 103.3 L125.3 107.4 L127.1 108.5 L128.7 107.3 L132.2 107.3 L133.2 108.8 L133.3 111.4 L135.9 115.0 L138.4 116.5 L139.8 118.8 L141.5 119.2 L142.3 121.0 L141.0 122.5 L141.4 125.1 L142.6 127.1 L144.8 127.6 L145.3 132.5 L146.4 134.7 L145.8 137.5 L142.6 137.7 L143.3 141.6 L140.2 140.8 L137.0 141.8 L136.1 142.6 L132.9 142.8 L131.2 140.9 L128.5 140.9 L125.3 141.9 L125.1 145.4 L125.5 147.2 L124.1 147.7 L122.1 146.6 L117.6 146.1 L117.8 145.2 L114.8 141.7 L114.5 139.8 L111.9 137.1 L116.2 133.5 L115.8 130.8 L114.6 131.2 L110.2 130.0 L109.1 130.5 L104.9 129.3 L102.1 127.8 L99.7 127.2 L98.4 125.1 L92.5 126.5 L91.8 125.3 L91.0 123.6 L91.0 120.4 L90.3 119.6 L90.3 116.6 L90.3 114.5 L92.2 112.8 L93.5 110.7 L96.4 111.3 L97.9 109.0 L100.7 108.8 L102.4 103.6 L104.6 102.0Z",118.6,123.3],["powiat parczewski","M107.8 69.3 L107.2 72.2 L103.6 71.8 L103.8 73.9 L102.0 74.4 L100.4 73.6 L98.9 75.4 L97.4 79.4 L101.3 83.6 L99.8 88.3 L98.8 89.1 L94.2 88.4 L93.4 88.8 L91.7 92.9 L89.0 91.6 L88.0 93.3 L86.5 92.6 L86.0 88.0 L87.8 86.9 L88.9 84.9 L87.3 82.4 L85.9 82.5 L82.4 79.6 L80.1 78.8 L80.2 82.1 L78.1 81.9 L76.7 83.3 L74.3 82.9 L74.3 78.9 L70.5 77.9 L67.5 75.7 L67.9 73.2 L70.2 69.1 L70.4 67.3 L73.6 67.3 L76.6 61.7 L78.6 62.2 L79.8 60.9 L82.1 60.6 L84.2 55.9 L86.7 56.4 L87.8 57.8 L89.2 57.0 L90.2 58.8 L92.1 59.6 L95.3 59.9 L98.5 64.5 L100.0 63.4 L102.2 63.6 L105.8 65.4 L107.8 69.3Z",88.7,74.5],["powiat świdnicki","M73.3 107.2 L75.7 106.6 L78.0 107.9 L78.8 109.6 L78.0 111.5 L78.9 113.5 L79.9 116.9 L82.9 117.6 L86.2 115.4 L87.7 117.1 L90.3 116.6 L90.3 119.6 L91.0 120.4 L91.0 123.6 L91.6 125.2 L90.0 126.2 L88.1 125.7 L85.2 123.0 L83.0 123.2 L80.0 129.1 L81.0 130.1 L81.6 132.6 L84.7 132.9 L84.4 134.9 L83.1 135.3 L82.6 137.4 L80.1 138.5 L78.0 137.6 L76.0 137.7 L73.8 135.7 L75.8 133.2 L75.9 130.9 L74.4 129.6 L73.5 127.6 L68.8 124.7 L67.7 119.8 L68.1 117.2 L69.0 115.9 L65.1 113.6 L66.7 110.8 L70.2 111.5 L71.5 110.0 L70.4 108.6 L73.3 107.2Z",79.3,122.1],["powiat lubelski","M35.6 109.3 L39.1 108.3 L40.5 108.7 L44.5 107.3 L42.4 105.8 L42.9 103.3 L40.8 101.7 L43.2 100.3 L41.7 98.4 L43.4 95.0 L43.9 92.2 L45.7 92.2 L47.4 92.0 L49.5 94.6 L51.7 95.9 L53.7 94.1 L55.8 94.7 L57.1 97.4 L60.5 95.9 L62.8 97.0 L64.8 97.0 L67.0 98.6 L67.5 100.3 L69.3 102.7 L74.2 105.0 L73.3 107.2 L70.4 108.6 L71.5 110.0 L70.2 111.5 L66.7 110.8 L63.0 106.9 L60.9 106.4 L55.9 106.8 L54.3 109.5 L54.2 111.4 L54.6 113.7 L57.4 116.4 L54.6 119.1 L55.4 120.6 L59.8 120.1 L59.8 117.4 L63.9 117.0 L63.4 114.1 L65.1 113.6 L69.0 115.9 L68.1 117.2 L67.7 119.8 L68.8 124.7 L73.5 127.6 L74.4 129.6 L75.9 130.9 L75.8 133.2 L73.8 135.7 L76.0 137.7 L74.5 138.5 L74.4 141.3 L72.8 144.3 L73.4 146.6 L69.7 147.0 L67.6 150.2 L65.8 149.2 L62.7 151.1 L61.3 151.2 L58.4 150.2 L58.9 147.9 L58.7 144.1 L55.5 144.4 L54.8 143.7 L53.5 143.3 L55.1 140.1 L53.1 137.8 L53.4 136.7 L49.3 135.1 L48.6 131.3 L48.0 130.7 L41.9 131.9 L36.2 131.5 L35.6 130.6 L38.6 130.5 L39.0 126.2 L39.6 124.2 L38.9 122.3 L36.2 121.3 L36.5 119.6 L32.9 119.8 L32.6 117.9 L34.1 117.6 L35.5 116.1 L35.3 113.1 L33.2 112.2 L35.6 109.3Z",55.8,117.9],["powiat lubartowski","M50.0 63.6 L55.4 65.6 L57.1 68.0 L60.5 69.0 L63.3 72.8 L66.6 75.9 L67.5 75.7 L70.5 77.9 L74.3 78.9 L74.3 82.9 L76.7 83.3 L78.1 81.9 L80.2 82.1 L80.1 78.8 L82.4 79.6 L85.9 82.5 L87.3 82.4 L88.9 84.9 L87.8 86.9 L86.0 88.0 L86.5 92.6 L86.2 95.1 L83.7 94.2 L79.7 96.4 L77.1 96.2 L73.9 94.8 L71.5 96.2 L69.7 96.3 L67.0 98.6 L64.8 97.0 L62.8 97.0 L60.5 95.9 L57.1 97.4 L55.9 94.9 L53.7 94.1 L51.7 95.9 L49.5 94.6 L47.4 92.0 L45.7 92.2 L43.9 92.2 L42.0 91.9 L38.2 89.2 L37.0 85.2 L41.1 84.0 L40.6 81.8 L41.0 79.6 L39.2 78.7 L38.2 76.6 L36.8 76.6 L38.4 74.6 L36.9 70.6 L37.2 69.0 L43.2 71.2 L44.3 67.7 L45.4 69.9 L48.1 69.2 L50.0 63.6Z",60.0,85.1],["powiat puławski","M28.9 77.7 L32.6 78.1 L36.8 76.6 L38.2 76.6 L39.2 78.7 L41.0 79.6 L40.6 81.8 L41.1 84.0 L37.0 85.2 L38.2 89.2 L42.0 91.9 L43.9 92.2 L43.4 95.0 L41.7 98.4 L43.2 100.3 L40.8 101.7 L42.9 103.3 L42.4 105.8 L44.5 107.3 L40.5 108.7 L39.1 108.3 L35.6 109.3 L30.6 107.2 L29.0 105.6 L27.5 107.0 L26.5 105.8 L23.8 104.9 L22.0 105.8 L21.1 107.9 L18.2 104.1 L16.7 105.6 L16.3 107.5 L13.3 105.9 L11.5 105.6 L14.0 104.7 L15.5 98.5 L14.5 97.0 L12.6 97.2 L10.5 93.7 L11.8 93.0 L12.6 92.2 L15.0 93.0 L17.2 87.8 L15.5 86.2 L16.0 84.0 L14.6 80.2 L15.7 80.2 L18.0 82.0 L20.9 80.5 L22.0 81.5 L25.7 77.5 L28.9 77.7Z",27.5,94.0],["powiat radzyński","M50.0 63.6 L52.4 60.4 L48.8 54.6 L47.2 53.7 L48.6 51.5 L47.4 50.8 L48.4 48.9 L49.8 49.6 L51.5 48.5 L53.6 50.8 L55.3 49.4 L55.8 46.4 L57.3 47.7 L60.9 45.4 L60.6 42.1 L59.8 41.3 L61.2 38.2 L64.8 38.1 L66.0 41.1 L68.1 41.5 L70.4 41.0 L73.4 41.2 L73.9 44.5 L72.9 44.9 L72.5 47.7 L70.8 51.0 L71.6 53.8 L72.9 53.7 L74.7 49.3 L80.3 48.8 L80.3 50.3 L85.7 45.7 L90.0 45.6 L91.5 48.6 L90.6 50.7 L89.2 57.0 L87.8 57.8 L86.7 56.4 L84.2 55.9 L82.1 60.6 L79.8 60.9 L78.6 62.2 L76.6 61.7 L73.6 67.3 L70.4 67.3 L70.2 69.1 L67.9 73.2 L67.5 75.7 L66.6 75.9 L63.3 72.8 L60.5 69.0 L57.1 68.0 L55.4 65.6 L50.0 63.6Z",66.5,54.1],["powiat Biała Podlaska","M98.9 34.2 L95.4 35.4 L92.4 34.7 L92.2 31.5 L93.6 29.6 L96.9 29.0 L97.3 29.8 L100.9 29.3 L101.0 31.7 L98.9 34.2Z",96.7,31.9],["powiat bialski","M95.8 6.2 L98.9 6.7 L100.3 7.2 L100.3 12.0 L102.7 13.0 L108.9 14.4 L112.8 15.6 L114.8 17.7 L116.4 16.5 L118.5 18.1 L120.4 21.7 L121.8 23.0 L125.2 23.3 L126.6 25.9 L128.7 27.9 L129.3 32.6 L130.9 35.8 L129.4 37.1 L129.7 38.5 L127.8 39.7 L128.1 41.8 L126.1 43.3 L127.6 45.8 L125.8 47.4 L126.6 51.9 L127.8 54.5 L127.3 56.9 L122.9 58.9 L121.0 60.7 L120.2 59.0 L116.9 56.9 L115.8 58.5 L115.7 60.8 L112.9 61.2 L113.7 62.8 L110.2 66.4 L108.5 67.4 L107.8 69.3 L105.8 65.4 L102.2 63.6 L100.0 63.4 L98.5 64.5 L95.3 59.9 L92.1 59.6 L90.2 58.8 L89.2 57.0 L90.6 50.7 L91.5 48.6 L90.0 45.6 L85.7 45.7 L80.3 50.3 L80.3 48.8 L74.7 49.3 L72.9 53.7 L71.6 53.8 L70.8 51.0 L72.5 47.7 L72.9 44.9 L73.9 44.5 L73.4 41.2 L70.4 41.0 L68.1 41.5 L66.0 41.1 L64.8 38.1 L64.8 35.1 L64.1 33.1 L66.2 31.4 L67.0 28.7 L65.7 25.9 L67.5 24.1 L72.3 25.5 L74.4 28.2 L75.6 27.1 L77.5 27.0 L78.3 28.2 L81.6 28.7 L81.1 25.9 L81.6 24.0 L84.6 24.8 L85.7 23.5 L83.5 21.4 L86.8 19.1 L86.3 17.8 L89.5 17.6 L90.2 16.6 L89.8 13.1 L93.7 9.4 L95.8 6.2Z",97.1,38.0],["powiat krasnostawski","M88.1 125.7 L90.0 126.2 L91.8 125.3 L92.5 126.5 L98.4 125.1 L99.7 127.2 L102.1 127.8 L104.9 129.3 L109.1 130.5 L110.2 130.0 L114.6 131.2 L115.8 130.8 L116.2 133.5 L111.9 137.1 L114.5 139.8 L114.8 141.7 L117.7 145.2 L115.9 147.2 L114.3 145.7 L111.2 146.0 L107.7 145.1 L106.4 144.1 L104.3 146.2 L103.2 149.5 L100.4 150.0 L100.0 148.2 L97.2 147.4 L97.3 149.9 L96.4 150.8 L93.7 150.6 L89.8 148.1 L88.0 150.5 L87.0 152.7 L84.5 152.6 L83.6 154.6 L80.7 154.2 L80.6 152.9 L78.6 153.5 L75.8 151.5 L75.3 147.2 L73.4 146.6 L72.8 144.3 L74.4 141.3 L74.5 138.5 L76.0 137.7 L78.0 137.6 L80.1 138.5 L82.6 137.4 L83.1 135.3 L84.4 134.9 L84.7 132.9 L81.6 132.6 L81.0 130.1 L80.0 129.1 L83.0 123.2 L85.2 123.0 L88.1 125.7Z",94.3,139.8],["powiat zamojski","M117.7 145.2 L117.6 146.1 L122.1 146.6 L124.1 147.7 L128.4 149.6 L128.0 151.4 L127.6 153.7 L129.1 155.9 L129.0 159.7 L128.2 161.1 L129.7 163.7 L126.9 164.1 L126.8 166.6 L125.1 167.1 L125.5 171.1 L125.2 173.6 L122.6 174.9 L118.4 175.7 L114.6 175.8 L112.5 174.1 L107.3 174.1 L107.1 177.5 L106.2 180.3 L108.1 181.0 L107.4 184.7 L105.8 185.9 L102.6 186.3 L101.2 184.4 L99.0 185.4 L97.1 183.0 L94.8 181.6 L88.0 182.8 L86.8 178.4 L84.2 177.7 L83.4 174.9 L81.6 175.5 L79.8 171.4 L80.3 170.8 L77.4 171.9 L77.4 174.1 L74.3 170.7 L75.2 169.3 L74.8 166.2 L76.6 163.5 L74.1 162.6 L73.1 157.9 L75.0 158.1 L77.0 156.6 L79.4 156.6 L80.7 154.2 L83.6 154.6 L84.5 152.6 L87.0 152.7 L88.0 150.5 L89.8 148.1 L93.7 150.6 L96.4 150.8 L97.3 149.9 L97.2 147.4 L100.0 148.2 L100.4 150.0 L103.2 149.5 L104.3 146.2 L106.4 144.1 L107.7 145.1 L111.2 146.0 L114.3 145.7 L115.9 147.2 L117.7 145.2Z",101.9,162.7],["powiat janowski","M61.3 151.2 L63.5 151.8 L64.2 154.6 L65.3 155.5 L67.3 158.2 L65.4 161.1 L65.8 162.4 L63.5 163.7 L65.5 166.0 L66.1 168.6 L67.6 169.8 L65.5 172.5 L62.3 175.8 L57.6 176.7 L55.3 176.9 L54.2 175.8 L50.6 176.5 L46.9 173.6 L40.5 172.5 L39.0 169.0 L34.3 167.7 L35.7 166.1 L35.7 164.4 L37.6 159.8 L37.4 158.9 L34.6 157.8 L35.3 155.3 L40.6 150.8 L42.6 152.6 L42.3 153.6 L45.8 155.2 L47.6 154.1 L50.1 151.6 L51.3 146.3 L54.4 146.3 L54.8 143.7 L55.5 144.4 L58.7 144.1 L58.9 147.9 L58.4 150.2 L61.3 151.2Z",52.7,159.8]];
+/* przypisanie powiatów do oddziałów (orientacyjne) — indeksy z BR: 0 Świdnik, 1 Miączyn, 2 Rudnik, 3 Białka */
+const DR_MAP={'Lublin':0,'lubelski':0,'świdnicki':0,'łęczyński':0,'lubartowski':0,'puławski':0,'rycki':0,
+  'kraśnicki':2,'janowski':2,'opolski':2,'krasnostawski':2,'biłgorajski':2,
+  'radzyński':3,'parczewski':3,'bialski':3,'Biała Podlaska':3,'łukowski':3,'włodawski':3,
+  'zamojski':1,'Zamość':1,'hrubieszowski':1,'tomaszowski':1,'chełmski':1,'Chełm':1};
+/* dyżury handlowców: 1=pon … 5=pt; d = dyżur, r = dyżur rotacyjny */
+const DR_REPS={
+  0:[{n:'Cezary Jaroszewski',d:{1:'r',4:'d'}},{n:'Sebastian Zacharuk',d:{1:'r',5:'d'}},{n:'Bartłomiej Mazurek',d:{1:'r',3:'d'}},{n:'Sylwester Żebrowski',d:{2:'d'}}],
+  2:[{n:'Sylwester Żebrowski',d:{3:'r',4:'d',5:'d'}},{n:'Łukasz Parus',d:{1:'d',2:'d',3:'r'}}],
+  3:[{n:'Jakub Lal',d:{2:'d',4:'d',5:'r'}},{n:'Marcin Majchrzak',d:{1:'d',3:'d',5:'r'}}],
+  1:[{n:'Dawid Śliwa',d:{1:'r',3:'d',5:'d'}},{n:'Kamil Szczerbicki',d:{1:'r',2:'d'}},{n:'Aleksander Paul',d:{1:'r',4:'d'}}]};
+const DR_DAYS=['','Pon','Wt','Śr','Czw','Pt'];
+const DR_SLOTS=['8:30','10:30','12:30','14:30'];
+const drWeek=d=>{const t=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));const n=t.getUTCDay()||7;t.setUTCDate(t.getUTCDate()+4-n);const y=new Date(Date.UTC(t.getUTCFullYear(),0,1));return Math.ceil(((t-y)/864e5+1)/7);};
+const drDuty=(b,date)=>{ const wd=date.getDay(); if(wd<1||wd>5) return []; const R=DR_REPS[b]||[];
+  const fix=R.filter(r=>r.d[wd]==='d'), rot=R.filter(r=>r.d[wd]==='r');
+  return rot.length?[...fix,rot[drWeek(date)%rot.length]]:fix; };
+const drKey=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+const drTaken=()=>{ try{return JSON.parse(localStorage.getItem('rx_drives')||'[]')}catch(e){return []} };
+const drPowName=n=>n.replace(/^powiat /,'');
+const drPowLabel=n=>{const s=drPowName(n); return /^[A-ZŁŚŻŹĆ]/.test(s)?`miasto ${s}`:`pow. ${s}`;};
+
+function openDrive(pre){
+  const S={pow:null,b:null,cat:null,m:pre&&pre.m||null,day:null,slot:null,step:1};
+  if(S.m){ const [c]=findProd(S.m); if(c) S.cat=c.s; }
+  const el=document.createElement('div'); el.className='dr-modal'; el.setAttribute('role','dialog'); el.setAttribute('aria-modal','true'); el.setAttribute('aria-label','Rezerwacja jazdy próbnej');
+  el.innerHTML=`<div class="dr-dlg"><button class="dr-x" aria-label="Zamknij">×</button>
+    <header class="dr-top"><div><div class="eyebrow">Rolmax · New Holland</div><h2 class="display chrome">Jazda próbna</h2></div>
+      <ol class="dr-steps">${['Powiat','Doradca','Maszyna','Termin','Dane'].map((t,i)=>`<li data-s="${i+1}"><b>${i+1}</b><span>${t}</span></li>`).join('')}</ol></header>
+    <div class="dr-body"></div>
+    <footer class="dr-foot"><div class="dr-sum"></div><div class="dr-nav"><button class="btn btn-ghost dr-back" type="button">← Wstecz</button><button class="btn btn-chrome btn-shine dr-next" type="button">Dalej →</button></div></footer></div>`;
+  document.body.appendChild(el); document.documentElement.style.overflow='hidden';
+  requestAnimationFrame(()=>el.classList.add('in'));
+  const body=el.querySelector('.dr-body'), next=el.querySelector('.dr-next'), back=el.querySelector('.dr-back');
+  const close=()=>{ el.classList.remove('in'); setTimeout(()=>el.remove(),280); document.documentElement.style.overflow=''; removeEventListener('keydown',esc); };
+  const esc=e=>{ if(e.key==='Escape') close(); }; addEventListener('keydown',esc);
+  el.addEventListener('click',e=>{ if(e.target===el||e.target.closest('.dr-x')) close(); });
+  const tel=t=>`<a class="dr-tel" href="tel:+48${t.replace(/ /g,'')}"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7l.7 2.7-1.8 3.4a16 16 0 006 6l3.4-1.8 2.7.7a2 2 0 011.7 2z"/></svg>${t}</a>`;
+  const prod=()=>S.m?findProd(S.m)[1]:null;
+  const ok=()=>({1:S.pow!=null,2:true,3:!!S.m,4:!!(S.day&&S.slot),5:true})[S.step];
+  const summary=()=>{ const p=prod(); const parts=[];
+    if(S.pow!=null) parts.push(`<span>📍 ${drPowLabel(DR_POW[S.pow][0])} → Rolmax ${BR[S.b].n}</span>`);
+    if(p) parts.push(`<span>🚜 ${p.n}</span>`);
+    if(S.day) parts.push(`<span>📅 ${S.day.toLocaleDateString('pl-PL',{weekday:'short',day:'numeric',month:'long'})}${S.slot?', '+S.slot:''}</span>`);
+    el.querySelector('.dr-sum').innerHTML=parts.join(''); };
+  const render=()=>{
+    el.querySelectorAll('.dr-steps li').forEach(li=>{const n=+li.dataset.s; li.classList.toggle('on',n===S.step); li.classList.toggle('done',n<S.step);});
+    back.style.visibility=S.step>1&&S.step<6?'visible':'hidden';
+    next.style.display=S.step>=5?'none':''; next.disabled=!ok();
+    next.textContent=S.step===2?'Umów jazdę próbną →':'Dalej →';
+    summary(); body.scrollTop=0;
+    ({1:step1,2:step2,3:step3,4:step4,5:step5,6:step6})[S.step]();
+  };
+  /* KROK 1 — mapa powiatów */
+  function step1(){
+    body.innerHTML=`<div class="dr-s1"><div class="dr-map"><svg viewBox="-12 -4 184 222" role="img" aria-label="Mapa powiatów województwa lubelskiego">
+      <defs><filter id="drGlow"><feGaussianBlur stdDeviation="1.2"/></filter></defs>
+      ${DR_POW.map((p,i)=>`<path class="dr-pow b${DR_MAP[drPowName(p[0])]}${S.pow===i?' sel':''}" data-i="${i}" d="${p[1]}"><title>${drPowLabel(p[0])}</title></path>`).join('')}
+      ${BR_XY.map((xy,i)=>`<g class="dr-pin" transform="translate(${xy[0]} ${xy[1]})"><circle r="3.2"/><circle r="1.3" class="c"/><text y="-5.5">${BR[i].n}</text></g>`).join('')}
+      <text class="dr-hover" x="80" y="214" text-anchor="middle"></text></svg></div>
+      <div class="dr-side"><h3>Gdzie znajduje się Twoje gospodarstwo?</h3><p>Kliknij powiat na mapie albo wybierz go z listy — przypiszemy Ci doradcę z najbliższego oddziału Rolmax.</p>
+      <label class="dr-sel"><span>Powiat</span><select><option value="">— wybierz powiat —</option>${DR_POW.map((p,i)=>[drPowLabel(p[0]),i]).sort((a,b)=>a[0].localeCompare(b[0],'pl')).map(([l,i])=>`<option value="${i}"${S.pow===i?' selected':''}>${l}</option>`).join('')}</select></label>
+      <ul class="dr-legend">${BR.map((b,i)=>`<li class="b${i}"><i></i>Rolmax ${b.n}</li>`).join('')}</ul></div></div>`;
+    const hv=body.querySelector('.dr-hover');
+    const pick=i=>{ S.pow=i; S.b=DR_MAP[drPowName(DR_POW[i][0])]; body.querySelectorAll('.dr-pow').forEach(p=>p.classList.toggle('sel',+p.dataset.i===i)); body.querySelector('select').value=i; next.disabled=false; summary(); setTimeout(()=>{S.step=2;render();},450); };
+    body.querySelectorAll('.dr-pow').forEach(p=>{ p.addEventListener('mouseenter',()=>hv.textContent=drPowLabel(DR_POW[+p.dataset.i][0])); p.addEventListener('mouseleave',()=>hv.textContent=''); p.addEventListener('click',()=>pick(+p.dataset.i)); });
+    body.querySelector('select').addEventListener('change',e=>{ if(e.target.value!=='') pick(+e.target.value); });
+  }
+  /* KROK 2 — oddział i doradcy */
+  function step2(){ const b=BR[S.b], sales=b.d[0], reps=DR_REPS[S.b]||[];
+    body.innerHTML=`<div class="dr-s2"><div class="dr-branch"><div class="eyebrow">Twój oddział</div><h3 class="display chrome">Rolmax ${b.n}</h3><p>${b.a}</p><p class="dr-muted">Obsługuje m.in.: ${DR_POW.filter(p=>DR_MAP[drPowName(p[0])]===S.b).map(p=>drPowLabel(p[0])).join(', ')}</p>
+      <div class="dr-call"><span>Wolisz porozmawiać? Zadzwoń od razu:</span>${sales[2].map(tel).join('')}<small>${sales[1]}</small></div></div>
+      <div class="dr-reps"><h4>Doradcy handlowi w oddziale</h4>${reps.map(r=>`<div class="dr-rep"><i>${r.n.split(' ').map(x=>x[0]).join('')}</i><div><b>${r.n}</b><small>Dyżury: ${Object.entries(r.d).map(([d,t])=>`<em class="${t}">${DR_DAYS[d]}${t==='r'?'*':''}</em>`).join('')}</small></div></div>`).join('')}
+      <p class="dr-muted">* dyżur rotacyjny — doradcy zmieniają się co tydzień.</p></div></div>`;
+  }
+  /* KROK 3 — wybór maszyny */
+  function step3(){ if(!S.cat) S.cat=RX[0].s;
+    const draw=()=>{ const c=catOf(S.cat);
+      body.querySelector('.dr-cats').innerHTML=RX.map(x=>`<button type="button" data-c="${x.s}" class="${x.s===S.cat?'on':''}">${x.c}</button>`).join('');
+      body.querySelector('.dr-mgrid').innerHTML=c.items.map(it=>`<button type="button" class="dr-m${S.m===it.s?' on':''}" data-m="${it.s}"><img loading="lazy" src="${IMG(it)}" alt=""><span>${it.n}</span></button>`).join('');
+      body.querySelectorAll('.dr-cats button').forEach(b=>b.onclick=()=>{S.cat=b.dataset.c;draw();});
+      body.querySelectorAll('.dr-m').forEach(b=>b.onclick=()=>{S.m=b.dataset.m; body.querySelectorAll('.dr-m').forEach(x=>x.classList.toggle('on',x===b)); next.disabled=false; summary();}); };
+    body.innerHTML=`<div class="dr-s3"><h3>Którą maszynę chcesz sprawdzić w praktyce?</h3><div class="dr-cats"></div><div class="dr-mgrid"></div></div>`; draw(); }
+  /* KROK 4 — kalendarz i godzina */
+  function step4(){ const today=new Date(); today.setHours(0,0,0,0); let mo=new Date((S.day||today).getFullYear(),(S.day||today).getMonth(),1);
+    const minD=new Date(today); minD.setDate(minD.getDate()+1); const maxD=new Date(today); maxD.setDate(maxD.getDate()+70);
+    const taken=drTaken();
+    const draw=()=>{ const y=mo.getFullYear(), m=mo.getMonth(), first=(new Date(y,m,1).getDay()+6)%7, dim=new Date(y,m+1,0).getDate();
+      let cells=''; for(let i=0;i<first;i++) cells+='<span></span>';
+      for(let d=1;d<=dim;d++){ const dt=new Date(y,m,d), wd=dt.getDay(), duty=drDuty(S.b,dt);
+        const off=dt<minD||dt>maxD||wd===0||wd===6||!duty.length; const full=!off&&DR_SLOTS.every(s=>taken.some(t=>t.b===S.b&&t.day===drKey(dt)&&t.slot===s));
+        cells+=`<button type="button" class="dr-d${off?' off':''}${full?' full':''}${S.day&&drKey(S.day)===drKey(dt)?' on':''}" data-k="${drKey(dt)}" ${off||full?'disabled':''}><b>${d}</b>${off?'':`<small>${full?'brak miejsc':duty.map(r=>r.n.split(' ')[0]).join(', ')}</small>`}</button>`; }
+      body.querySelector('.dr-cal').innerHTML=`<div class="dr-calh"><button type="button" class="pv">‹</button><b>${mo.toLocaleDateString('pl-PL',{month:'long',year:'numeric'})}</b><button type="button" class="nx">›</button></div>
+        <div class="dr-wd">${['Pn','Wt','Śr','Cz','Pt','So','Nd'].map(x=>`<span>${x}</span>`).join('')}</div><div class="dr-grid">${cells}</div>`;
+      const pv=body.querySelector('.pv'), nx=body.querySelector('.nx');
+      pv.disabled=new Date(y,m,0)<minD; nx.disabled=new Date(y,m+1,1)>maxD;
+      pv.onclick=()=>{mo=new Date(y,m-1,1);draw();}; nx.onclick=()=>{mo=new Date(y,m+1,1);draw();};
+      body.querySelectorAll('.dr-d:not([disabled])').forEach(b=>b.onclick=()=>{ const [yy,mm,dd]=b.dataset.k.split('-').map(Number); S.day=new Date(yy,mm-1,dd); S.slot=null; draw(); slots(); next.disabled=true; summary(); });
+    };
+    const slots=()=>{ const box=body.querySelector('.dr-slots'); if(!S.day){ box.innerHTML='<p class="dr-muted">Wybierz dzień w kalendarzu — pokażemy wolne godziny i doradcę dyżurnego.</p>'; return; }
+      const duty=drDuty(S.b,S.day), k=drKey(S.day);
+      box.innerHTML=`<h4>${S.day.toLocaleDateString('pl-PL',{weekday:'long',day:'numeric',month:'long'})}</h4><p class="dr-muted">Doradca dyżurny: <b>${duty.map(r=>r.n).join(' / ')}</b></p>
+        <div class="dr-slotg">${DR_SLOTS.map(s=>{const t=taken.some(x=>x.b===S.b&&x.day===k&&x.slot===s);return `<button type="button" class="${t?'taken':''}${S.slot===s?' on':''}" data-s="${s}" ${t?'disabled':''}>${s}${t?'<small>zajęte</small>':''}</button>`;}).join('')}</div>
+        <p class="dr-muted">Jazda trwa ok. 1,5 h — w oddziale Rolmax ${BR[S.b].n} lub u Ciebie w gospodarstwie (ustalimy telefonicznie).</p>`;
+      box.querySelectorAll('button:not([disabled])').forEach(b=>b.onclick=()=>{S.slot=b.dataset.s; box.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b)); next.disabled=false; summary();}); };
+    body.innerHTML=`<div class="dr-s4"><div class="dr-cal"></div><div class="dr-slots"></div></div>`; draw(); slots(); }
+  /* KROK 5 — dane kontaktowe */
+  function step5(){ const p=prod(), duty=drDuty(S.b,S.day);
+    body.innerHTML=`<form class="dr-s5" novalidate><div class="dr-recap chrome-frame"><div class="eyebrow">Twoja rezerwacja</div>
+        <dl><dt>Maszyna</dt><dd>${p.n}</dd><dt>Termin</dt><dd>${S.day.toLocaleDateString('pl-PL',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}, godz. ${S.slot}</dd><dt>Oddział</dt><dd>Rolmax ${BR[S.b].n}, ${BR[S.b].a}</dd><dt>Doradca</dt><dd>${duty.map(r=>r.n).join(' / ')}</dd></dl></div>
+      <div class="dr-fields">
+        <label><span>Imię i nazwisko *</span><input name="name" required autocomplete="name"></label>
+        <label><span>Telefon *</span><input name="phone" type="tel" required autocomplete="tel" placeholder="np. 600 100 200"></label>
+        <label><span>E-mail</span><input name="email" type="email" autocomplete="email"></label>
+        <label><span>Miejscowość / gospodarstwo</span><input name="place" autocomplete="address-level2"></label>
+        <label class="wide"><span>Uwagi (np. maszyna, którą obecnie użytkujesz, preferowane miejsce jazdy)</span><textarea name="note" rows="3"></textarea></label>
+        <label class="dr-check wide"><input type="checkbox" name="rodo" required><span>Wyrażam zgodę na kontakt ze strony Rolmax w sprawie jazdy próbnej i przetwarzanie podanych danych w tym celu. *</span></label>
+        <p class="dr-err wide" hidden>Uzupełnij imię i nazwisko, poprawny numer telefonu i zaznacz zgodę.</p>
+        <button class="btn btn-chrome btn-shine wide" type="submit">Zarezerwuj termin</button></div></form>`;
+    const f=body.querySelector('form');
+    f.addEventListener('submit',e=>{ e.preventDefault(); const v=Object.fromEntries(new FormData(f)); const okp=(v.phone||'').replace(/\D/g,'').length>=9;
+      if(!v.name||!okp||!v.rodo){ f.querySelector('.dr-err').hidden=false; return; }
+      const rec={b:S.b,day:drKey(S.day),slot:S.slot,m:S.m,pow:DR_POW[S.pow][0],rep:duty.map(r=>r.n).join(' / '),...v,ts:Date.now()};
+      try{ const t=drTaken(); t.push(rec); localStorage.setItem('rx_drives',JSON.stringify(t)); }catch(err){}
+      if(typeof window.rxSendDrive==='function') window.rxSendDrive(rec); /* tu podłączymy wysyłkę do oddziału (e-mail / CRM) */
+      S.rec=rec; S.step=6; render(); });
+  }
+  /* POTWIERDZENIE */
+  function step6(){ const p=prod(), r=S.rec, b=BR[S.b];
+    el.querySelectorAll('.dr-steps li').forEach(li=>li.classList.add('done'));
+    const ics=()=>{ const [h,mi]=S.slot.split(':').map(Number); const st=new Date(S.day); st.setHours(h,mi); const en=new Date(st.getTime()+90*60000);
+      const f=d=>d.toISOString().replace(/[-:]/g,'').replace(/\.\d+/,'');
+      const txt=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Rolmax//Jazda probna//PL','BEGIN:VEVENT',`UID:${r.ts}@rolmax.net.pl`,`DTSTAMP:${f(new Date())}`,`DTSTART:${f(st)}`,`DTEND:${f(en)}`,`SUMMARY:Jazda próbna — New Holland ${p.n}`,`LOCATION:Rolmax ${b.n}, ${b.a}`,`DESCRIPTION:Doradca: ${r.rep}. Kontakt: ${b.d[0][2][0]}`,'END:VEVENT','END:VCALENDAR'].join('\r\n');
+      const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([txt],{type:'text/calendar'})); a.download='jazda-probna-rolmax.ics'; a.click(); };
+    body.innerHTML=`<div class="dr-done"><div class="dr-tick"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg></div>
+      <h3 class="display chrome">Termin zarezerwowany</h3>
+      <p>${r.name.split(' ')[0]}, czekamy na Ciebie <b>${S.day.toLocaleDateString('pl-PL',{weekday:'long',day:'numeric',month:'long'})} o ${S.slot}</b> — jazda próbna <b>New Holland ${p.n}</b> z oddziałem <b>Rolmax ${b.n}</b>.</p>
+      <p class="dr-muted">Doradca ${r.rep} zadzwoni na numer ${r.phone}, aby potwierdzić szczegóły i miejsce jazdy.</p>
+      <div class="dr-done-act"><button type="button" class="btn btn-ghost dr-ics">Dodaj do kalendarza</button>${b.d[0][2].slice(0,1).map(t=>`<a class="btn btn-chrome btn-shine" href="tel:+48${t.replace(/ /g,'')}">Zadzwoń: ${t}</a>`).join('')}</div></div>`;
+    body.querySelector('.dr-ics').onclick=ics; el.querySelector('.dr-foot').style.display='none'; }
+  next.addEventListener('click',()=>{ if(!ok()) return; S.step++; render(); });
+  back.addEventListener('click',()=>{ if(S.step>1){ S.step--; render(); } });
+  render();
+}
+document.addEventListener('click',e=>{ const a=e.target.closest('.hdr-drive,[data-drive]'); if(!a) return; e.preventDefault(); e.stopPropagation(); openDrive({m:a.dataset.drive||null}); },true);
+
 function route(){
   const h=location.hash.slice(1); const app=$('#app');
   document.querySelectorAll('[data-mega]').forEach(x=>x.classList.remove('open'));
