@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611101105">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611101130">
 </head>
 <body>
 
@@ -45,6 +45,10 @@
     </a>
     <span class="hdr-sep" aria-hidden="true"></span>
     <a class="nh-badge" href="https://agriculture.newholland.com/pl-pl/europe" target="_blank" rel="noopener" title="New Holland — autoryzowany dealer"><img class="nh-full" src="assets/nh-logo.svg" alt="New Holland" width="266" height="45"><img class="nh-leaf" src="assets/nh-leaf.svg" alt="New Holland" width="45" height="45"></a>
+    <div class="hdr-quick">
+      <a class="hq-btn hq-parts btn-shine" href="https://www.rolmax-sklep.pl/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Części</a>
+      <a class="hq-btn hq-svc" href="#usluga-serwis" data-tip="Żniwa 24/7"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2.5-2.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Serwis</a>
+    </div>
     <ul class="nav" id="nav">
       <li data-mega="oferta"><button aria-expanded="false">Oferta <svg class="caret" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.6"/></svg></button>
         <div class="mega"><div class="mega-inner"><div class="mega-side" id="megaOfertaSide"></div><div class="mega-main" id="megaOfertaMain"></div></div></div>
@@ -52,7 +56,6 @@
       <li data-mega="uslugi"><button aria-expanded="false">Usługi <svg class="caret" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.6"/></svg></button>
         <div class="mega"><div class="mega-inner"><div class="mega-side" id="megaUslugiSide"></div><div class="mega-main" id="megaUslugiMain"></div></div></div>
       </li>
-      <li><a href="https://www.rolmax-sklep.pl/">Sklep</a></li>
       <li><a href="#promocje">Promocje</a></li>
       <li><a href="#blog">Blog</a></li>
       <li><a href="#aktualnosci">Aktualności</a></li>
@@ -99,7 +102,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611101105"></script>
+<script src="data.js?v=202611101130"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -817,6 +820,11 @@ async function mountNhx(){
   }));
 }
 
+
+/* Części / Serwis: na telefonie przenoszone do górnego paska */
+(()=>{const q=document.querySelector('.hdr-quick'), home=q.parentNode, next=q.nextElementSibling, tb=document.querySelector('.topbar .wrap'), jw=tb.querySelector('.jub-wrap');
+ const place=()=>{ const m=innerWidth<=700; if(m&&q.parentNode!==tb){ tb.insertBefore(q,jw); q.classList.add('in-tb'); } else if(!m&&q.parentNode!==home){ home.insertBefore(q,next); q.classList.remove('in-tb'); } };
+ place(); addEventListener('resize',place);})();
 function route(){
   const h=location.hash.slice(1); const app=$('#app');
   document.querySelectorAll('[data-mega]').forEach(x=>x.classList.remove('open'));
