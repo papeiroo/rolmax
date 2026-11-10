@@ -1164,45 +1164,37 @@ html,body{overflow-x:clip}
   .nhx-dbody{padding:22px 20px 28px}.nhx-sub{grid-template-columns:1fr}.nhx-sub img{width:100%;height:170px}
 }
 
-/* ===== Szybkie przyciski w nagłówku: Części / Serwis ===== */
-.hdr-quick{display:flex;align-items:center;gap:8px;flex:none}
-.hq-btn{position:relative;display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;font-family:var(--ff-display);font-weight:700;font-size:.95rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;transition:transform .25s,box-shadow .25s,border-color .25s,color .25s}
-.hq-btn svg{width:17px;height:17px;flex:none}
-.hq-parts{color:var(--navy-950);background:var(--chrome-h);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 6px 18px -6px rgba(200,215,235,.55);overflow:hidden}
-.hq-parts:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 #fff,0 10px 26px -6px rgba(220,232,250,.7)}
-.hq-svc{color:#e8eef7;border:1.5px solid rgba(214,224,238,.7);background:rgba(255,255,255,.04)}
-.hq-svc:hover{border-color:#fff;color:#fff;background:rgba(255,255,255,.1)}
-.hq-svc::after{content:attr(data-tip);position:absolute;left:50%;top:calc(100% + 12px);transform:translate(-50%,-6px);padding:8px 14px;border-radius:10px;background:var(--chrome-h);color:var(--navy-950);font-size:.82rem;letter-spacing:.12em;box-shadow:0 12px 30px -10px rgba(0,0,0,.8);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:60}
-.hq-svc::before{content:"";position:absolute;left:50%;top:calc(100% + 6px);width:12px;height:12px;background:#e6ecf5;transform:translate(-50%,-6px) rotate(45deg);opacity:0;transition:opacity .2s,transform .2s;z-index:59}
-.hq-svc:hover::after,.hq-svc:focus-visible::after{opacity:1;transform:translate(-50%,0)}
-.hq-svc:hover::before,.hq-svc:focus-visible::before{opacity:1;transform:translate(-50%,0) rotate(45deg)}
-@media (max-width:1560px){.hq-btn{height:40px;padding:0 15px;font-size:.85rem;letter-spacing:.1em}}
-@media (max-width:1400px){.hq-btn{height:36px;padding:0 12px;font-size:.78rem;letter-spacing:.08em;gap:6px}.hq-btn svg{width:14px;height:14px}}
-@media (max-width:700px){.hdr-quick{gap:5px}.hq-btn{height:30px;padding:0 9px;font-size:.66rem;letter-spacing:.05em}.hq-btn svg{display:none}}
-/* miejsce na Części / Serwis w nagłówku */
-@media (min-width:1700px){.site-header .wrap{max-width:1880px}}
-@media (max-width:1700px){
-  .site-header .nav>li>a,.site-header .nav>li>button{padding:0 8px;letter-spacing:.04em}
-  .site-header .nav>li>a::after,.site-header .nav>li>button::after{left:8px;right:8px}
-}
-@media (max-width:1800px){
-  .hdr-sep{margin:0 10px!important;height:30px!important}
-  .nh-badge{padding:6px!important;margin-right:4px!important;border-radius:8px!important}
-  .nh-badge .nh-full{display:none}.nh-badge .nh-leaf{display:block;height:20px!important;width:auto}
-  .site-header .nav>li>a,.site-header .nav>li>button{padding:0 6px;font-size:.86rem;letter-spacing:.03em}
-  .site-header .nav>li>a::after,.site-header .nav>li>button::after{left:6px;right:6px}
-}
-@media (max-width:1500px){
-  .site-header .wrap{gap:10px}
-  .site-header .nav>li>a,.site-header .nav>li>button{padding:0 5px;font-size:.8rem;letter-spacing:.02em}
-  .hq-btn{padding:0 10px;font-size:.72rem}
-  .hdr-cta{padding-left:14px!important;padding-right:14px!important}
-}
-@media (max-width:1100px){.hq-btn svg{display:none}.hq-btn{padding:0 9px}.site-header .nav>li>a,.site-header .nav>li>button{font-size:.74rem;padding:0 4px}}
-@media (max-width:1280px){.hq-btn{padding:0 8px;font-size:.68rem;letter-spacing:.06em}}
-.hdr-quick.in-tb{gap:4px;margin-left:auto}
-@media (max-width:700px){.topbar .wrap{display:flex!important;flex-wrap:nowrap!important;gap:6px!important}.topbar .tb-chip{display:none!important}.hdr-quick.in-tb~.jub-wrap{margin-left:0}}
-.hdr-quick.in-tb .hq-btn{height:26px;padding:0 8px;font-size:.6rem;letter-spacing:.05em;gap:4px}
-.hdr-quick.in-tb .hq-btn svg{display:block!important;width:11px;height:11px}
-.hdr-quick.in-tb .hq-svc::after{font-size:.68rem;padding:6px 10px;top:calc(100% + 10px)}
 
+/* ===== Wstążka nagłówka: ikony nad kategoriami, pełne logo New Holland ===== */
+.site-header .wrap{max-width:1880px}
+.hdr-sep,.nh-badge{display:flex!important}
+.hdr-sep{margin:0 18px!important;height:44px!important}
+.nh-badge{padding:9px 14px!important;margin-right:10px!important;border-radius:9px!important}
+.nh-badge .nh-full{display:block!important;height:22px!important;width:auto}
+.nh-badge .nh-leaf{display:none!important}
+.site-header .nav{margin-left:auto}
+.site-header .nav>li>a,.site-header .nav>li>button{flex-direction:column;justify-content:center;gap:7px;height:84px;padding:0 13px;font-family:var(--ff-body);font-weight:500;font-size:.95rem;letter-spacing:0;text-transform:none;color:#fff}
+.site-header .nav .nt{display:flex;align-items:center;gap:5px;line-height:1}
+.site-header .nav .ni{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;color:#dfe7f3;transition:transform .3s,color .3s,filter .3s}
+.site-header .nav>li:hover .ni,.site-header .nav>li.open .ni{transform:translateY(-3px);color:#fff;filter:drop-shadow(0 0 6px rgba(200,220,255,.6))}
+.site-header .nav>li>a::after,.site-header .nav>li>button::after{left:13px;right:13px;bottom:6px}
+.site-header .nav .caret{width:10px;height:10px}
+@media (max-width:1700px){.site-header .nav>li>a,.site-header .nav>li>button{padding:0 10px;font-size:.9rem}.site-header .nav>li>a::after,.site-header .nav>li>button::after{left:10px;right:10px}}
+@media (max-width:1500px){
+  .hdr-sep{margin:0 12px!important;height:38px!important}
+  .nh-badge{padding:7px 10px!important;margin-right:4px!important}.nh-badge .nh-full{height:18px!important}
+  .site-header .nav>li>a,.site-header .nav>li>button{padding:0 7px;font-size:.84rem;gap:6px}
+  .site-header .nav .ni{width:23px;height:23px}
+  .site-header .nav>li>a::after,.site-header .nav>li>button::after{left:7px;right:7px}
+}
+@media (max-width:1280px){
+  .hdr-sep{margin:0 9px!important;height:32px!important}
+  .nh-badge{padding:6px 8px!important}.nh-badge .nh-full{height:15px!important}
+  .site-header .nav>li>a,.site-header .nav>li>button{padding:0 5px;font-size:.78rem}
+  .site-header .nav .ni{width:21px;height:21px}
+}
+@media (max-width:1100px){.site-header .nav>li>a,.site-header .nav>li>button{padding:0 4px;font-size:.72rem;height:72px;gap:5px}.site-header .nav .ni{width:19px;height:19px}}
+@media (max-width:700px){
+  .hdr-sep{margin:0 8px!important;height:26px!important}
+  .nh-badge{padding:5px 7px!important;margin-right:0!important;border-radius:7px!important}.nh-badge .nh-full{height:12px!important}
+}
