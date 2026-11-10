@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611101235">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611101245">
 </head>
 <body>
 
@@ -102,7 +102,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611101235"></script>
+<script src="data.js?v=202611101245"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -727,11 +727,12 @@ async function mountNhx(){
   if(M.length){ tabs.push(['nhModels','Modele']);
     html+=`<section class="nhx-sec" id="nhModels"><div class="wrap">
       <div class="nhx-head"><div><div class="eyebrow">Modele</div><h2 class="display chrome nhx-h">Przegląd dostępnych modeli</h2></div><span class="nhx-count">${M.length} ${plM(M.length)}</span></div>
-      <div class="nhx-models">${M.map((m,i)=>`<button class="nhx-model reveal" data-mi="${i}" style="transition-delay:${Math.min(i,8)*40}ms">
+      <div class="nhx-models">${M.map((m,i)=>`<button class="nhx-model reveal${i>=4?' nhx-mhide':''}" data-mi="${i}" style="transition-delay:${Math.min(i,8)*40}ms">
         <div class="nhx-mimg">${m.img?`<img loading="lazy" src="${NHI(m.img,500)}" alt="New Holland ${nhEsc(m.t)}">`:''}</div>
         <b class="chrome">${nhEsc(m.t)}</b>
         <dl>${(m.ss||[]).slice(0,4).map(([k,v])=>`<div><dt>${nhEsc(k)}</dt><dd>${nhEsc(v)}</dd></div>`).join('')}</dl>
         <span class="nhx-mcta">${d.spec?'Zobacz specyfikację →':'Zapytaj o ten model →'}</span></button>`).join('')}</div>
+      ${M.length>4?`<div class="nhx-center"><button class="btn btn-ghost nhx-mmore" type="button" data-n="${M.length-4}">Pokaż więcej modeli (${M.length-4})</button></div>`:''}
     </div></section>`; }
   /* --- Specyfikacje --- */
   const S=d.spec;
@@ -805,6 +806,9 @@ async function mountNhx(){
       draw(); go('nhSpec'); }));
     draw();
   } else box.querySelectorAll('.nhx-model').forEach(b=>b.addEventListener('click',()=>scrollToSec('oddzialy')));
+  const mm=box.querySelector('.nhx-mmore'); if(mm) mm.addEventListener('click',()=>{ const open=mm.classList.toggle('on');
+    box.querySelectorAll('.nhx-model[data-mi]').forEach(b=>{ if(+b.dataset.mi>=4){ b.classList.toggle('nhx-mhide',!open); if(open) b.classList.add('in','visible','show'); } });
+    mm.textContent=open?'Pokaż mniej':`Pokaż więcej modeli (${mm.dataset.n})`; if(!open) go('nhModels'); });
   /* funkcje — okno ze szczegółami */
   const sa=box.querySelector('.nhx-showall'); if(sa) sa.addEventListener('click',()=>{ box.querySelectorAll('.nhx-more').forEach(x=>x.classList.remove('nhx-more')); sa.parentElement.remove(); });
   box.querySelectorAll('.nhx-feat').forEach(b=>b.addEventListener('click',()=>{ const f=F[+b.dataset.fi];

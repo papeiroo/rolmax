@@ -1323,3 +1323,4 @@ html,body{overflow-x:clip}
 .site-header .nav>li{position:static!important}
 .site-header .nav>li+li::before{display:none!important}
 .site-header .nav>li+li>a::before,.site-header .nav>li+li>button::before{content:"";position:absolute;left:0;top:50%;width:3px;height:3px;border-radius:50%;background:#7d8aa0;transform:translate(-50%,-50%);pointer-events:none}
+.nhx-model.nhx-mhide{display:none}
