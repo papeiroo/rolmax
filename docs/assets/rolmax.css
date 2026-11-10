@@ -1198,3 +1198,9 @@ html,body{overflow-x:clip}
   .hdr-sep{margin:0 8px!important;height:26px!important}
   .nh-badge{padding:5px 7px!important;margin-right:0!important;border-radius:7px!important}.nh-badge .nh-full{height:12px!important}
 }
+/* 10 kategorii w wstążce */
+@media (max-width:1700px){.site-header .nav>li>a,.site-header .nav>li>button{padding:0 8px}.site-header .nav>li>a::after,.site-header .nav>li>button::after{left:8px;right:8px}}
+@media (max-width:1500px){.site-header .nav>li>a,.site-header .nav>li>button{padding:0 5px;font-size:.8rem}.site-header .nav>li>a::after,.site-header .nav>li>button::after{left:5px;right:5px}}
+@media (max-width:1280px){.site-header .nav>li>a,.site-header .nav>li>button{padding:0 4px;font-size:.74rem}}
+@media (max-width:1100px){.site-header .nav>li>a,.site-header .nav>li>button{padding:0 3px;font-size:.66rem}.site-header .nav .ni{width:18px;height:18px}.nh-badge .nh-full{height:13px!important}.hdr-sep{margin:0 7px!important}}
+@media (max-width:1100px) and (min-width:701px){.logo-img{height:30px}.site-header .wrap{gap:6px}.hdr-cta{padding:7px 10px!important;font-size:.66rem!important;margin-left:6px!important}}
