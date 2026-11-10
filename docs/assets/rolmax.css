@@ -1204,3 +1204,68 @@ html,body{overflow-x:clip}
 @media (max-width:1280px){.site-header .nav>li>a,.site-header .nav>li>button{padding:0 4px;font-size:.74rem}}
 @media (max-width:1100px){.site-header .nav>li>a,.site-header .nav>li>button{padding:0 3px;font-size:.66rem}.site-header .nav .ni{width:18px;height:18px}.nh-badge .nh-full{height:13px!important}.hdr-sep{margin:0 7px!important}}
 @media (max-width:1100px) and (min-width:701px){.logo-img{height:30px}.site-header .wrap{gap:6px}.hdr-cta{padding:7px 10px!important;font-size:.66rem!important;margin-left:6px!important}}
+
+/* ===== Wstążka: wyśrodkowana, większa, z menu „trzy kreski” gdy brak miejsca ===== */
+.site-header .wrap{position:relative}
+.site-header .nav{flex:1 1 auto;min-width:0;margin:0 12px!important;justify-content:center;overflow:hidden}
+.site-header.nav-l .nav>li>a,.site-header.nav-l .nav>li>button{padding:0 13px;font-size:1.05rem;gap:8px}
+.site-header.nav-l .nav .ni{width:29px;height:29px}
+.site-header.nav-m .nav>li>a,.site-header.nav-m .nav>li>button{padding:0 9px;font-size:.95rem;gap:7px}
+.site-header.nav-m .nav .ni{width:26px;height:26px}
+.site-header.nav-s .nav>li>a,.site-header.nav-s .nav>li>button{padding:0 6px;font-size:.86rem;gap:6px}
+.site-header.nav-s .nav .ni{width:23px;height:23px}
+.site-header.nav-l .nav>li>a::after,.site-header.nav-l .nav>li>button::after{left:13px;right:13px}
+.site-header.nav-m .nav>li>a::after,.site-header.nav-m .nav>li>button::after{left:9px;right:9px}
+.site-header.nav-s .nav>li>a::after,.site-header.nav-s .nav>li>button::after{left:6px;right:6px}
+.nav-burger{display:none;flex:none;width:46px;height:46px;border-radius:12px;border:1.5px solid rgba(214,224,238,.55);background:rgba(255,255,255,.05);margin-left:auto;position:relative;transition:border-color .2s,background .2s}
+.nav-burger:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.nav-burger span{position:absolute;left:12px;right:12px;height:2px;border-radius:2px;background:linear-gradient(90deg,#f4f7fb,#aab6c8);transition:transform .3s,opacity .2s}
+.nav-burger span:nth-child(1){top:14px}.nav-burger span:nth-child(2){top:21px}.nav-burger span:nth-child(3){top:28px}
+.nav-burger.on span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.on span:nth-child(2){opacity:0}
+.nav-burger.on span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.site-header.nav-collapsed .nav{display:none!important}
+.site-header.nav-collapsed .nav-burger{display:block}
+.site-header.nav-collapsed .hdr-cta{margin-left:10px!important}
+.nav-panel{position:absolute;top:100%;left:0;right:0;z-index:70;padding:18px 28px 22px;background:linear-gradient(180deg,rgba(6,18,44,.98),rgba(3,10,24,.98));backdrop-filter:blur(14px);border-bottom:1px solid rgba(195,204,216,.2);box-shadow:0 30px 60px -20px rgba(0,0,0,.8);animation:npIn .25s ease}
+@keyframes npIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.np-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:10px;max-width:1100px;margin:0 auto}
+.np-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:16px 8px;border-radius:14px;border:1px solid rgba(195,204,216,.14);background:rgba(255,255,255,.03);color:#fff;font-size:.95rem;font-weight:500;text-align:center;transition:border-color .2s,background .2s,transform .2s}
+.np-item:hover,.np-item.on{border-color:rgba(230,240,255,.6);background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.np-item .ni{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;color:#dfe7f3}
+.np-subl{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:1100px;margin:14px auto 0}
+.np-subl[hidden]{display:none}
+.np-subl a{padding:9px 16px;border-radius:999px;border:1px solid rgba(195,204,216,.3);font-size:.9rem;color:#e8eef7}
+.np-subl a:hover{border-color:#fff;color:#fff}
+@media (max-width:700px){
+  .nav-burger{width:36px;height:36px;border-radius:10px}
+  .nav-burger span{left:9px;right:9px}.nav-burger span:nth-child(1){top:10px}.nav-burger span:nth-child(2){top:16px}.nav-burger span:nth-child(3){top:22px}
+  .nav-burger.on span:nth-child(1){transform:translateY(6px) rotate(45deg)}.nav-burger.on span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  .site-header.nav-collapsed .hdr-cta{margin-left:6px!important;padding:7px 9px!important;font-size:.58rem!important;letter-spacing:.05em!important}
+  .nav-panel{padding:14px 16px 18px}.np-grid{grid-template-columns:repeat(3,1fr);gap:8px}.np-item{padding:12px 4px;font-size:.78rem;gap:7px}.np-item .ni{width:24px;height:24px}
+}
+.site-header.nav-xs .nav>li>a,.site-header.nav-xs .nav>li>button{padding:0 4px;font-size:.76rem;gap:5px}
+.site-header.nav-xs .nav .ni{width:20px;height:20px}
+.site-header.nav-xs .nav>li>a::after,.site-header.nav-xs .nav>li>button::after{left:4px;right:4px}
+@media (max-width:700px){
+  .site-header .wrap{gap:6px!important}
+  .site-header .logo-img{height:22px!important}
+  .hdr-sep{margin:0 2px!important;height:22px!important}
+  .nh-badge{padding:4px 6px!important}.nh-badge .nh-full{height:10px!important}
+}
+/* większe i rozciągnięte na całą wolną szerokość */
+.site-header .nav{justify-content:space-evenly;margin:0 18px!important}
+.site-header.nav-l .nav>li>a,.site-header.nav-l .nav>li>button{padding:0 10px;font-size:1.16rem;gap:9px}
+.site-header.nav-l .nav .ni{width:32px;height:32px}
+.site-header.nav-m .nav>li>a,.site-header.nav-m .nav>li>button{padding:0 8px;font-size:1.05rem;gap:8px}
+.site-header.nav-m .nav .ni{width:29px;height:29px}
+.site-header.nav-s .nav>li>a,.site-header.nav-s .nav>li>button{padding:0 6px;font-size:.96rem;gap:7px}
+.site-header.nav-s .nav .ni{width:26px;height:26px}
+.site-header.nav-xs .nav>li>a,.site-header.nav-xs .nav>li>button{padding:0 4px;font-size:.86rem;gap:6px}
+.site-header.nav-xs .nav .ni{width:23px;height:23px}
+.site-header .nav .ni{stroke-width:1.45}
+.site-header .nav>li>a::after,.site-header .nav>li>button::after{left:4px!important;right:4px!important}
+.site-header.nav-xxs .nav>li>a,.site-header.nav-xxs .nav>li>button{padding:0 3px;font-size:.78rem;gap:5px}
+.site-header.nav-xxs .nav .ni{width:21px;height:21px}
+.np-grid{grid-template-columns:repeat(5,1fr)}
+@media (max-width:700px){.np-grid{grid-template-columns:repeat(2,1fr)}.np-item{flex-direction:row;justify-content:flex-start;padding:12px 14px;font-size:.85rem;gap:10px}}
