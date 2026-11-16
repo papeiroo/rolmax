@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611161530">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611161600">
 </head>
 <body>
 
@@ -104,7 +104,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611161530"></script>
+<script src="data.js?v=202611161600"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -933,17 +933,39 @@ function openDrive(pre){
     const A=DR_GEO.areas, order=['zeb','par','jar','zac','lal','maj','szc','pau','por'];
     const opts=[...A.keys()].map(i=>[drLabel(A[i]),i]).sort((x,y)=>x[0].localeCompare(y[0],'pl'));
     body.innerHTML=`<div class="dr-s1"><div class="dr-map"><svg viewBox="-12 -4 184 222" role="img" aria-label="Mapa powiatów województwa lubelskiego z podziałem powiatu lubelskiego na gminy">
-      ${A.map((a,i)=>`<path class="dr-pow k-${a.k}${S.a===i?' sel':''}" data-i="${i}" style="--c:${DR_REP[a.r].c}" d="${a.d}"><title>${drLabel(a)} — ${DR_REP[a.r].n}</title></path>`).join('')}
+      ${[...A.keys()].sort((u,v)=>({p:0,g:1,m:2})[A[u].k]-({p:0,g:1,m:2})[A[v].k]).map(i=>[A[i],i]).map(([a,i])=>`<path class="dr-pow k-${a.k}${S.a===i?' sel':''}" data-i="${i}" style="--c:${DR_REP[a.r].c}" d="${a.d}"><title>${drLabel(a)} — ${DR_REP[a.r].n}</title></path>`).join('')}
       <path class="dr-lubo" d="${DR_GEO.lubOutline}"/>
       ${BR_XY.map((xy,i)=>`<g class="dr-pin" transform="translate(${xy[0]} ${xy[1]})"><circle r="3.2"/><circle r="1.3" class="c"/><text y="-5.5">${BR[i].n}</text></g>`).join('')}
       <text class="dr-hover" x="80" y="214" text-anchor="middle"></text></svg></div>
       <div class="dr-side"><h3>Gdzie znajduje się Twoje gospodarstwo?</h3><p>Kliknij powiat na mapie albo wybierz go z listy. W powiecie lubelskim wybierz swoją gminę — każdy obszar ma swojego doradcę Rolmax.</p>
+      <form class="dr-find" autocomplete="off"><label class="dr-sel"><span>Wpisz swoją miejscowość</span><div class="dr-findrow"><input type="search" name="q" placeholder="np. Kock, Łęczna, Wola Uhruska…" aria-label="Miejscowość"><button class="btn btn-chrome" type="submit">Szukaj</button></div></label><div class="dr-res" hidden></div></form>
+      <div class="dr-or"><span>albo wybierz z listy</span></div>
       <label class="dr-sel"><span>Powiat / gmina</span><select><option value="">— wybierz z listy —</option>${opts.map(([l,i])=>`<option value="${i}"${S.a===i?' selected':''}>${l}</option>`).join('')}</select></label>
       <ul class="dr-legend">${order.map(k=>`<li><i style="background:${DR_REP[k].c}"></i>${DR_REP[k].n}<small>${DR_REP[k].role||DR_BR[DR_REP[k].b].n.replace('Siedziba Główna ','')}</small></li>`).join('')}</ul></div></div>`;
     const hv=body.querySelector('.dr-hover');
     const pick=i=>{ S.a=i; S.r=A[i].r; body.querySelectorAll('.dr-pow').forEach(p=>p.classList.toggle('sel',+p.dataset.i===i)); body.querySelector('select').value=i; next.disabled=false; summary(); setTimeout(()=>{S.step=2;render();},450); };
     body.querySelectorAll('.dr-pow').forEach(p=>{ const a=A[+p.dataset.i]; p.addEventListener('mouseenter',()=>hv.textContent=`${drShort(a)} · ${DR_REP[a.r].n}`); p.addEventListener('mouseleave',()=>hv.textContent=''); p.addEventListener('click',()=>pick(+p.dataset.i)); });
     body.querySelector('select').addEventListener('change',e=>{ if(e.target.value!=='') pick(+e.target.value); });
+    /* wyszukiwanie miejscowości (OpenStreetMap / Nominatim — tylko po zatwierdzeniu, bez podpowiadania przy każdej literze) */
+    const svg=body.querySelector('.dr-map svg'), fm=body.querySelector('.dr-find'), res=fm.querySelector('.dr-res');
+    const P=[62.66171231793154,-1353.496903570078,-99.99936306788045,5234.970093630349];
+    const at=(lat,lon)=>{ const x=P[0]*lon+P[1], y=P[2]*lat+P[3], pt=new DOMPoint(x,y); let hit=-1;
+      const rank={m:0,g:1,p:2}; [...body.querySelectorAll('.dr-pow')].sort((u,v)=>rank[A[+u.dataset.i].k]-rank[A[+v.dataset.i].k]).forEach(p=>{ if(hit<0&&p.isPointInFill(pt)) hit=+p.dataset.i; }); return [hit,x,y]; };
+    const mark=(x,y)=>{ let m=svg.querySelector('.dr-me'); if(!m){ m=document.createElementNS('http://www.w3.org/2000/svg','g'); m.setAttribute('class','dr-me'); m.innerHTML='<circle r="5" class="h"/><circle r="2.2"/>'; svg.appendChild(m); } m.setAttribute('transform',`translate(${x} ${y})`); };
+    let last=0;
+    fm.addEventListener('submit',async e=>{ e.preventDefault(); const q=fm.q.value.trim(); if(q.length<2) return;
+      const wait=1100-(Date.now()-last); if(wait>0) await new Promise(r=>setTimeout(r,wait)); last=Date.now();
+      res.hidden=false; res.innerHTML='<p class="dr-muted">Szukam…</p>';
+      try{
+        const u=`https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=6&countrycodes=pl&accept-language=pl&viewbox=21.55,52.35,24.2,50.2&bounded=1&q=${encodeURIComponent(q)}`;
+        const L=(await (await fetch(u,{headers:{'Accept':'application/json'}})).json()).map(r=>{ const [i,x,y]=at(+r.lat,+r.lon); return {r,i,x,y}; }).filter(o=>o.i>=0);
+        const seen=new Set(); const U=L.filter(o=>{ const ad=o.r.address||{}; const k=(ad.village||ad.town||ad.city||ad.hamlet||o.r.name)+'|'+o.i; if(seen.has(k)) return false; seen.add(k); return true; });
+        if(!U.length){ res.innerHTML='<p class="dr-muted">Nie znaleźliśmy tej miejscowości w województwie lubelskim. Sprawdź pisownię lub wybierz powiat z listy poniżej.</p>'; return; }
+        res.innerHTML=U.map((o,k)=>{ const ad=o.r.address||{}; const nm=ad.village||ad.town||ad.city||ad.hamlet||ad.suburb||o.r.name; const gm=ad.municipality||''; return `<button type="button" data-k="${k}"><b>${nm}</b><small>${[gm,drLabel(A[o.i])].filter(Boolean).join(' · ')} → ${DR_REP[A[o.i].r].n}</small></button>`; }).join('')+'<p class="dr-osm">Wyszukiwanie: © OpenStreetMap</p>';
+        res.querySelectorAll('button').forEach(b=>{ const o=U[+b.dataset.k]; b.onmouseenter=()=>mark(o.x,o.y); b.onclick=()=>{ mark(o.x,o.y); pick(o.i); }; });
+        if(U.length===1) mark(U[0].x,U[0].y);
+      }catch(err){ res.innerHTML='<p class="dr-muted">Wyszukiwarka jest chwilowo niedostępna — wybierz powiat z listy lub kliknij na mapie.</p>'; }
+    });
   }
   /* KROK 2 — doradca handlowy przypisany do obszaru */
   function step2(){ const r=rep(), br=DR_BR[r.b], a=DR_GEO.areas[S.a], dir=DR_REP.por;
