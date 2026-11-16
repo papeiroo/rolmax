@@ -959,9 +959,9 @@ function openDrive(pre){
       try{
         const u=`https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=6&countrycodes=pl&accept-language=pl&viewbox=21.55,52.35,24.2,50.2&bounded=1&q=${encodeURIComponent(q)}`;
         const L=(await (await fetch(u,{headers:{'Accept':'application/json'}})).json()).map(r=>{ const [i,x,y]=at(+r.lat,+r.lon); return {r,i,x,y}; }).filter(o=>o.i>=0);
-        const seen=new Set(); const U=L.filter(o=>{ const ad=o.r.address||{}; const k=(ad.village||ad.town||ad.city||ad.hamlet||o.r.name)+'|'+o.i; if(seen.has(k)) return false; seen.add(k); return true; });
+        const seen=new Set(); const L2=L.filter(o=>!(/^gmina /i.test(o.r.name||'')&&L.some(z=>z!==o&&z.i===o.i&&!/^gmina /i.test(z.r.name||'')))); const U=L2.filter(o=>{ const ad=o.r.address||{}; const k=(ad.village||ad.town||ad.city||ad.hamlet||o.r.name)+'|'+o.i; if(seen.has(k)) return false; seen.add(k); return true; });
         if(!U.length){ res.innerHTML='<p class="dr-muted">Nie znaleźliśmy tej miejscowości w województwie lubelskim. Sprawdź pisownię lub wybierz powiat z listy poniżej.</p>'; return; }
-        res.innerHTML=U.map((o,k)=>{ const ad=o.r.address||{}; const nm=ad.village||ad.town||ad.city||ad.hamlet||ad.suburb||o.r.name; const gm=ad.municipality||''; return `<button type="button" data-k="${k}"><b>${nm}</b><small>${[gm,drLabel(A[o.i])].filter(Boolean).join(' · ')} → ${DR_REP[A[o.i].r].n}</small></button>`; }).join('')+'<p class="dr-osm">Wyszukiwanie: © OpenStreetMap</p>';
+        res.innerHTML=U.map((o,k)=>{ const ad=o.r.address||{}; const nm=ad.village||ad.town||ad.city||ad.hamlet||ad.suburb||o.r.name; const gm=(ad.municipality||'').replace(/^gmina /i,'gm. '); const al=drLabel(A[o.i]); const gmS=al.startsWith(gm)?'':gm; return `<button type="button" data-k="${k}"><b>${nm}</b><small>${[gmS,al].filter(Boolean).join(' · ')} → ${DR_REP[A[o.i].r].n}</small></button>`; }).join('')+'<p class="dr-osm">Wyszukiwanie: © OpenStreetMap</p>';
         res.querySelectorAll('button').forEach(b=>{ const o=U[+b.dataset.k]; b.onmouseenter=()=>mark(o.x,o.y); b.onclick=()=>{ mark(o.x,o.y); pick(o.i); }; });
         if(U.length===1) mark(U[0].x,U[0].y);
       }catch(err){ res.innerHTML='<p class="dr-muted">Wyszukiwarka jest chwilowo niedostępna — wybierz powiat z listy lub kliknij na mapie.</p>'; }
