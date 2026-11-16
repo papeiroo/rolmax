@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611161600">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611161640">
 </head>
 <body>
 
@@ -104,7 +104,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611161600"></script>
+<script src="data.js?v=202611161640"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -402,7 +402,7 @@ function prodPage(s){ const [c,it]=findProd(s); if(!it) return home(); const idx
       <div class="eyebrow">New Holland · ${c.c}</div>
       <h1 class="display chrome-sheen" style="margin-top:14px">${it.n}</h1>
       <p class="desc"${it.new?'':' data-nhdesc'}>${it.new?it.t:cap(it.t)+'…'}</p>${it.pw?`<p class="pw chrome">${it.pw}</p>`:''}${it.ask?'<p class="ask">Dostępność tej maszyny potwierdzi doradca Rolmax.</p>':''}
-      <div class="actions"><a class="btn btn-chrome" href="#oddzialy">${it.ask?'Zapytaj o dostępność':'Zapytaj o cenę'}</a><a class="btn btn-ghost" href="#" data-drive="${it.s}">Umów jazdę próbną</a>${it.br?`<a class="btn btn-blue" href="${it.br}" target="_blank" rel="noopener">Pobierz broszurę (PDF)</a>`:''}<a class="btn btn-ghost" href="https://agriculture.newholland.com/pl-pl/europe/uslugi-i-rozwiazania/konfigurator">Konfigurator</a><a class="btn btn-ghost" href="#usluga-finansowanie">Finansowanie</a></div>${NHX[it.s]?`<p class="nhx-jump">${NHX[it.s][0]?`<a class="more-link" href="#" data-nhgo="nhModels">${NHX[it.s][0]} ${plM(NHX[it.s][0])} do wyboru ↓</a>`:''}${NHX[it.s][1]?`<a class="more-link" href="#" data-nhgo="nhSpec">Pełna specyfikacja techniczna ↓</a>`:''}</p>`:(it.man?`<p style="margin-top:14px"><a class="more-link" href="${it.man}" target="_blank" rel="noopener">Pełna specyfikacja na stronie New Holland ↗</a></p>`:'')}
+      <div class="actions"><a class="btn btn-chrome" href="#oddzialy">${it.ask?'Zapytaj o dostępność':'Zapytaj o cenę'}</a><a class="btn btn-ghost" href="#" data-drive="${it.s}">Umów pokaz DEMO</a>${it.br?`<a class="btn btn-blue" href="${it.br}" target="_blank" rel="noopener">Pobierz broszurę (PDF)</a>`:''}<a class="btn btn-ghost" href="https://agriculture.newholland.com/pl-pl/europe/uslugi-i-rozwiazania/konfigurator">Konfigurator</a><a class="btn btn-ghost" href="#usluga-finansowanie">Finansowanie</a></div>${NHX[it.s]?`<p class="nhx-jump">${NHX[it.s][0]?`<a class="more-link" href="#" data-nhgo="nhModels">${NHX[it.s][0]} ${plM(NHX[it.s][0])} do wyboru ↓</a>`:''}${NHX[it.s][1]?`<a class="more-link" href="#" data-nhgo="nhSpec">Pełna specyfikacja techniczna ↓</a>`:''}</p>`:(it.man?`<p style="margin-top:14px"><a class="more-link" href="${it.man}" target="_blank" rel="noopener">Pełna specyfikacja na stronie New Holland ↗</a></p>`:'')}
       <p style="margin-top:22px;color:var(--steel-500);font-size:.85rem">URL bez zmian: <code>/pl/maszyny/${c.s}/${it.s}</code></p>
     </div>
   </div>
@@ -887,6 +887,8 @@ const DR_REP={
   szc:{n:'Kamil Szczerbicki',b:1,t:'504 227 127',e:'k.szczerbicki@rolmax.net.pl',c:'#2a8f8a'},
   pau:{n:'Aleksander Paul',b:1,t:'723 405 407',e:'a.paul@rolmax.net.pl',c:'#4cc2b5'},
   por:{n:'Wojciech Portka',b:0,t:'606 363 398',e:'w.portka@rolmax.net.pl',c:'#7d8aa0',role:'Dyrektor sprzedaży'}};
+/* maszyny dostępne od ręki na placach: {m:'slug produktu', n:'nazwa/wersja', br:indeks oddziału, y:rok, img:'opcjonalne zdjęcie'} */
+const DR_STOCK=[];
 const DR_SLOTS=['8:30','10:30','12:30','14:30'];
 const drKey=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 const drTaken=()=>{ try{return JSON.parse(localStorage.getItem('rx_drives')||'[]')}catch(e){return []} };
@@ -898,9 +900,9 @@ const drAreasOf=r=>DR_GEO.areas.filter(a=>a.r===r);
 function openDrive(pre){
   const S={a:null,r:null,cat:null,m:pre&&pre.m||null,day:null,slot:null,step:1};
   if(S.m){ const [c]=findProd(S.m); if(c) S.cat=c.s; }
-  const el=document.createElement('div'); el.className='dr-modal'; el.setAttribute('role','dialog'); el.setAttribute('aria-modal','true'); el.setAttribute('aria-label','Rezerwacja jazdy próbnej');
+  const el=document.createElement('div'); el.className='dr-modal'; el.setAttribute('role','dialog'); el.setAttribute('aria-modal','true'); el.setAttribute('aria-label','Rezerwacja pokazu demonstracyjnego');
   el.innerHTML=`<div class="dr-dlg"><button class="dr-x" aria-label="Zamknij">×</button>
-    <header class="dr-top"><div><div class="eyebrow">Rolmax · New Holland</div><h2 class="display chrome">Jazda próbna</h2></div>
+    <header class="dr-top"><div><div class="eyebrow">Rolmax · New Holland</div><h2 class="display chrome">Pokazy demonstracyjne</h2></div>
       <ol class="dr-steps">${['Lokalizacja','Doradca','Maszyna','Termin','Dane'].map((t,i)=>`<li data-s="${i+1}"><b>${i+1}</b><span>${t}</span></li>`).join('')}</ol></header>
     <div class="dr-body"></div>
     <footer class="dr-foot"><div class="dr-sum"></div><div class="dr-nav"><button class="btn btn-ghost dr-back" type="button">← Wstecz</button><button class="btn btn-chrome btn-shine dr-next" type="button">Dalej →</button></div></footer></div>`;
@@ -924,7 +926,7 @@ function openDrive(pre){
     el.querySelectorAll('.dr-steps li').forEach(li=>{const n=+li.dataset.s; li.classList.toggle('on',n===S.step); li.classList.toggle('done',n<S.step);});
     back.style.visibility=S.step>1&&S.step<6?'visible':'hidden';
     next.style.display=S.step>=5?'none':''; next.disabled=!ok();
-    next.textContent=S.step===2?'Umów jazdę próbną →':'Dalej →';
+    next.textContent=S.step===2?'Umów pokaz DEMO →':'Dalej →';
     summary(); body.scrollTop=0;
     ({1:step1,2:step2,3:step3,4:step4,5:step5,6:step6})[S.step]();
   };
@@ -937,7 +939,7 @@ function openDrive(pre){
       <path class="dr-lubo" d="${DR_GEO.lubOutline}"/>
       ${BR_XY.map((xy,i)=>`<g class="dr-pin" transform="translate(${xy[0]} ${xy[1]})"><circle r="3.2"/><circle r="1.3" class="c"/><text y="-5.5">${BR[i].n}</text></g>`).join('')}
       <text class="dr-hover" x="80" y="214" text-anchor="middle"></text></svg></div>
-      <div class="dr-side"><h3>Gdzie znajduje się Twoje gospodarstwo?</h3><p>Kliknij powiat na mapie albo wybierz go z listy. W powiecie lubelskim wybierz swoją gminę — każdy obszar ma swojego doradcę Rolmax.</p>
+      <div class="dr-side"><div class="dr-intro"><b>Sprawdź maszynę New Holland w praktyce.</b> Wybierz model, którym jesteś zainteresowany — przygotujemy go na pokaz w Twoim gospodarstwie albo w oddziale Rolmax. Zacznij od lokalizacji, żebyśmy przypisali Ci doradcę.</div><h3>Gdzie znajduje się Twoje gospodarstwo?</h3><p>Wpisz miejscowość, kliknij powiat na mapie albo wybierz go z listy.</p>
       <form class="dr-find" autocomplete="off"><label class="dr-sel"><span>Wpisz swoją miejscowość</span><div class="dr-findrow"><input type="search" name="q" placeholder="np. Kock, Łęczna, Wola Uhruska…" aria-label="Miejscowość"><button class="btn btn-chrome" type="submit">Szukaj</button></div></label><div class="dr-res" hidden></div></form>
       <div class="dr-or"><span>albo wybierz z listy</span></div>
       <label class="dr-sel"><span>Powiat / gmina</span><select><option value="">— wybierz z listy —</option>${opts.map(([l,i])=>`<option value="${i}"${S.a===i?' selected':''}>${l}</option>`).join('')}</select></label>
@@ -976,14 +978,26 @@ function openDrive(pre){
         <h4>Obszar doradcy</h4><p class="dr-muted">${(()=>{const L=drAreasOf(S.r),o=L.filter(x=>x.k!=='g').map(drLabel),g=L.filter(x=>x.k==='g').map(x=>x.n);return o.concat(g.length?[`gminy powiatu lubelskiego: ${g.join(', ')}`]:[]).join('; ');})()}</p>
         ${S.r!=='por'?`<h4>Dyrektor sprzedaży</h4><div class="dr-rep"><i>${dir.n.split(' ').map(x=>x[0]).join('')}</i><div><b>${dir.n}</b><small><a href="${drTel(dir.t)}">${dir.t}</a> · <a href="mailto:${dir.e}">${dir.e}</a></small></div></div>`:''}</div></div>`;
   }
-  /* KROK 3 — wybór maszyny */
-  function step3(){ if(!S.cat) S.cat=RX[0].s;
-    const draw=()=>{ const c=catOf(S.cat);
-      body.querySelector('.dr-cats').innerHTML=RX.map(x=>`<button type="button" data-c="${x.s}" class="${x.s===S.cat?'on':''}">${x.c}</button>`).join('');
-      body.querySelector('.dr-mgrid').innerHTML=c.items.map(it=>`<button type="button" class="dr-m${S.m===it.s?' on':''}" data-m="${it.s}"><img loading="lazy" src="${IMG(it)}" alt=""><span>${it.n}</span></button>`).join('');
-      body.querySelectorAll('.dr-cats button').forEach(b=>b.onclick=()=>{S.cat=b.dataset.c;draw();});
-      body.querySelectorAll('.dr-m').forEach(b=>b.onclick=()=>{S.m=b.dataset.m; body.querySelectorAll('.dr-m').forEach(x=>x.classList.toggle('on',x===b)); next.disabled=false; summary();}); };
-    body.innerHTML=`<div class="dr-s3"><h3>Którą maszynę chcesz sprawdzić w praktyce?</h3><div class="dr-cats"></div><div class="dr-mgrid"></div></div>`; draw(); }
+  /* KROK 3 — wybór maszyny: cała oferta / dostępne od ręki na placu */
+  function step3(){ if(!S.cat) S.cat=RX[0].s; if(!S.tab) S.tab='all';
+    const pick=(m,stock)=>{ S.m=m; S.stock=stock; body.querySelectorAll('.dr-m').forEach(x=>x.classList.toggle('on',x.dataset.m===m&&String(x.dataset.st||'')===String(stock??''))); next.disabled=false; summary(); };
+    const draw=()=>{ body.querySelectorAll('.dr-tabs button').forEach(b=>b.classList.toggle('on',b.dataset.t===S.tab));
+      const box=body.querySelector('.dr-tabbody');
+      if(S.tab==='all'){ const c=catOf(S.cat);
+        box.innerHTML=`<div class="dr-cats">${RX.map(x=>`<button type="button" data-c="${x.s}" class="${x.s===S.cat?'on':''}">${x.c}</button>`).join('')}</div>
+          <div class="dr-mgrid">${c.items.map(it=>`<button type="button" class="dr-m${S.m===it.s&&S.stock==null?' on':''}" data-m="${it.s}"><img loading="lazy" src="${IMG(it)}" alt=""><span>${it.n}</span></button>`).join('')}</div>`;
+        box.querySelectorAll('.dr-cats button').forEach(b=>b.onclick=()=>{S.cat=b.dataset.c;draw();});
+        box.querySelectorAll('.dr-m').forEach(b=>b.onclick=()=>pick(b.dataset.m,null));
+      } else {
+        box.innerHTML=DR_STOCK.length?`<p class="dr-muted">Te maszyny stoją na placach Rolmax — pokaz możemy zorganizować najszybciej.</p><div class="dr-mgrid">${DR_STOCK.map((x,k)=>{ const [,it]=findProd(x.m)||[]; return `<button type="button" class="dr-m stock${S.stock===k?' on':''}" data-m="${x.m}" data-st="${k}"><img loading="lazy" src="${x.img||(it?IMG(it):'')}" alt=""><span>${x.n}</span><em>${DR_BR[x.br]?DR_BR[x.br].n.replace('Siedziba Główna ',''):''}${x.y?' · '+x.y:''}</em></button>`; }).join('')}</div>`
+          :`<div class="dr-empty"><b>Lista maszyn na placu jest właśnie uzupełniana.</b><p>Zapytaj swojego doradcę <b>${rep().n}</b>, które maszyny są dostępne od ręki: <a href="${drTel(rep().t)}">${rep().t}</a>. Możesz też wybrać model z całej oferty — doradca potwierdzi termin pokazu.</p></div>`;
+        box.querySelectorAll('.dr-m').forEach(b=>b.onclick=()=>pick(b.dataset.m,+b.dataset.st));
+      }
+    };
+    body.innerHTML=`<div class="dr-s3"><h3>Którą maszynę chcesz zobaczyć na pokazie?</h3><p class="dr-muted">Wybierz model z całej oferty New Holland albo jedną z maszyn dostępnych od ręki na naszych placach.</p>
+      <div class="dr-tabs"><button type="button" data-t="all">Cała oferta New Holland</button><button type="button" data-t="stock">Dostępne od ręki na placu${DR_STOCK.length?` <i>${DR_STOCK.length}</i>`:''}</button></div><div class="dr-tabbody"></div></div>`;
+    body.querySelectorAll('.dr-tabs button').forEach(b=>b.onclick=()=>{S.tab=b.dataset.t;draw();});
+    draw(); }
   /* KROK 4 — kalendarz i godzina (terminy doradcy) */
   function step4(){ const today=new Date(); today.setHours(0,0,0,0); let mo=new Date((S.day||today).getFullYear(),(S.day||today).getMonth(),1);
     const minD=new Date(today); minD.setDate(minD.getDate()+1); const maxD=new Date(today); maxD.setDate(maxD.getDate()+70);
@@ -1004,7 +1018,7 @@ function openDrive(pre){
       const k=drKey(S.day);
       box.innerHTML=`<h4>${S.day.toLocaleDateString('pl-PL',{weekday:'long',day:'numeric',month:'long'})}</h4><p class="dr-muted">Doradca: <b>${rep().n}</b></p>
         <div class="dr-slotg">${DR_SLOTS.map(s=>{const t=isT(k,s);return `<button type="button" class="${t?'taken':''}${S.slot===s?' on':''}" data-s="${s}" ${t?'disabled':''}>${s}${t?'<small>zajęte</small>':''}</button>`;}).join('')}</div>
-        <p class="dr-muted">Jazda trwa ok. 1,5 h — w oddziale (${DR_BR[rep().b].n}) lub u Ciebie w gospodarstwie (ustalimy telefonicznie).</p>`;
+        <p class="dr-muted">Pokaz trwa ok. 1,5 h — w oddziale (${DR_BR[rep().b].n}) lub u Ciebie w gospodarstwie (ustalimy telefonicznie).</p>`;
       box.querySelectorAll('button:not([disabled])').forEach(b=>b.onclick=()=>{S.slot=b.dataset.s; box.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b)); next.disabled=false; summary();}); };
     body.innerHTML=`<div class="dr-s4"><div class="dr-cal"></div><div class="dr-slots"></div></div>`; draw(); slots(); }
   /* KROK 5 — dane kontaktowe */
@@ -1016,8 +1030,8 @@ function openDrive(pre){
         <label><span>Telefon *</span><input name="phone" type="tel" required autocomplete="tel" placeholder="np. 600 100 200"></label>
         <label><span>E-mail</span><input name="email" type="email" autocomplete="email"></label>
         <label><span>Miejscowość / gospodarstwo</span><input name="place" autocomplete="address-level2"></label>
-        <label class="wide"><span>Uwagi (np. maszyna, którą obecnie użytkujesz, preferowane miejsce jazdy)</span><textarea name="note" rows="3"></textarea></label>
-        <label class="dr-check wide"><input type="checkbox" name="rodo" required><span>Wyrażam zgodę na kontakt ze strony Rolmax w sprawie jazdy próbnej i przetwarzanie podanych danych w tym celu. *</span></label>
+        <label class="wide"><span>Uwagi (np. maszyna, którą obecnie użytkujesz, preferowane miejsce pokazu)</span><textarea name="note" rows="3"></textarea></label>
+        <label class="dr-check wide"><input type="checkbox" name="rodo" required><span>Wyrażam zgodę na kontakt ze strony Rolmax w sprawie pokazu demonstracyjnego i przetwarzanie podanych danych w tym celu. *</span></label>
         <p class="dr-err wide" hidden>Uzupełnij imię i nazwisko, poprawny numer telefonu i zaznacz zgodę.</p>
         <button class="btn btn-chrome btn-shine wide" type="submit">Zarezerwuj termin</button></div></form>`;
     const f=body.querySelector('form');
@@ -1033,12 +1047,12 @@ function openDrive(pre){
     el.querySelectorAll('.dr-steps li').forEach(li=>li.classList.add('done'));
     const ics=()=>{ const [h,mi]=S.slot.split(':').map(Number); const st=new Date(S.day); st.setHours(h,mi); const en=new Date(st.getTime()+90*60000);
       const f=d=>d.toISOString().replace(/[-:]/g,'').replace(/\.\d+/,'');
-      const txt=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Rolmax//Jazda probna//PL','BEGIN:VEVENT',`UID:${rc.ts}@rolmax.net.pl`,`DTSTAMP:${f(new Date())}`,`DTSTART:${f(st)}`,`DTEND:${f(en)}`,`SUMMARY:Jazda próbna — New Holland ${p.n}`,`LOCATION:${br.n}, ${br.a}`,`DESCRIPTION:Doradca: ${r.n}, tel. ${r.t}, ${r.e}`,'END:VEVENT','END:VCALENDAR'].join('\r\n');
-      const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([txt],{type:'text/calendar'})); a.download='jazda-probna-rolmax.ics'; a.click(); };
+      const txt=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Rolmax//Pokaz DEMO//PL','BEGIN:VEVENT',`UID:${rc.ts}@rolmax.net.pl`,`DTSTAMP:${f(new Date())}`,`DTSTART:${f(st)}`,`DTEND:${f(en)}`,`SUMMARY:Pokaz DEMO — New Holland ${p.n}`,`LOCATION:${br.n}, ${br.a}`,`DESCRIPTION:Doradca: ${r.n}, tel. ${r.t}, ${r.e}`,'END:VEVENT','END:VCALENDAR'].join('\r\n');
+      const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([txt],{type:'text/calendar'})); a.download='pokaz-demo-rolmax.ics'; a.click(); };
     body.innerHTML=`<div class="dr-done"><div class="dr-tick"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg></div>
       <h3 class="display chrome">Termin zarezerwowany</h3>
-      <p>${rc.name.split(' ')[0]}, czekamy na Ciebie <b>${S.day.toLocaleDateString('pl-PL',{weekday:'long',day:'numeric',month:'long'})} o ${S.slot}</b> — jazda próbna <b>New Holland ${p.n}</b>.</p>
-      <p class="dr-muted">Twój doradca <b>${r.n}</b> zadzwoni na numer ${rc.phone}, aby potwierdzić szczegóły i miejsce jazdy.</p>
+      <p>${rc.name.split(' ')[0]}, czekamy na Ciebie <b>${S.day.toLocaleDateString('pl-PL',{weekday:'long',day:'numeric',month:'long'})} o ${S.slot}</b> — pokaz demonstracyjny <b>New Holland ${p.n}</b>.</p>
+      <p class="dr-muted">Twój doradca <b>${r.n}</b> zadzwoni na numer ${rc.phone}, aby potwierdzić szczegóły i miejsce pokazu.</p>
       <div class="dr-done-act"><button type="button" class="btn btn-ghost dr-ics">Dodaj do kalendarza</button><a class="btn btn-chrome btn-shine" href="${drTel(r.t)}">Zadzwoń: ${r.t}</a></div></div>`;
     body.querySelector('.dr-ics').onclick=ics; el.querySelector('.dr-foot').style.display='none'; }
   next.addEventListener('click',()=>{ if(!ok()) return; S.step++; render(); });

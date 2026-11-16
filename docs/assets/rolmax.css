@@ -1509,3 +1509,13 @@ html,body{overflow-x:clip}
 .dr-or::before,.dr-or::after{content:"";flex:1;height:1px;background:rgba(214,224,238,.2)}
 .dr-me{pointer-events:none}.dr-me circle{fill:#fff}.dr-me circle.h{fill:rgba(255,255,255,.25);animation:drPulse 1.4s infinite}
 @keyframes drPulse{0%{r:3}100%{r:9;opacity:0}}
+/* pokazy DEMO */
+.dr-intro{padding:14px 16px;border-radius:14px;background:rgba(156,195,255,.08);border:1px solid rgba(156,195,255,.25);color:#dfe6f0;font-size:.92rem;line-height:1.5;margin-bottom:18px}
+.dr-intro b{color:#fff}
+.dr-tabs{display:flex;gap:6px;margin:14px 0 4px;border-bottom:1px solid rgba(214,224,238,.18)}
+.dr-tabs button{padding:12px 18px;font-family:var(--ff-display);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.9rem;color:var(--steel-300);border-bottom:2px solid transparent;margin-bottom:-1px;display:flex;align-items:center;gap:8px}
+.dr-tabs button.on{color:#fff;border-bottom-color:#e6ecf5}
+.dr-tabs i{font-style:normal;font-size:.75rem;background:var(--chrome-h);color:var(--navy-950);border-radius:999px;padding:1px 8px}
+.dr-m.stock em{font-style:normal;font-size:.75rem;color:#47566e}
+.dr-empty{margin-top:18px;padding:22px;border-radius:16px;border:1px dashed rgba(214,224,238,.3);color:var(--steel-300)}
+.dr-empty b{color:#fff}.dr-empty p{margin-top:8px}.dr-empty a{color:#9cc3ff;font-weight:600}
