@@ -1519,3 +1519,41 @@ html,body{overflow-x:clip}
 .dr-m.stock em{font-style:normal;font-size:.75rem;color:#47566e}
 .dr-empty{margin-top:18px;padding:22px;border-radius:16px;border:1px dashed rgba(214,224,238,.3);color:var(--steel-300)}
 .dr-empty b{color:#fff}.dr-empty p{margin-top:8px}.dr-empty a{color:#9cc3ff;font-weight:600}
+
+/* ===================== Kontakt — zespół ===================== */
+.tm-find{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-top:26px;padding:16px 18px;border-radius:18px;background:rgba(10,31,71,.55);border:1px solid rgba(214,224,238,.2);max-width:820px}
+.tm-find label{flex:1 1 320px;display:grid;gap:6px}
+.tm-find label span{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--steel-500)}
+.tm-find select{appearance:none;background:rgba(3,10,24,.6) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M1 3l4 4 4-4' stroke='%23e6ecf5' fill='none' stroke-width='1.5'/%3E%3C/svg%3E") right 16px center/12px no-repeat;border:1px solid rgba(214,224,238,.35);border-radius:12px;color:#fff;font:inherit;padding:13px 40px 13px 16px}
+.tm-find select option{color:#061430}
+.tm-sec{padding-top:40px}
+.tm-head{margin-bottom:14px}
+.tm-branch{margin-top:70px;padding-top:40px;border-top:1px solid rgba(214,224,238,.14)}
+.tm-bhead{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:26px}
+.tm-bhead h2{font-size:clamp(2rem,3.6vw,2.9rem);margin:6px 0 6px;text-transform:uppercase}
+.tm-bhead p{color:var(--steel-300)}
+.tm-sub{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ice-300);margin:26px 0 14px}
+.tm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(440px,1fr));gap:18px}
+.tm-grid.one{grid-template-columns:minmax(0,640px)}
+.tm-card{display:grid;grid-template-columns:150px 1fr;gap:22px;padding:22px;border-radius:20px;background:linear-gradient(160deg,rgba(15,45,102,.5),rgba(4,12,30,.75));border:1px solid rgba(214,224,238,.18);transition:border-color .3s,box-shadow .3s,transform .3s}
+.tm-card:hover{border-color:rgba(230,240,255,.5);transform:translateY(-3px)}
+.tm-card.hl{border-color:#e6ecf5;box-shadow:0 0 0 3px rgba(156,195,255,.35),0 24px 50px -20px rgba(0,0,0,.8)}
+.tm-ph{width:150px;height:180px;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,#1a3c7a,#061430);display:grid;place-items:center;border:1px solid rgba(214,224,238,.25)}
+.tm-ph img{width:100%;height:100%;object-fit:cover}
+.tm-ph span{font-family:var(--ff-display);font-weight:800;font-size:3rem;letter-spacing:.04em;background:var(--chrome-h);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tm-role{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ice-300)}
+.tm-body h3{font-family:var(--ff-display);font-size:1.7rem;text-transform:uppercase;letter-spacing:.02em;line-height:1.05;margin:4px 0 10px}
+.tm-bio{color:var(--steel-300);font-size:.92rem;line-height:1.55}
+.tm-area{font-size:.84rem;color:var(--steel-500);margin-top:10px;line-height:1.5}
+.tm-area b{color:#dfe6f0;font-weight:600}
+.tm-act{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tm-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;background:var(--chrome-h);color:var(--navy-950);font-weight:700;font-size:.9rem}
+.tm-btn.ghost{background:none;border:1px solid rgba(214,224,238,.4);color:#fff;font-weight:500}
+.tm-btn svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2}
+.tm-depts{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.tm-dept{display:grid;gap:4px;padding:18px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(214,224,238,.16)}
+.tm-dept b{font-family:var(--ff-display);font-size:1.15rem;text-transform:uppercase;letter-spacing:.04em}
+.tm-dept small{color:var(--steel-500);margin-bottom:6px}
+.tm-dept a{color:#fff;font-weight:600}
+.tm-dept a.m{color:#9cc3ff;font-weight:500;font-size:.9rem}
+@media (max-width:700px){.tm-grid{grid-template-columns:1fr}.tm-card{grid-template-columns:96px 1fr;gap:14px;padding:16px}.tm-ph{width:96px;height:118px}.tm-ph span{font-size:2rem}.tm-body h3{font-size:1.35rem}.tm-btn{font-size:.82rem}}
