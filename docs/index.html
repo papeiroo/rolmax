@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="jub-wrap">
-      <div class="jub-count" id="jubCount" role="timer" aria-live="off" title="Do jubileuszu 30-lecia Rolmax — 1 lutego 2027">
+      <div class="jub-count" id="jubCount" role="timer" aria-live="off" title="Do jubileuszu 30-lecia Rolmax — 24 lutego 2027">
         <span class="jc-lbl">Do jubileuszu</span>
         <span class="jc-seg"><b data-u="d">--</b><i>dni</i></span><span class="jc-dot">:</span>
         <span class="jc-seg"><b data-u="h">--</b><i>godz</i></span><span class="jc-dot jc-min">:</span>
@@ -1181,8 +1181,8 @@ addEventListener('resize',railLayout); addEventListener('load',railLayout);
     if(innerWidth<=700){ [chip,f.querySelector(':scope>a'),f.querySelector('.f-icons')].forEach(el=>el&&(el.style.marginLeft='')); return; }
     const mid=(L+Rr)/2; [chip,f.querySelector(':scope>a'),f.querySelector('.f-icons')].forEach(el=>{ if(!el) return; el.style.marginLeft='0'; const c=el.getBoundingClientRect(); el.style.marginLeft=Math.max(0,mid-c.width/2-c.left).toFixed(1)+'px'; }); };
   addEventListener('load',fit); addEventListener('resize',fit); if(document.fonts) document.fonts.ready.then(fit); setTimeout(fit,300); })();
-/* odliczanie do jubileuszu 30-lecia — 1 lutego 2027, 00:00 czasu polskiego */
-(()=>{ const el=document.getElementById('jubCount'); if(!el) return; const T=Date.parse('2027-02-01T00:00:00+01:00');
+/* odliczanie do jubileuszu 30-lecia — 24 lutego 2027, 00:00 czasu polskiego */
+(()=>{ const el=document.getElementById('jubCount'); if(!el) return; const T=Date.parse('2027-02-24T00:00:00+01:00');
   const q=u=>el.querySelector(`[data-u="${u}"]`), p=n=>String(n).padStart(2,'0'); let last={};
   const set=(u,v)=>{ if(last[u]===v) return; last[u]=v; const b=q(u); b.textContent=v; b.classList.remove('tick'); void b.offsetWidth; b.classList.add('tick'); };
   function tick(){ let ms=T-Date.now(); if(ms<=0){ el.innerHTML='<span class="jc-lbl jc-now">Świętujemy 30 lat Rolmax!</span>'; return; }
