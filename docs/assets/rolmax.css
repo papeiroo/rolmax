@@ -1473,3 +1473,23 @@ html,body{overflow-x:clip}
 @media (max-width:900px){.dr-s1,.dr-s2,.dr-s4,.dr-s5{grid-template-columns:1fr}.dr-top{flex-direction:column;align-items:flex-start;padding:22px 70px 14px 22px}.dr-body{padding:20px 22px}.dr-foot{padding:12px 22px;flex-direction:column;align-items:stretch}.dr-nav{justify-content:space-between}}
 @media (max-width:700px){.dr-modal{padding:0;place-items:end stretch}.dr-dlg{max-height:94vh;border-radius:22px 22px 0 0}.dr-steps span{display:none}.dr-steps li{padding:4px}
   .dr-map svg{max-height:46vh}.dr-mgrid{grid-template-columns:1fr 1fr}.dr-d{min-height:48px}.dr-d small{display:none}.dr-fields{grid-template-columns:1fr}.dr-legend{grid-template-columns:1fr 1fr;font-size:.8rem}}
+/* jazda próbna v2: obszary doradców */
+.dr-pow{fill:var(--c)!important;fill-opacity:.6}
+.dr-pow.k-g{stroke-width:.22;stroke:rgba(230,238,250,.5)}
+.dr-pow:hover{fill-opacity:.95}
+.dr-pow.sel{fill:#e9eef6!important;fill-opacity:1}
+.dr-lubo{fill:none;stroke:#fff;stroke-width:.7;stroke-dasharray:1.6 1;pointer-events:none;opacity:.85}
+.dr-legend{grid-template-columns:1fr 1fr}
+.dr-legend li{display:grid;grid-template-columns:auto 1fr;column-gap:8px;align-items:center;line-height:1.2}
+.dr-legend li i{grid-row:span 2;margin:0}
+.dr-legend small{color:var(--steel-500);font-size:.72rem}
+.dr-rep.big{padding:16px 18px;margin:16px 0 4px}
+.dr-rep.big>i{width:54px;height:54px;font-size:1.1rem}
+.dr-rep.big b{font-size:1.25rem}
+.dr-rep small a{color:#dfe6f0}
+.dr-mail{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid rgba(214,224,238,.4);color:#fff;font-weight:500}
+.dr-mail svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8}
+.dr-addr{display:grid;gap:2px;margin-bottom:18px}.dr-addr span{color:var(--steel-300)}
+.dr-reps h4{margin-top:4px}
+.dr-reps p.dr-muted{margin-bottom:18px}
+.dr-d small{color:var(--ice-300)}
