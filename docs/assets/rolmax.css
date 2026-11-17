@@ -1558,3 +1558,6 @@ html,body{overflow-x:clip}
 .tm-dept a.m{color:#9cc3ff;font-weight:500;font-size:.9rem}
 @media (max-width:700px){.tm-grid{grid-template-columns:1fr}.tm-card{grid-template-columns:96px 1fr;gap:14px;padding:16px}.tm-ph{width:96px;height:118px}.tm-ph span{font-size:2rem}.tm-body h3{font-size:1.35rem}.tm-btn{font-size:.82rem}}
 .dr-pow{fill-opacity:.72}.dr-pow:hover{fill-opacity:.95}
+/* hero: „Napędzani pasją” większe */
+.hero-badge .eyebrow{font-size:clamp(.95rem,1.35vw,1.25rem)!important;letter-spacing:.3em!important;margin-bottom:6px!important}
+@media (max-width:700px){.hero-badge .eyebrow{font-size:.78rem!important;letter-spacing:.18em!important}}
