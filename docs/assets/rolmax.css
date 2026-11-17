@@ -1646,3 +1646,125 @@ html,body{overflow-x:clip}
 .u-prev button{position:absolute;top:4px;right:4px;width:24px;height:24px;border-radius:50%;background:rgba(3,10,24,.8);color:#fff}
 @media (max-width:1000px){.u-filters{grid-template-columns:repeat(2,1fr)}.u-q{grid-column:1/-1}.u-dgrid,.u-band{grid-template-columns:1fr}.u-band-act{justify-content:flex-start}}
 @media (max-width:700px){.u-filters{grid-template-columns:1fr 1fr}.u-grid{grid-template-columns:1fr}.u-params{grid-template-columns:1fr 1fr}}
+
+/* ===== Finansowanie fabryczne — strony CNH Capital (Montserrat, kolory wg wytycznych: #c4241f, #383838, #e2e2e1) ===== */
+.cnh{font-family:'Montserrat',sans-serif;color:#000;font-size:14px;font-weight:400;line-height:1.5;background:#fff;-webkit-font-smoothing:antialiased}
+.cnh *{font-family:'Montserrat',sans-serif}
+.cnh p{margin:0 0 1.15em}
+.cnh-wrap{max-width:1400px;margin:0 auto;padding:0 clamp(18px,3.4vw,56px)}
+.cnh-sec{padding:clamp(40px,4.6vw,72px) 0}
+.cnh-grey{background:#e2e2e1}
+.cnh-h1{display:inline-block;background:#c4241f;color:#fff;font-size:28px;line-height:1.3;font-weight:400;padding:12px 24px 13px;margin:0 0 18px}
+.cnh-h1.cnh-dark{background:#383838}
+.cnh-h2{font-size:28px;font-weight:400;line-height:1.3;color:#000;margin:0 0 28px;padding-left:24px;max-width:760px}
+.cnh-h3{display:inline-block;background:#383838;color:#fff;font-size:14px;font-weight:600;line-height:1.3;text-transform:uppercase;padding:12px 32px 12px 14px;margin:0}
+.cnh .p2{font-size:14px;font-weight:600;line-height:1.6;color:#fff}
+.cnh .p3{font-size:10px;line-height:1.3;color:inherit;margin:0}
+/* hero + zakładki */
+.cnh-hero{position:relative;overflow:hidden;background:#3a8cc4}
+.cnh-hero>img{width:100%;aspect-ratio:1670/840;max-height:760px;min-height:340px;object-fit:cover;object-position:70% 50%}
+.cnh-hero-brand{position:absolute;left:3.7%;top:6%;width:min(21.2%,360px);min-width:170px}
+.cnh-logo{display:block;width:100%;height:auto}
+.cnh-tags{margin:9% 0 0 2.5%!important;display:flex;flex-direction:column;align-items:flex-start}
+.cnh-tags span{display:block;background:#c4241f;color:#fff;text-transform:uppercase;font-weight:600;font-size:clamp(11px,1.12vw,18px);line-height:1;padding:.55em .45em .5em;letter-spacing:.01em;white-space:nowrap}
+.cnh-tabs{display:grid;grid-template-columns:repeat(3,1fr);background:#c8c8c8}
+.cnh-tabs a{display:flex;align-items:center;justify-content:center;text-align:center;min-height:clamp(52px,5.8vw,88px);padding:10px;font-size:clamp(13px,1.1vw,17px);font-weight:400;color:#383838;transition:background .2s,color .2s}
+.cnh-tabs a:hover{color:#000;background:#d6d6d6}
+.cnh-tabs a.on{background:#383838;color:#fff}
+/* sekcja z tekstem + zdjęcie ze schodkiem */
+.cnh-2col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);align-items:start}
+.cnh-2col>div>p{padding-left:24px;max-width:680px}
+.cnh-photo{margin:0;clip-path:polygon(0 0,93.5% 0,93.5% 50%,100% 50%,100% 100%,6.5% 100%,6.5% 50%,0 50%)}
+.cnh-photo img{width:100%;aspect-ratio:760/505;object-fit:cover}
+/* oferta promocyjna */
+.cnh-promo .cnh-wrap{position:relative}
+.cnh-promo-logo{margin:clamp(40px,6vw,96px) 0 0 clamp(0px,2.4vw,40px);width:min(260px,40vw)}
+.cnh-logobox{display:block;background:#fff;padding:14% 7% 12%;width:100%}
+.cnh-promo-logo .cnh-tags{margin:0 0 0 54%!important;width:max-content}
+.cnh-promo-logo .cnh-tags span{font-size:clamp(10px,.95vw,14px)}
+.cnh-big{margin:clamp(60px,9vw,170px) 0 clamp(70px,9vw,170px) clamp(0px,8.5vw,150px);color:#5d5d5d}
+.cnh-big b{display:block;font-weight:400;font-size:clamp(46px,6.6vw,108px);line-height:1.05;letter-spacing:-.005em}
+.cnh-big sup{font-size:.42em;vertical-align:top;position:relative;top:-.05em;margin-left:.04em}
+.cnh-big span{display:block;font-size:clamp(28px,4vw,64px);line-height:1.2;max-width:15em;margin-top:.15em}
+.cnh-promo .p3{padding-left:18px;max-width:1340px}
+/* tabela zalet */
+.cnh-tbl-wrap{overflow-x:auto;margin:18px 0 0 24px}
+.cnh-tbl{width:100%;min-width:720px;border-collapse:collapse;font-size:14px}
+.cnh-tbl th{font-weight:600;padding:22px 20px;text-align:center;background:#383838;color:#fff;border-left:1px solid #6a6a6a}
+.cnh-tbl th:first-child{background:#fff;color:#000;border-left:0;border-top:2px solid #9a9a9a}
+.cnh-tbl td{vertical-align:top;padding:18px 28px 26px;border-bottom:1px solid #9a9a9a;border-left:1px solid #9a9a9a;color:#000}
+.cnh-tbl td:first-child{background:#e2e2e1;border-left:0;width:31%;padding-left:28px;white-space:nowrap}
+.cnh-tbl td:first-child b{font-weight:600;vertical-align:middle}
+.cnh-tbl td:nth-child(2),.cnh-tbl td:nth-child(3){width:34.5%}
+.cnh-chk{width:22px;height:20px;vertical-align:middle;margin:-4px 16px 0 0;display:inline-block}
+.cnh-center{text-align:center}
+.cnh-cta-wrap{text-align:center;margin:44px 0 10px!important}
+.cnh a.cnh-cta{display:inline-block;font-size:20px;line-height:1.3;font-weight:600;color:#fff;text-decoration:none;padding:12px 40px 13px;background:linear-gradient(180deg,#d83a33 0%,#c4241f 45%,#a8160f 100%);border:5px solid #383838;box-shadow:0 18px 22px -12px rgba(0,0,0,.45);transition:color .2s,filter .2s}
+.cnh a.cnh-cta:hover{color:darkgray}
+/* kontakt */
+.cnh-contact{list-style:none;padding:6px 0 0 24px;margin:0;font-size:14px}
+.cnh-contact li{display:flex;align-items:center;gap:22px;margin-bottom:16px}
+.cnh-contact i{width:24px;height:24px;flex:none}.cnh-contact i svg{width:100%;height:100%}
+.cnh-contact b{font-weight:600}.cnh-contact small{display:block;font-size:12px;color:#383838}
+.cnh-contact a{color:#000}.cnh-contact a:hover{color:#c4241f}
+/* produkty: boksy z listami */
+.cnh-boxes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,44px);margin-top:44px}
+.cnh-box{background:#fff;padding:24px 34px 30px 20px;height:calc(100% - 41px)}
+.cnh-box ul{list-style:disc;padding-left:18px;margin:0;font-size:14px;line-height:1.5}
+.cnh-box ul>li{margin-bottom:1.4em;padding-left:6px}
+.cnh-box li::marker{font-size:.8em}
+.cnh-dash{list-style:none;padding:0 0 0 0;margin:0}
+.cnh-dash li{position:relative;padding-left:24px;margin:0}
+.cnh-dash li::before{content:'–';position:absolute;left:0}
+/* stopka */
+.cnh-foot{display:grid;grid-template-columns:1fr 1fr}
+.cnh-foot-l{background:#383838;padding:clamp(36px,4vw,60px) clamp(24px,7vw,120px);min-height:220px}
+.cnh-globe{display:block;width:26px;height:26px;margin:0 0 38px 4px}
+.cnh-foot-l .p2{margin:0}
+.cnh-foot-r{background:#fff;padding:clamp(36px,4vw,60px) clamp(24px,4vw,70px)}
+.cnh-foot-r .cnh-logo{width:min(200px,60%);margin-bottom:28px}
+.cnh-foot-r p{font-size:14px;max-width:640px;color:#383838}
+@media (max-width:900px){
+  .cnh-2col,.cnh-boxes,.cnh-foot{grid-template-columns:1fr}
+  .cnh-h1,.cnh-h2{font-size:22px}.cnh-h2,.cnh-2col>div>p,.cnh-contact{padding-left:0}
+  .cnh-tbl-wrap{margin-left:0}
+  .cnh-hero-brand{left:16px;top:16px}
+  .cnh-tabs a{font-size:12px;padding:8px 6px}
+  .cnh a.cnh-cta{font-size:17px;padding:12px 22px}
+  .cnh-box{height:auto}
+}
+/* wstążka: Finansowanie fabryczne — rozwijana lista 3 stron */
+.mega.cnh-mega{left:auto;right:auto;width:340px}
+.cnh-dd{background:#fff;border-radius:0 0 14px 14px;box-shadow:var(--shadow-lg);overflow:hidden;border-top:3px solid #c4241f}
+.cnh-dd-h{display:flex;align-items:center;gap:10px;padding:14px 18px 10px;color:#383838;font:600 .72rem/1.2 var(--ff-body);letter-spacing:.16em;text-transform:uppercase}
+.cnh-dd-h img{width:110px;height:auto}
+.site-header .cnh-dd a{display:flex!important;flex-direction:column;align-items:flex-start!important;gap:2px;padding:13px 18px!important;height:auto!important;border-top:1px solid #e6e8ec;color:#0a1f47!important;font:600 1rem/1.25 var(--ff-body)!important;letter-spacing:0!important;text-transform:none!important;white-space:normal!important}
+.site-header .cnh-dd a::before,.site-header .cnh-dd a::after{display:none!important}
+.site-header .cnh-dd a small{font:400 .82rem/1.3 var(--ff-body);color:#5b6575}
+.site-header .cnh-dd a:hover{background:#f3f4f6;color:#c4241f!important}
+.site-header .nav .nt-2l{display:block;line-height:1.12;text-align:left;white-space:nowrap}
+.site-header .nav-cnh>button::after{bottom:14px}
+.site-header.nav-xxs .nav>li>a,.site-header.nav-xxs .nav>li>button{padding:0 6px!important;letter-spacing:.05em!important}
+.site-header.nav-xxs .nav>li>a::after,.site-header.nav-xxs .nav>li>button::after{left:6px!important;right:6px!important}
+
+/* Montserrat (Google Fonts, OFL) — kopia lokalna dla stron CNH Capital */
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;src:url(fonts/montserrat-latin-ext-300-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;src:url(fonts/montserrat-latin-300-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/montserrat-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/montserrat-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/montserrat-latin-ext-500-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/montserrat-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/montserrat-latin-ext-600-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/montserrat-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/montserrat-latin-ext-700-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/montserrat-latin-700-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@media (max-width:700px){
+  .cnh-tbl,.cnh-tbl tbody,.cnh-tbl tr,.cnh-tbl td{display:block;width:100%!important;min-width:0}
+  .cnh-tbl thead{display:none}
+  .cnh-tbl tr{border:1px solid #9a9a9a;margin-bottom:14px}
+  .cnh-tbl td{border:0!important;padding:12px 16px!important;white-space:normal!important}
+  .cnh-tbl td:first-child{padding:14px 16px!important}
+  .cnh-tbl td[data-l]::before{content:attr(data-l);display:block;background:#383838;color:#fff;font-weight:600;font-size:12px;padding:5px 10px;margin:0 0 8px;width:max-content}
+  .cnh-tbl td+td+td{border-top:1px solid #d0d0d0!important}
+  .cnh-tabs a{font-size:11px}
+}
