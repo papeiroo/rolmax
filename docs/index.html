@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rolmax.css?v=202611171425">
+<link rel="stylesheet" href="assets/rolmax.css?v=202611171500">
 </head>
 <body>
 
@@ -57,6 +57,7 @@
       </li>
       <li><a href="#usluga-serwis"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2.5-2.5z"/></svg><span class="nt">Serwis</span></a></li>
       <li class="nav-more"><a href="#usluga-finansowanie"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 17l2 2a1 1 0 103-3"/><path d="M14 14l2.5 2.5a1 1 0 103-3l-3.88-3.88a3 3 0 00-4.24 0l-.88.88a1 1 0 11-3-3l2.81-2.81a5.79 5.79 0 017.06-.87l.47.28a2 2 0 001.42.25L21 4"/><path d="M21 3l1 11h-2"/><path d="M3 3L2 14l6.5 6.5a1 1 0 103-3"/><path d="M3 4h8"/></svg><span class="nt">Finansowanie</span></a></li>
+      <li class="nav-more"><a href="#uzywane"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="16" r="4.5"/><circle cx="7" cy="16" r="1.3"/><circle cx="19" cy="18" r="2.5"/><path d="M4 11.6V4h7l1.2 7.6"/><path d="M11.5 16.5h5.2"/><path d="M12.2 11.6H20l.9 4.4"/><path d="M16.2 11.6V7.6"/></svg><span class="nt">Używane</span></a></li>
       <li class="nav-more"><a href="#promocje"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg><span class="nt">Promocje</span></a></li>
       <li class="nav-more"><a href="#aktualnosci"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h13v15a2 2 0 002 2H6a2 2 0 01-2-2z"/><path d="M17 8h3v11a2 2 0 01-2 2"/><path d="M8 8h5M8 12h5M8 16h3"/></svg><span class="nt">Aktualności</span></a></li>
       <li class="nav-more"><a href="#blog"><svg class="ni" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg><span class="nt">Blog</span></a></li>
@@ -96,7 +97,7 @@
       <div class="f-col-oferta"><h5>Oferta</h5><ul id="fOferta" class="f-2col"></ul></div>
       <div><h5>Usługi</h5><ul id="fUslugi"></ul></div>
       <div><h5>Rolmax</h5><ul>
-        <li><a href="#promocje">Promocje</a></li><li><a href="#blog">Blog</a></li><li><a href="#aktualnosci">Aktualności</a></li><li><a href="#galeria">Galeria</a></li><li><a href="#jubileusz">O nas</a></li><li><a href="#oddzialy">Praca</a></li><li><a href="#oddzialy">Kontakt</a></li>
+        <li><a href="#promocje">Promocje</a></li><li><a href="#uzywane">Maszyny używane</a></li><li><a href="#blog">Blog</a></li><li><a href="#aktualnosci">Aktualności</a></li><li><a href="#galeria">Galeria</a></li><li><a href="#jubileusz">O nas</a></li><li><a href="#oddzialy">Praca</a></li><li><a href="#oddzialy">Kontakt</a></li>
       </ul></div>
     </div>
     <div class="f-bottom"><span>© Rolmax 2027 · Wszelkie prawa zastrzeżone.</span>
@@ -104,7 +105,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=202611171425"></script>
+<script src="data.js?v=202611171500"></script>
 <script>
 const IMG = it => it.img || `assets/img/p_${it.s}.webp`;
 const BADGE = it => it.new?`<em class="badge">${it.new}</em>`:'';
@@ -1109,6 +1110,133 @@ function mountContact(){ const s=document.getElementById('tmFind'); if(!s) retur
   s.addEventListener('change',()=>{ if(s.value==='') return; const k=DR_GEO.areas[+s.value].r, c=document.getElementById('tm-'+k); if(!c) return;
     document.querySelectorAll('.tm-card.hl').forEach(x=>x.classList.remove('hl')); c.classList.add('hl','in','visible','show');
     const hh=(document.querySelector('.site-header')||{}).offsetHeight||0; window.scrollTo({top:c.getBoundingClientRect().top+scrollY-hh-30,behavior:'smooth'}); }); }
+/* ===================== MASZYNY UŻYWANE — ogłoszenia Rolmax i rolników ===================== */
+/* src: 'rolmax' (maszyna Rolmax) lub 'private' (ogłoszenie rolnika). demo:true = przykładowe ogłoszenie do podmiany na prawdziwe. */
+const USED=[
+  {id:'u-t5-2019',src:'rolmax',demo:true,cat:'Ciągniki',brand:'New Holland',model:'T5.100 Electro Command',y:2019,h:3150,price:259000,vat:true,area:'świdnicki',br:0,img:['assets/img/p_t5-electro-command.webp'],
+   feat:['Ładowacz czołowy','Klimatyzacja','Przedni TUZ','Pneumatyka 2-obwodowa'],desc:'Ciągnik po przeglądzie w serwisie Rolmax, komplet dokumentacji serwisowej. Możliwe finansowanie CNH Capital i rozliczenie Twojej maszyny w rozliczeniu.'},
+  {id:'u-cx6-2017',src:'rolmax',demo:true,cat:'Kombajny',brand:'New Holland',model:'CX6.80',y:2017,h:1840,price:0,vat:true,area:'zamojski',br:1,img:['assets/img/p_cx5-i-cx6-stage-v.webp'],
+   feat:['Heder 6,1 m z wózkiem','Rozdrabniacz słomy','Monitor plonu'],desc:'Kombajn przygotowany do sezonu, przegląd posezonowy wykonany. Cena do uzgodnienia — zapytaj doradcę.'},
+  {id:'u-pras-2015',src:'private',demo:true,cat:'Prasy',brand:'New Holland',model:'Roll-Belt 150',y:2015,h:0,price:68000,vat:false,area:'lubartowski',seller:'Pan Marek',phone:'',img:[],
+   feat:['Siatka i sznurek','Rotor CropCutter'],desc:'Prasa w dobrym stanie, garażowana, ok. 18 000 bel. Do obejrzenia w gospodarstwie.'},
+  {id:'u-opr-2012',src:'private',demo:true,cat:'Maszyny uprawowe',brand:'Inna marka',model:'Opryskiwacz zawieszany 1000 l',y:2012,h:0,price:14500,vat:false,area:'krasnostawski',seller:'Gospodarstwo rolne',phone:'',img:[],
+   feat:['Belka 15 m','Komputer sterujący'],desc:'Opryskiwacz po przeglądzie, sprawny technicznie, gotowy do pracy.'}];
+const USED_CATS=['Ciągniki','Kombajny','Ładowarki','Prasy','Maszyny zielonkowe','Maszyny uprawowe','Inne'];
+const usedPrice=u=>u.price?`${u.price.toLocaleString('pl-PL')} zł${u.src==='rolmax'?(u.vat?' netto':' brutto'):''}`:'Cena do uzgodnienia';
+const usedAreaLabel=a=>{ const x=DR_GEO.areas.find(z=>z.n===a); return x?drLabel(x):a; };
+const usedRep=u=>{ const x=DR_GEO.areas.find(z=>z.n===u.area); return x?DR_REP[x.r]:DR_REP.por; };
+const USED_PH=`<svg class="u-ph" viewBox="0 0 120 70" aria-hidden="true"><circle cx="32" cy="50" r="15"/><circle cx="32" cy="50" r="5"/><circle cx="96" cy="55" r="9"/><path d="M18 36V14h26l4 22M47 36h42l3 14M60 36V24M47 50h40"/></svg>`;
+function usedCard(u){ return `<a class="u-card chrome-frame reveal" href="#uzywane-${u.id}">
+  <div class="u-img">${u.img[0]?`<img loading="lazy" src="${u.img[0]}" alt="${u.brand} ${u.model}">`:USED_PH}
+    <span class="u-badge ${u.src}">${u.src==='rolmax'?'Od Rolmax':'Ogłoszenie prywatne'}</span>${u.demo?'<span class="u-demo">Przykład</span>':''}</div>
+  <div class="u-body"><small>${u.cat} · ${u.brand}</small><h3>${u.model}</h3>
+    <p class="u-meta">${u.y}${u.h?` · ${u.h.toLocaleString('pl-PL')} mth`:''} · ${usedAreaLabel(u.area)}</p>
+    <b class="u-price">${usedPrice(u)}</b></div></a>`; }
+function usedPage(){
+  return `<section class="page-hero"><div class="wrap"><div class="crumbs"><a href="#home">Home</a><i>/</i>Maszyny używane</div>
+  <h1 class="display h2 chrome-sheen">Maszyny używane</h1>
+  <p class="lead" style="margin-top:14px">Sprawdzone maszyny z placów Rolmax i ogłoszenia rolników z całej Lubelszczyzny — w jednym miejscu. Masz maszynę na sprzedaż? Wystaw ją bezpłatnie albo poproś nas o ofertę odkupu.</p>
+  <div class="u-cta"><button class="btn btn-chrome btn-shine" type="button" data-sell="1">Wystaw swoją maszynę — bezpłatnie</button><button class="btn btn-ghost" type="button" data-sell="buy">Sprzedaj maszynę Rolmax (odkup)</button></div></div></section>
+  <section class="sec u-sec"><div class="wrap">
+    ${USED.some(u=>u.demo)?'<p class="u-note">Na razie widzisz <b>przykładowe ogłoszenia</b> pokazujące wygląd zakładki — zastąpimy je prawdziwymi maszynami.</p>':''}
+    <div class="u-tools">
+      <div class="u-tabs" role="tablist"><button data-src="all" class="on">Wszystkie</button><button data-src="rolmax">Od Rolmax</button><button data-src="private">Od rolników</button></div>
+      <div class="u-filters">
+        <label><span>Rodzaj</span><select data-f="cat"><option value="">Wszystkie</option>${USED_CATS.map(c=>`<option>${c}</option>`).join('')}</select></label>
+        <label><span>Rok od</span><select data-f="y"><option value="">Dowolny</option>${[2024,2022,2020,2018,2015,2010,2005].map(y=>`<option>${y}</option>`).join('')}</select></label>
+        <label><span>Cena do</span><select data-f="p"><option value="">Dowolna</option>${[20000,50000,100000,250000,500000,1000000].map(p=>`<option value="${p}">${p.toLocaleString('pl-PL')} zł</option>`).join('')}</select></label>
+        <label class="u-q"><span>Szukaj</span><input type="search" data-f="q" placeholder="np. T5, prasa, opryskiwacz"></label>
+        <label><span>Sortuj</span><select data-f="s"><option value="new">Najnowsze</option><option value="pa">Cena rosnąco</option><option value="pd">Cena malejąco</option><option value="y">Rocznik</option></select></label>
+      </div></div>
+    <p class="u-count"></p><div class="u-grid"></div>
+    <div class="u-band chrome-frame"><div><div class="eyebrow">Dla sprzedających</div><h2 class="display chrome">Sprzedajesz ciągnik lub maszynę?</h2>
+      <p>Dodaj ogłoszenie bezpłatnie — trafi do rolników, którzy szukają maszyn na stronie Rolmax. Wolisz szybko i bez kłopotu? Wycenimy Twoją maszynę i złożymy ofertę odkupu albo rozliczymy ją przy zakupie nowej.</p></div>
+      <div class="u-band-act"><button class="btn btn-chrome btn-shine" type="button" data-sell="1">Wystaw maszynę</button><button class="btn btn-ghost" type="button" data-sell="buy">Poproś o wycenę</button></div></div>
+  </div></section>`; }
+function mountUsed(){ const grid=document.querySelector('.u-grid'); if(!grid) return; const st={src:'all'};
+  const f=k=>document.querySelector(`[data-f="${k}"]`).value;
+  const draw=()=>{ const q=f('q').toLowerCase().trim();
+    let L=USED.filter(u=>(st.src==='all'||u.src===st.src)&&(!f('cat')||u.cat===f('cat'))&&(!f('y')||u.y>=+f('y'))&&(!f('p')||(u.price&&u.price<=+f('p')))&&(!q||`${u.brand} ${u.model} ${u.cat} ${u.desc}`.toLowerCase().includes(q)));
+    const s=f('s'); if(s==='pa') L.sort((a,b)=>(a.price||9e9)-(b.price||9e9)); else if(s==='pd') L.sort((a,b)=>(b.price||0)-(a.price||0)); else if(s==='y') L.sort((a,b)=>b.y-a.y); else L.sort((a,b)=>(a.src==='rolmax'?0:1)-(b.src==='rolmax'?0:1));
+    document.querySelector('.u-count').textContent=`${L.length} ${L.length===1?'ogłoszenie':(L.length%10>=2&&L.length%10<=4&&(L.length%100<12||L.length%100>14))?'ogłoszenia':'ogłoszeń'}`;
+    grid.innerHTML=L.length?L.map(usedCard).join(''):`<div class="u-empty"><b>Brak ogłoszeń dla wybranych filtrów.</b><p>Zmień kryteria albo zostaw nam zapytanie — doradca poszuka maszyny dla Ciebie.</p></div>`;
+    grid.querySelectorAll('.reveal').forEach(e=>e.classList.add('in','visible','show')); };
+  document.querySelectorAll('.u-tabs button').forEach(b=>b.onclick=()=>{ st.src=b.dataset.src; document.querySelectorAll('.u-tabs button').forEach(x=>x.classList.toggle('on',x===b)); draw(); });
+  document.querySelectorAll('[data-f]').forEach(e=>e.addEventListener(e.tagName==='INPUT'?'input':'change',draw));
+  draw(); }
+function usedDetail(id){ const u=USED.find(x=>x.id===id); if(!u) return usedPage(); const r=usedRep(u), pr=u.src==='private';
+  return `<section class="page-hero u-dhero"><div class="wrap"><div class="crumbs"><a href="#home">Home</a><i>/</i><a href="#uzywane">Maszyny używane</a><i>/</i>${u.model}</div></div></section>
+  <section class="sec u-detail"><div class="wrap u-dgrid">
+    <div class="u-gal chrome-frame">${u.img[0]?`<img class="u-main" src="${u.img[0]}" alt="${u.brand} ${u.model}">`:`<div class="u-main ph">${USED_PH}<span>Zdjęcia wkrótce</span></div>`}
+      ${u.img.length>1?`<div class="u-thumbs">${u.img.map((s,i)=>`<img src="${s}" data-i="${i}" alt="">`).join('')}</div>`:''}</div>
+    <div class="u-info"><span class="u-badge ${u.src}">${pr?'Ogłoszenie prywatne':'Od Rolmax'}</span>${u.demo?'<span class="u-demo static">Przykładowe ogłoszenie</span>':''}
+      <small class="u-kicker">${u.cat} · ${u.brand}</small><h1 class="display chrome">${u.model}</h1>
+      <b class="u-price big">${usedPrice(u)}</b>
+      <dl class="u-params"><div><dt>Rok produkcji</dt><dd>${u.y}</dd></div>${u.h?`<div><dt>Motogodziny</dt><dd>${u.h.toLocaleString('pl-PL')}</dd></div>`:''}<div><dt>Lokalizacja</dt><dd>${usedAreaLabel(u.area)}</dd></div>${pr?'':`<div><dt>Oddział</dt><dd>${DR_BR[u.br].n}</dd></div>`}</dl>
+      ${u.feat.length?`<ul class="u-feat">${u.feat.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}
+      <p class="u-desc">${u.desc}</p>
+      ${pr?`<div class="u-contact"><h4>Sprzedający</h4><b>${u.seller}</b>${u.phone?`<button class="btn btn-chrome" type="button" onclick="this.outerHTML='<a class=&quot;btn btn-chrome&quot; href=&quot;tel:${u.phone.replace(/ /g,'')}&quot;>${u.phone}</a>'">Pokaż numer telefonu</button>`:'<p class="dr-muted">Kontakt do sprzedającego pojawi się po publikacji ogłoszenia.</p>'}
+          <p class="u-disc">Ogłoszenie prywatne — Rolmax udostępnia miejsce na stronie, ale nie jest stroną transakcji i nie odpowiada za stan maszyny. Przed zakupem obejrzyj maszynę i sprawdź dokumenty. Chcesz, żeby nasz serwis ocenił stan techniczny? <a href="#usluga-serwis">Zamów przegląd</a>.</p></div>`
+        :`<div class="u-contact"><h4>Twój doradca</h4><div class="dr-rep"><i>${r.n.split(' ').map(x=>x[0]).join('')}</i><div><b>${r.n}</b><small>${r.role||'Doradca handlowy'}</small></div></div>
+          <div class="u-cact"><a class="btn btn-chrome btn-shine" href="${drTel(r.t)}">Zadzwoń: ${r.t}</a><a class="btn btn-ghost" href="mailto:${r.e}?subject=${encodeURIComponent('Maszyna używana: '+u.brand+' '+u.model)}">Napisz e-mail</a></div>
+          <ul class="u-perks"><li>Sprawdzona przez serwis Rolmax</li><li>Finansowanie CNH Capital</li><li>Możliwe rozliczenie Twojej maszyny</li></ul></div>`}
+    </div></div>
+    <div class="wrap"><div class="u-more"><h2 class="display chrome">Inne maszyny używane</h2><div class="u-grid">${USED.filter(x=>x.id!==u.id).slice(0,3).map(usedCard).join('')}</div></div></div></section>`; }
+/* kreator „Wystaw swoją maszynę” / „Odkup” */
+function openSell(mode){ const buy=mode==='buy'; const S={step:1,photos:[]};
+  const el=document.createElement('div'); el.className='dr-modal u-modal'; el.setAttribute('role','dialog'); el.setAttribute('aria-modal','true');
+  const steps=buy?['Maszyna','Zdjęcia','Kontakt']:['Maszyna','Zdjęcia','Cena','Kontakt'];
+  el.innerHTML=`<div class="dr-dlg"><button class="dr-x" aria-label="Zamknij">×</button>
+    <header class="dr-top"><div><div class="eyebrow">Maszyny używane</div><h2 class="display chrome">${buy?'Wycena i odkup':'Wystaw swoją maszynę'}</h2></div>
+    <ol class="dr-steps">${steps.map((t,i)=>`<li data-s="${i+1}"><b>${i+1}</b><span>${t}</span></li>`).join('')}</ol></header>
+    <form class="dr-body u-form" novalidate></form>
+    <footer class="dr-foot"><div class="dr-sum">${buy?'Doradca Rolmax przygotuje wycenę i zadzwoni do Ciebie.':'Ogłoszenie jest bezpłatne. Opublikujemy je po krótkiej weryfikacji.'}</div><div class="dr-nav"><button class="btn btn-ghost dr-back" type="button">← Wstecz</button><button class="btn btn-chrome btn-shine dr-next" type="button">Dalej →</button></div></footer></div>`;
+  document.body.appendChild(el); document.documentElement.style.overflow='hidden'; requestAnimationFrame(()=>el.classList.add('in'));
+  const form=el.querySelector('form'), next=el.querySelector('.dr-next'), back=el.querySelector('.dr-back'); const V={};
+  const close=()=>{ el.classList.remove('in'); setTimeout(()=>el.remove(),280); document.documentElement.style.overflow=''; removeEventListener('keydown',esc); };
+  const esc=e=>{ if(e.key==='Escape') close(); }; addEventListener('keydown',esc);
+  el.addEventListener('click',e=>{ if(e.target===el||e.target.closest('.dr-x')) close(); });
+  const save=()=>new FormData(form).forEach((v,k)=>{ if(!(v instanceof File)) V[k]=v; });
+  const fld=(n,l,t='text',x='')=>`<label${x?` class="${x}"`:''}><span>${l}</span><input name="${n}" type="${t}" value="${(V[n]||'').replace(/"/g,'&quot;')}"></label>`;
+  const opts=[...DR_GEO.areas.keys()].map(i=>[drLabel(DR_GEO.areas[i]),DR_GEO.areas[i].n]).sort((a,b)=>a[0].localeCompare(b[0],'pl'));
+  const pages={
+    1:()=>`<div class="dr-fields"><label><span>Rodzaj maszyny *</span><select name="cat">${USED_CATS.map(c=>`<option${V.cat===c?' selected':''}>${c}</option>`).join('')}</select></label>
+      ${fld('brand','Marka *')}${fld('model','Model *')}${fld('y','Rok produkcji *','number')}${fld('h','Motogodziny','number')}
+      <label class="wide"><span>Opis i wyposażenie</span><textarea name="desc" rows="4" placeholder="np. ładowacz czołowy, klimatyzacja, stan opon, historia serwisowa">${V.desc||''}</textarea></label></div>`,
+    2:()=>`<div class="u-up"><label class="u-drop"><input type="file" accept="image/*" multiple><b>Dodaj zdjęcia</b><small>Do 10 zdjęć: przód, tył, bok, kabina, licznik motogodzin, opony</small></label><div class="u-prev">${S.photos.map((p,i)=>`<figure><img src="${p}"><button type="button" data-rm="${i}">×</button></figure>`).join('')}</div></div>`,
+    3:()=>buy?contact():`<div class="dr-fields">${fld('price','Cena (zł) *','number')}<label><span>Lokalizacja maszyny *</span><select name="area"><option value="">— powiat lub gmina —</option>${opts.map(([l,n])=>`<option value="${n}"${V.area===n?' selected':''}>${l}</option>`).join('')}</select></label>
+      <label class="dr-check wide"><input type="checkbox" name="nego"${V.nego?' checked':''}><span>Cena do negocjacji</span></label>
+      <label class="dr-check wide"><input type="checkbox" name="buyoffer"${V.buyoffer?' checked':''}><span>Chcę też otrzymać od Rolmax ofertę odkupu tej maszyny</span></label></div>`,
+    4:()=>contact()};
+  function contact(){ return `<div class="dr-fields">${fld('name','Imię i nazwisko / gospodarstwo *')}${fld('phone','Telefon *','tel')}${fld('email','E-mail','email')}
+    ${buy?`<label><span>Lokalizacja maszyny *</span><select name="area"><option value="">— powiat lub gmina —</option>${opts.map(([l,n])=>`<option value="${n}"${V.area===n?' selected':''}>${l}</option>`).join('')}</select></label>`:''}
+    <label class="dr-check wide"><input type="checkbox" name="rodo"><span>Wyrażam zgodę na przetwarzanie danych w celu ${buy?'przygotowania wyceny':'publikacji ogłoszenia i kontaktu z kupującymi'}. *</span></label>
+    ${buy?'':'<label class="dr-check wide"><input type="checkbox" name="terms"><span>Akceptuję regulamin ogłoszeń: ogłoszenie prywatne, Rolmax nie jest stroną transakcji, ogłoszenie wygasa po 60 dniach. *</span></label>'}
+    <p class="dr-err wide" hidden>Uzupełnij pola oznaczone gwiazdką i zaznacz wymagane zgody.</p>
+    <button class="btn btn-chrome btn-shine wide" type="submit">${buy?'Poproś o wycenę':'Wyślij ogłoszenie do publikacji'}</button></div>`; }
+  const last=steps.length;
+  const render=()=>{ el.querySelectorAll('.dr-steps li').forEach(li=>{const n=+li.dataset.s; li.classList.toggle('on',n===S.step); li.classList.toggle('done',n<S.step);});
+    back.style.visibility=S.step>1?'visible':'hidden'; next.style.display=S.step>=last?'none':''; form.innerHTML=pages[S.step](); form.scrollTop=0;
+    const inp=form.querySelector('input[type=file]');
+    if(inp) inp.onchange=()=>{ [...inp.files].slice(0,10-S.photos.length).forEach(f=>{ const r=new FileReader(); r.onload=()=>{ S.photos.push(r.result); render(); }; r.readAsDataURL(f); }); };
+    form.querySelectorAll('[data-rm]').forEach(b=>b.onclick=()=>{ S.photos.splice(+b.dataset.rm,1); render(); }); };
+  const valid=()=>{ save(); if(S.step===1) return V.brand&&V.model&&V.y; if(S.step===3&&!buy) return V.price&&V.area; return true; };
+  next.onclick=()=>{ if(!valid()){ form.querySelectorAll('input[name=brand],input[name=model],input[name=y],input[name=price],select[name=area]').forEach(i=>i.classList.toggle('bad',!i.value)); return; } S.step++; render(); };
+  back.onclick=()=>{ save(); if(S.step>1){ S.step--; render(); } };
+  form.addEventListener('submit',e=>{ e.preventDefault(); save(); const okp=(V.phone||'').replace(/\D/g,'').length>=9;
+    if(!V.name||!okp||!V.rodo||(!buy&&!V.terms)||(buy&&!V.area)){ form.querySelector('.dr-err').hidden=false; return; }
+    const rec={type:buy?'odkup':'ogloszenie',...V,photos:S.photos.length,ts:Date.now()};
+    try{ const t=JSON.parse(localStorage.getItem('rx_used')||'[]'); t.push(rec); localStorage.setItem('rx_used',JSON.stringify(t)); }catch(err){}
+    if(typeof window.rxSendListing==='function') window.rxSendListing(rec,S.photos); /* tu podłączymy wysyłkę do moderacji (e-mail / panel) */
+    const ar=DR_GEO.areas.find(z=>z.n===V.area), rep=ar?DR_REP[ar.r]:DR_REP.por;
+    el.querySelectorAll('.dr-steps li').forEach(li=>li.classList.add('done')); el.querySelector('.dr-foot').style.display='none';
+    form.outerHTML=`<div class="dr-body"><div class="dr-done"><div class="dr-tick"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg></div>
+      <h3 class="display chrome">${buy?'Dziękujemy — wycena w drodze':'Ogłoszenie przyjęte'}</h3>
+      <p>${buy?`Twój doradca <b>${rep.n}</b> obejrzy zgłoszenie i zadzwoni z propozycją wyceny lub odkupu.`:`Sprawdzimy ogłoszenie <b>${V.brand} ${V.model}</b> i opublikujemy je w zakładce Maszyny używane. Damy znać SMS-em lub e-mailem.`}</p>
+      <p class="dr-muted">${buy?`Masz pytania? Zadzwoń: <a href="${drTel(rep.t)}">${rep.t}</a>`:'Ogłoszenie jest bezpłatne i wygaśnie po 60 dniach — przypomnimy Ci o przedłużeniu.'}</p></div></div>`; });
+  render(); }
+document.addEventListener('click',e=>{ const b=e.target.closest('[data-sell]'); if(!b) return; e.preventDefault(); openSell(b.dataset.sell); });
+
 function route(){
   const h=location.hash.slice(1); const app=$('#app');
   document.querySelectorAll('[data-mega]').forEach(x=>x.classList.remove('open'));
@@ -1121,6 +1249,8 @@ function route(){
   else if(h.startsWith('wpis-')) app.innerHTML=postPage(h.slice(5));
   else if(h==='promocje') app.innerHTML=promoPage();
   else if(h==='kontakt'){ app.innerHTML=contactPage(); setTimeout(mountContact,0); }
+  else if(h==='uzywane'){ app.innerHTML=usedPage(); setTimeout(mountUsed,0); }
+  else if(h.startsWith('uzywane-')) app.innerHTML=usedDetail(h.slice(8));
   else { if(!$('.hero video')||app.dataset.view!=='home'){ app.innerHTML=home(); app.dataset.view='home'; mountHome(); animate(); }
          if(h && document.getElementById(h)) scrollToSec(h); else window.scrollTo(0,0); return; }
   app.dataset.view='sub'; mountHome(); animate(); window.scrollTo(0,0);
