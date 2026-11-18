@@ -1,0 +1,18 @@
+/* Rolmax 2027 — poprawki dla WordPressa i Elementora (wygląd 1:1 z projektu) */
+.rx .elementor-widget-container{margin:0;padding:0}
+.rx .rx-home.e-con,.rx .rx-home>.e-con-inner{--padding-top:0;--padding-bottom:0;--padding-left:0;--padding-right:0;--gap:0;--row-gap:0;--column-gap:0;padding:0!important;gap:0!important;max-width:none!important;width:100%}
+.rx .rx-home .elementor-widget{width:100%;max-width:100%;margin:0!important}
+.rx .elementor a{box-shadow:none}
+.rx #app>.elementor{width:100%}
+/* Edytor: elementy z animacją wejścia widoczne od razu */
+.elementor-editor-active .reveal{opacity:1!important;transform:none!important}
+.elementor-editor-active .cta-dock,.elementor-editor-active .to-top{display:none!important}
+/* Zwykłe strony i wpisy WordPressa */
+.rx-page-hero{padding:clamp(70px,9vw,120px) 0 30px}
+.rx-page{padding:20px 0 90px}
+.rx-page .wrap>p,.rx-article{max-width:860px;color:var(--ink-200,#c9d3e3);font-size:1.05rem;line-height:1.75}
+.rx-article h2,.rx-article h3{font-family:var(--ff-display);color:#fff;margin:1.6em 0 .6em}
+.rx-article a{color:var(--chrome-200,#e6ebf2);text-decoration:underline}
+.rx-article img{max-width:100%;height:auto;border-radius:12px}
+.rx-card{margin-bottom:18px}
+.rx-card a{color:inherit}
