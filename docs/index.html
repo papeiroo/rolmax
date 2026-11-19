@@ -1330,6 +1330,13 @@ function cnhPage(k){
 }
 
 function route(){
+  /* Stały link do formularza pokazów DEMO (kod QR na naklejkach): rolmax.net.pl/#pokaz-demo
+     opcjonalnie z maszyną: #pokaz-demo-<slug>. Pokazuje stronę główną i otwiera rezerwację. */
+  if(location.hash.startsWith('#pokaz-demo')){
+    const m=location.hash.slice(12)||null;
+    history.replaceState(null,'',location.pathname+location.search+'#home');
+    setTimeout(()=>openDrive({m}),350);
+  }
   const h=location.hash.slice(1); const app=$('#app');
   document.querySelectorAll('[data-mega]').forEach(x=>x.classList.remove('open'));
   if(h.startsWith('oferta-') && h!=='oferta-home') app.innerHTML=catPage(h.slice(7));
