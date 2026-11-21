@@ -135,8 +135,6 @@ def main():
     head_html = html[i_top:i_main]
     foot_html = html[i_main + len('<main id="app"></main>'):i_end]
     head_html = must(head_html, 'Pokazy DEMO</a>', "<?php echo esc_html( rx_mod( 'rx_cta', 'Pokazy DEMO' ) ); ?></a>")
-    foot_html = must(foot_html, '<p>Autoryzowany Dealer i Serwis New Holland. Oddziały: Świdnik, Miączyn, Rudnik, Białka.</p>',
-                     "<p><?php echo esc_html( rx_mod( 'rx_about', 'Autoryzowany Dealer i Serwis New Holland. Oddziały: Świdnik, Miączyn, Rudnik, Białka.' ) ); ?></p>")
     foot_html = must(foot_html, '<a href="tel:+48817216785">+48 81 721 67 85</a><a href="mailto:rolmax@rolmax.net.pl">rolmax@rolmax.net.pl</a>',
                      "<?php $rx_ph = rx_mod( 'rx_phone', '+48 81 721 67 85' ); $rx_ml = rx_mod( 'rx_mail', 'rolmax@rolmax.net.pl' ); ?><a href=\"tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $rx_ph ) ); ?>\"><?php echo esc_html( $rx_ph ); ?></a><a href=\"mailto:<?php echo esc_attr( $rx_ml ); ?>\"><?php echo esc_html( $rx_ml ); ?></a>")
     desc = re.search(r'<meta name="description" content="([^"]*)"', html).group(1)
